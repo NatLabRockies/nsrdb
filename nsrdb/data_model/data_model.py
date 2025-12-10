@@ -28,6 +28,9 @@ class variables in Ancillary() below.
      'air_temperature',
      'specific_humidity',
      'wind_speed',
+     'wind_direction',
+     'wind_speed_10m',
+     'wind_direction_10m',
      'dew_point')
 """
 
@@ -104,6 +107,8 @@ class DataModel:
         'total_precipitable_water',
         'wind_speed',
         'wind_direction',
+        'wind_speed_10m',
+        'wind_direction_10m',
         'alpha',
         'aod',
         'ssa',

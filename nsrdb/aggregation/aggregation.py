@@ -902,6 +902,8 @@ class Manager:
         'air_temperature': Aggregation.point,
         'wind_direction': Aggregation.point,
         'wind_speed': Aggregation.point,
+        'wind_direction_10m': Aggregation.point,
+        'wind_speed_10m': Aggregation.point,
         'cloud_type': Aggregation.cloud_type,
         'cld_opd_dcomp': Aggregation.cloud_property,
         'cld_reff_dcomp': Aggregation.cloud_property,

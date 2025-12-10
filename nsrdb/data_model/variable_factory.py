@@ -52,6 +52,8 @@ class VarFactory:
         'total_precipitable_water': MerraVar,
         'wind_speed': MerraVar,
         'wind_direction': MerraVar,
+        'wind_speed_10m': MerraVar,
+        'wind_direction_10m': MerraVar,
     }
 
     HANDLER_NAMES: ClassVar = {

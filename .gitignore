@@ -140,3 +140,6 @@ docs/source/_autosummary
 
 # notebooks
 examples
+# pixi environments
+.pixi/*
+!.pixi/config.toml

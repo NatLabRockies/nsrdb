@@ -34,6 +34,8 @@ IGNORE_DSETS = [
     'relative_humidity',
     'wind_direction',
     'wind_speed',
+    'wind_direction_10m',
+    'wind_speed_10m',
     'cld_reff_dcomp',
 ]
 

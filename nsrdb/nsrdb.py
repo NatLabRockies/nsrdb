@@ -73,7 +73,13 @@ class NSRDB:
             'surface_pressure',
         ),
         'nsrdb_irradiance_{y}.h5': ('dhi', 'dni', 'ghi', 'fill_flag'),
-        'nsrdb_pv_{y}.h5': ('air_temperature', 'wind_direction', 'wind_speed'),
+        'nsrdb_pv_{y}.h5': (
+            'air_temperature',
+            'wind_direction',
+            'wind_speed',
+            'wind_direction_10m',
+            'wind_speed_10m',
+        ),
     }
 
     def __init__(
