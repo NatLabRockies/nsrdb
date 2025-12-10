@@ -61,25 +61,33 @@ can be found `here <https://github.com/NREL/nsrdb/tree/main/nsrdb/gap_fill>`_.
 
 Installation
 ============
+
+NOTE: The installation instructions below assume that you have python installed
+on your machine and are using either `conda <https://docs.conda.io/en/latest/index.html>`__
+or `pixi <https://pixi.sh/latest/>`_ as your package/environment manager.
+
 Option 1: Install from PIP (recommended for analysts):
 ------------------------------------------------------
-1. Create a new environment: ``conda create --name nsrdb python=3.9``
+
+1. Create a new environment: ``conda create --name nsrdb python=3.11``
+
 2. Activate environment: ``conda activate nsrdb``
+
 3. Install nsrdb: ``pip install NREL-nsrdb``
 
 Option 2: Clone repo (recommended for developers)
 -------------------------------------------------
-1. from home dir, ``git clone git@github.com:NREL/nsrdb.git``
-2. Create ``nsrdb`` environment and install package
-    1) Create a conda env: ``conda create -n nsrdb``
-    2) Run the command: ``conda activate nsrdb``
-    3) ``cd`` into the repo cloned in 1.
-    4) Prior to running ``pip`` below, make sure the branch is correct (install
-       from main!)
-    5) Install ``nsrdb`` and its dependencies by running:
-       ``pip install .`` (or ``pip install -e .`` if running a dev branch
-       or working on the source code)
-    6) *Optional*: Set up the pre-commit hooks with ``pip install pre-commit`` and ``pre-commit install``
+
+1. Run ``git clone git@github.com:NREL/nsrdb.git``
+2. ``cd nsrdb``.
+3. Make sure the branch is correct (install from main!)
+4. If you are using conda, create and activate a new environment:
+   ``conda create --name nsrdb python=3.11`` and ``conda activate nsrdb``
+
+   4.1 Install ``nsrdb`` and its dependencies by running: ``pip install .`` (or ``pip install -e .`` for editable install)
+
+5. Alternatively, run ``pixi install``
+6. *Optional*: Set up the pre-commit hooks with ``pip install pre-commit`` or ``pixi add pre-commit`` and ``pre-commit install``
 
 NSRDB Versions
 ==============
