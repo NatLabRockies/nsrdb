@@ -91,9 +91,11 @@ Option 2: Clone repo (recommended for developers)
 
 NSRDB Versions
 ==============
-.. list-table:: NSRDB Versions History
+
+.. list-table::
     :widths: auto
     :header-rows: 1
+
     * - Version
       - Effective Date
       - Data Years*
@@ -109,7 +111,7 @@ NSRDB Versions
       - Complete CLI refactor.
     * - 4.0.0
       - 5/1/23
-      - GOES: 1998-2024. Meteosat: 2005-2022.
+      - GOES 1998-2024, Meteosat 2005-2022.
       - Integrated an improved direct normal irradiance model (FARMS-DNI),
         described in the paper "Integration of a physics-based direct
         normal irradiance (DNI) model to enhance the National Solar
