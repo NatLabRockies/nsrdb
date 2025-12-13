@@ -1777,8 +1777,7 @@ class DataModel:
                     fout.time_index = self.nsrdb_ti
 
                 if 'meta' not in fout:
-                    meta_gids = self.nsrdb_grid[['gid']]
-                    fout.meta = meta_gids
+                    fout.meta = self.nsrdb_grid
 
                 var_kwargs = self._factory_kwargs.get(var, {})
                 var_obj = VarFactory.get_base_handler(

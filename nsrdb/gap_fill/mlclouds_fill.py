@@ -5,6 +5,7 @@ import os
 import shutil
 import time
 from concurrent.futures import as_completed
+from typing import ClassVar
 from warnings import warn
 
 import numpy as np
@@ -29,7 +30,7 @@ class MLCloudsFill:
     Use the MLClouds algorithm with phygnn model to fill missing cloud data
     """
 
-    DEFAULT_MODEL = {
+    DEFAULT_MODEL: ClassVar[dict] = {
         'cloud_type_model_path': None,
         'cloud_prop_model_path': LEG_MODEL_FPATH,
     }
@@ -471,9 +472,9 @@ class MLCloudsFill:
             )
         )
         logger.debug(
-            'Cleaned feature data dict values have these shapes: {}'.format(
-                [d.shape for d in feature_data.values()]
-            )
+            'Cleaned feature data dict values have these shapes: {}'.format([
+                d.shape for d in feature_data.values()
+            ])
         )
         logger.debug(
             'Feature flag column has these values: {}'.format(

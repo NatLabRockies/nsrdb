@@ -40,9 +40,9 @@ def test_collect(dates=('20190102', '20190103', '20190104'), slim_meta=True):
             for fn in os.listdir(daily_dir):
                 fp = os.path.join(daily_dir, fn)
                 with Outputs(fp, mode='a') as res:
-                    meta_gids = res.meta[['gid']]
+                    meta = res.meta[['gid', 'latitude', 'longitude']]
                     del res.h5['meta']
-                    res.meta = meta_gids
+                    res.meta = meta
 
         year = int(dates[0][0:4])
 
@@ -77,15 +77,21 @@ def test_collect(dates=('20190102', '20190103', '20190104'), slim_meta=True):
         fp_final = os.path.join(final_dir, 'mlclouds_test_*.h5')
         with MultiFileNSRDB(fp_final) as res:
             dsets = res.dsets
+            dsets = [
+                d
+                for d in dsets
+                if d not in ('time_index', 'meta', 'coordinates')
+            ]
             meta = res.meta
             ti = res.time_index
-            assert len(dsets) == 28
+            assert len(dsets) == sum(len(v) for v in NSRDB.OUTS.values())
             assert len(meta) == 9
             assert len(ti) == (288 * 3)
-            dsets = [d for d in dsets if d not in ('time_index', 'meta')]
             for dset in dsets:
                 data = res[dset]
-                assert (data != 0).sum() > 0
+                assert (data != 0).sum() > 0, (
+                    'Dataset {} is all zeros!'.format(dset)
+                )
                 all_data[dset] = data
                 all_attrs[dset] = res.get_attrs(dset)
 
