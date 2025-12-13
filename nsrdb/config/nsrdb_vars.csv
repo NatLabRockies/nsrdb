@@ -27,6 +27,8 @@ surface_pressure,hPa,uint16,1,300,1100,IDW2,TRUE,linear,tavg1_2d_slv_Nx,PS,MERRA
 total_precipitable_water,cm,uint8,10,0,15,IDW2,TRUE,linear,tavg1_2d_slv_Nx,TQV,MERRA2,/projects/pxs/ancillary/merra,,2000,1000
 wind_direction,degrees,uint16,1,0,360,NN,FALSE,linear,tavg1_2d_slv_Nx,,MERRA2,/projects/pxs/ancillary/merra,,2000,500
 wind_speed,m/s,uint16,10,0,40,IDW4,FALSE,linear,tavg1_2d_slv_Nx,,MERRA2,/projects/pxs/ancillary/merra,,2000,500
+wind_direction_10m,degrees,uint16,1,0,360,NN,FALSE,linear,tavg1_2d_slv_Nx,,MERRA2,/projects/pxs/ancillary/merra,,2000,500
+wind_speed_10m,m/s,uint16,10,0,40,IDW4,FALSE,linear,tavg1_2d_slv_Nx,,MERRA2,/projects/pxs/ancillary/merra,,2000,500
 cloud_fraction,unitless,float32,1,,,,,,,,UW-GOES,,,2000,250
 cloud_probability,unitless,float32,1,,,,,,,,UW-GOES,,,2000,250
 temp_3_75um_nom ,K,float32,1,,,,,,,,UW-GOES,,,2000,250

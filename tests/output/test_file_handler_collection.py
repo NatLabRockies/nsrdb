@@ -139,9 +139,9 @@ def test_collect_lowmem():
 
             # reduced precision for changed dtypes (aod in Jan 2022)
             msg = 'Dset failed: {}'.format(dset)
-            assert np.allclose(
-                data, data_collected, rtol=0.001, atol=0.001
-            ), msg
+            assert np.allclose(data, data_collected, rtol=0.001, atol=0.001), (
+                msg
+            )
 
 
 def test_final_daily():
@@ -217,7 +217,11 @@ def test_final_daily():
                 assert all(d in ti_doys for d in doys)
                 assert all(d in doys for d in ti_doys)
 
-                dsets = [d for d in f.dsets if d not in ('time_index', 'meta')]
+                dsets = [
+                    d
+                    for d in f.dsets
+                    if d not in ('time_index', 'meta', 'coordinates')
+                ]
                 for dset, doy in itertools.product(dsets, doys):
                     disk_data = f[dset]
                     dset_test_data = test_data[dset][doy]

@@ -28,6 +28,9 @@ class variables in Ancillary() below.
      'air_temperature',
      'specific_humidity',
      'wind_speed',
+     'wind_direction',
+     'wind_speed_10m',
+     'wind_direction_10m',
      'dew_point')
 """
 
@@ -104,6 +107,8 @@ class DataModel:
         'total_precipitable_water',
         'wind_speed',
         'wind_direction',
+        'wind_speed_10m',
+        'wind_direction_10m',
         'alpha',
         'aod',
         'ssa',
@@ -1772,8 +1777,7 @@ class DataModel:
                     fout.time_index = self.nsrdb_ti
 
                 if 'meta' not in fout:
-                    meta_gids = self.nsrdb_grid[['gid']]
-                    fout.meta = meta_gids
+                    fout.meta = self.nsrdb_grid
 
                 var_kwargs = self._factory_kwargs.get(var, {})
                 var_obj = VarFactory.get_base_handler(

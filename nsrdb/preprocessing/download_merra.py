@@ -30,7 +30,17 @@ def get_var_list(source):
         ]
 
     elif source.lower() == 'slv':
-        VARIABLES = ['PS', 'QV2M', 'T2M', 'TO3', 'TQV', 'U2M', 'V2M']
+        VARIABLES = [
+            'PS',
+            'QV2M',
+            'T2M',
+            'TO3',
+            'TQV',
+            'U2M',
+            'V2M',
+            'U10M',
+            'V10M',
+        ]
 
     elif source.lower() == 'aer':
         VARIABLES = ['TOTANGSTR', 'TOTEXTTAU', 'TOTSCATAU']

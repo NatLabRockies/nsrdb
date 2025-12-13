@@ -173,6 +173,28 @@ class MerraVar(AncillaryVarHandler):
 
         return flat_data
 
+    def _get_wind_data(self, file_handler):
+        """Get wind speed and direction data for the given height.
+
+        Parameters
+        ----------
+        file_handler : NSRDBfs
+            Opened MERRA source file handler.
+
+        Returns
+        -------
+        data : np.ndarray
+            3D numpy array (lat, lon, time) of wind speed or direction data.
+        """
+        height = '10M' if '_10m' in self.name else '2M'
+        u_vector = file_handler[f'U{height}'][:]
+        v_vector = file_handler[f'V{height}'][:]
+        if self.name.startswith('wind_speed'):
+            data = np.hypot(u_vector, v_vector)
+        else:
+            data = np.degrees(np.arctan2(u_vector, v_vector)) + 180
+        return data
+
     def _get_data(self, file):
         """Get single variable data from the given MERRA source file
 
@@ -193,13 +215,8 @@ class MerraVar(AncillaryVarHandler):
         # open NetCDF file
         with NSRDBfs(file) as f:
             # depending on variable, might need extra logic
-            if self.name in ['wind_speed', 'wind_direction']:
-                u_vector = f['U2M'][:]
-                v_vector = f['V2M'][:]
-                if self.name == 'wind_speed':
-                    data = np.sqrt(u_vector**2 + v_vector**2)
-                else:
-                    data = np.degrees(np.arctan2(u_vector, v_vector)) + 180
+            if 'wind_speed' in self.name or 'wind_direction' in self.name:
+                data = self._get_wind_data(f)
 
             elif self.dset_name == 'TOTSCATAU':
                 # Single scatter albedo is total scatter / aod
