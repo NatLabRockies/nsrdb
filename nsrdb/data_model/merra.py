@@ -190,7 +190,7 @@ class MerraVar(AncillaryVarHandler):
         u_vector = file_handler[f'U{height}'][:]
         v_vector = file_handler[f'V{height}'][:]
         if self.name.startswith('wind_speed'):
-            data = np.sqrt(u_vector**2 + v_vector**2)
+            data = np.hypot(u_vector, v_vector)
         else:
             data = np.degrees(np.arctan2(u_vector, v_vector)) + 180
         return data
