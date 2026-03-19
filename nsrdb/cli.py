@@ -127,7 +127,7 @@ def main(ctx, config, verbose):
 
         $ CONFIG='{"year": <year>, "out_dir": <out_dir>}'
 
-        $ python -m nsrdb.cli create-configs -c ${CONFIG}
+        $ python -m nsrdb.cli create-configs -c ${CONFIG} -r full
 
         $ cd <out_dir>
 
