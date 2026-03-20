@@ -224,6 +224,7 @@ ruff = ">=0.5.0"
 pre-commit = ">=2.20"
 ipython = ">=9.8.0,<10"
 bs4 = ">=4.14.3,<5"
+pyhdf = ">=0.11.6,<0.12"
 
 [tool.pixi.feature.build.dependencies]
 build = ">=0.6"
