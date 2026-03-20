@@ -1,0 +1,66 @@
+nsrdb.data\_model.maiac\_aod.MaiacVar
+=====================================
+
+.. currentmodule:: nsrdb.data_model.maiac_aod
+
+.. autoclass:: MaiacVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MaiacVar.pre_flight
+      ~MaiacVar.scale_data
+      ~MaiacVar.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MaiacVar.DEFAULT_DIR
+      ~MaiacVar.NN_METHOD
+      ~MaiacVar.attrs
+      ~MaiacVar.cache_file
+      ~MaiacVar.chunks
+      ~MaiacVar.data_source
+      ~MaiacVar.date
+      ~MaiacVar.description
+      ~MaiacVar.doy
+      ~MaiacVar.doy_index
+      ~MaiacVar.dset_name
+      ~MaiacVar.dtype
+      ~MaiacVar.elevation_correct
+      ~MaiacVar.file
+      ~MaiacVar.file_set
+      ~MaiacVar.files
+      ~MaiacVar.final_dtype
+      ~MaiacVar.grid
+      ~MaiacVar.mask
+      ~MaiacVar.name
+      ~MaiacVar.next_date
+      ~MaiacVar.next_file
+      ~MaiacVar.next_file_exists
+      ~MaiacVar.next_pattern
+      ~MaiacVar.pattern
+      ~MaiacVar.physical_max
+      ~MaiacVar.physical_min
+      ~MaiacVar.scale_factor
+      ~MaiacVar.source_data
+      ~MaiacVar.source_dir
+      ~MaiacVar.spatial_method
+      ~MaiacVar.temporal_method
+      ~MaiacVar.time_index
+      ~MaiacVar.units
+      ~MaiacVar.var_meta
+   
+   

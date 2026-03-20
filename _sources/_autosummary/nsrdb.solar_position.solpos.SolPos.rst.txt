@@ -1,0 +1,35 @@
+nsrdb.solar\_position.solpos.SolPos
+===================================
+
+.. currentmodule:: nsrdb.solar_position.solpos
+
+.. autoclass:: SolPos
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SolPos.apparent_elevation
+      ~SolPos.azimuth
+      ~SolPos.elevation
+      ~SolPos.latitude
+      ~SolPos.longitude
+      ~SolPos.time_index
+      ~SolPos.zenith
+   
+   

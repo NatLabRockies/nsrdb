@@ -1,0 +1,39 @@
+nsrdb.albedo.albedo
+===================
+
+.. automodule:: nsrdb.albedo.albedo
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      CompositeAlbedoDay
+      ModisClipper
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+      :toctree:
+   
+      AlbedoError
+   
+   
+
+
+

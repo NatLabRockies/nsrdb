@@ -1,0 +1,1518 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.utilities.plots &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/nsrdb.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../utilities.html">nsrdb.utilities</a></li>
+      <li class="breadcrumb-item active">nsrdb.utilities.plots</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nsrdb.utilities.plots</h1><div class="highlight"><pre>
+<span></span><span class="c1"># flake8: noqa: C901</span>
+<span class="sd">&quot;&quot;&quot;Test data extraction.</span>
+
+<span class="sd">Created on Tue Dec  10 08:22:26 2018</span>
+
+<span class="sd">@author: gbuster</span>
+
+<span class="sd">TODO: Integrate into cli as a QA module.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassVar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">warn</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">if</span> <span class="s1">&#39;linux&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
+<span class="c1"># pylint: disable-msg=W0404</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex.utilities.execution</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpawnProcessPool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex.utilities.loggers</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_logger</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Temporal">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html#nsrdb.utilities.plots.Temporal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Temporal</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Framework to perform NSRDB temporal QA via timeseries plots.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">gids1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gids2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f1/f2 : str</span>
+<span class="sd">            Two NSRDB h5 files to benchmark against each other (with paths).</span>
+<span class="sd">        gids1/gids2 : NoneType | str | list</span>
+<span class="sd">            Optional file-specific GID&#39;s to assign to each h5 file. None will</span>
+<span class="sd">            default to the index in the h5 meta data. A string is interpreted</span>
+<span class="sd">            as a meta data file with the first column being the GIDs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s1">&#39;Performing temporal QA of </span><span class="si">{}</span><span class="s1"> and </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f1</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gids1</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gids2</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_meta1</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_meta2</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t1</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t2</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_h1</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_h2</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gids1</span> <span class="o">=</span> <span class="n">gids1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gids2</span> <span class="o">=</span> <span class="n">gids2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_h1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_h2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gids1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the gid list for h5 file 1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        _gids1 : list</span>
+<span class="sd">            List of gids specific for h5 file 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gids1</span>
+
+    <span class="nd">@gids1</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gids1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the gid&#39;s for h5 file #1.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        inp : NoneType | str | list</span>
+<span class="sd">            Optional file-specific GID&#39;s to assign to h5 file #1. None will</span>
+<span class="sd">            default to the index in the h5 meta data. A string is interpreted</span>
+<span class="sd">            as a meta data file with the first column being the GIDs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gids1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">inp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gids1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta1</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gids1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gids2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the gid list for h5 file 2.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        _gids2 : list</span>
+<span class="sd">            List of gids specific for h5 file 2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gids2</span>
+
+    <span class="nd">@gids2</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gids2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the gid&#39;s for h5 file #2.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        inp : NoneType | str | list</span>
+<span class="sd">            Optional file-specific GID&#39;s to assign to h5 file #2. None will</span>
+<span class="sd">            default to the index in the h5 meta data. A string is interpreted</span>
+<span class="sd">            as a meta data file with the first column being the GIDs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gids2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">inp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gids2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta2</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_gids2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Temporal.attrs1">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html#nsrdb.utilities.plots.Temporal.attrs1">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">attrs1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get an attributes dictionary associated with dset in h1.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Temporal.attrs2">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html#nsrdb.utilities.plots.Temporal.attrs2">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">attrs2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get an attributes dictionary associated with dset in h1.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">h1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the h5 file #1 h5py file handler.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">h2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the h5 file #2 h5py file handler.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h2</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">meta1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the meta data for file 1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        _meta1 : pd.DataFrame</span>
+<span class="sd">            DataFrame representation of the &#39;meta&#39; dataset in h1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_meta1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">meta2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the meta data for file 2.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        _meta1 : pd.DataFrame</span>
+<span class="sd">            DataFrame representation of the &#39;meta&#39; dataset in h2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_meta2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta2</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">t1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the time index for file 1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        _t1 : pd.DateTime</span>
+<span class="sd">            Get the timeseries index for h1 in pandas DateTime format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">[</span><span class="s1">&#39;time_index&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">t2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the time index for file 2.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        _t2 : pd.DateTime</span>
+<span class="sd">            Get the timeseries index for h2 in pandas DateTime format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="p">[</span><span class="s1">&#39;time_index&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t2</span>
+
+<div class="viewcode-block" id="Temporal.plot_timeseries">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html#nsrdb.utilities.plots.Temporal.plot_timeseries">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_timeseries</span><span class="p">(</span>
+        <span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">legend</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot a single day timeseries for two timeseries-indexed dataframes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        df1/df2 : pd.DataFrame</span>
+<span class="sd">            Data from these two dataframes are plotted against each other.</span>
+<span class="sd">            Each dataframe must have a pandas datetime index with day/month</span>
+<span class="sd">            attributes. Only data in the 1st column (index 0) is plotted.</span>
+<span class="sd">        title : str</span>
+<span class="sd">            Plot title and output filename.</span>
+<span class="sd">        ylabel : str</span>
+<span class="sd">            Label for the y-axis.</span>
+<span class="sd">        legend : list | tuple</span>
+<span class="sd">            Two-entry legend specification.</span>
+<span class="sd">        out_dir : str</span>
+<span class="sd">            Location to dump plot image files.</span>
+<span class="sd">        month : int</span>
+<span class="sd">            Month of the time index in df1/df2 to plot.</span>
+<span class="sd">        day : int</span>
+<span class="sd">            Day of the time index in df1/df2 to plot.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mask1</span> <span class="o">=</span> <span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="n">month</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="n">day</span><span class="p">)</span>
+        <span class="n">mask2</span> <span class="o">=</span> <span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="n">month</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="n">day</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">mask1</span><span class="p">],</span> <span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">mask2</span><span class="p">],</span> <span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;--x&#39;</span><span class="p">)</span>
+
+        <span class="n">y_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">((</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+        <span class="p">))</span>
+        <span class="n">y_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">((</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">mask2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+        <span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="n">y_min</span><span class="p">,</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">y_max</span><span class="p">))</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time Index&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">title</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span>
+        <span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Temporal.plot_sites">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html#nsrdb.utilities.plots.Temporal.plot_sites">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_sites</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">f1</span><span class="p">,</span>
+        <span class="n">f2</span><span class="p">,</span>
+        <span class="n">gids1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">gids2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">dsets</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;dni&#39;</span><span class="p">,),</span>
+        <span class="n">sites</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span>
+        <span class="n">months</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span>
+        <span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span>
+        <span class="n">out_dir</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot sites in file1 against a baseline file2.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f1/f2 : str</span>
+<span class="sd">            Two NSRDB h5 files to benchmark against each other (with paths).</span>
+<span class="sd">            f2 is interpreted as the baseline full NSRDB file.</span>
+<span class="sd">        gids1/gids2 : NoneType | str | list</span>
+<span class="sd">            Optional file-specific GID&#39;s to assign to each h5 file. None will</span>
+<span class="sd">            default to the index in the h5 meta data. A string is interpreted</span>
+<span class="sd">            as a meta data file with the first column being the GIDs.</span>
+<span class="sd">        dsets : iterable</span>
+<span class="sd">            Dataset names (str) to plot from each file.</span>
+<span class="sd">        sites : iterable</span>
+<span class="sd">            Site indices to plot. This will be interpreted as the index in f1,</span>
+<span class="sd">            with gids1 used to find the index in f2 (if the indices do not</span>
+<span class="sd">            match between f1/f2).</span>
+<span class="sd">        months : iterable</span>
+<span class="sd">            Months to plot.</span>
+<span class="sd">        days : iterable</span>
+<span class="sd">            Days to plot.</span>
+<span class="sd">        out_dir : str</span>
+<span class="sd">            Directory to dump output plot image files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">init_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">)</span>
+        <span class="n">legend</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f2</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f1</span><span class="p">))</span>
+        <span class="k">with</span> <span class="bp">cls</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">gids1</span><span class="o">=</span><span class="n">gids1</span><span class="p">,</span> <span class="n">gids2</span><span class="o">=</span><span class="n">gids2</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sites</span><span class="p">:</span>
+                <span class="n">site1</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="n">site2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">gids1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Plotting dataset &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">))</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">scale1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">attrs1</span><span class="p">(</span><span class="n">dset</span><span class="p">)[</span><span class="s1">&#39;psm_scale_factor&#39;</span><span class="p">]</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="n">scale1</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="n">warn</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s1">&#39;Dataset &quot;</span><span class="si">{</span><span class="n">dset</span><span class="si">}</span><span class="s1">&quot; does not have psm_scale_factor.&#39;</span>
+                        <span class="p">)</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">scale2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">attrs2</span><span class="p">(</span><span class="n">dset</span><span class="p">)[</span><span class="s1">&#39;psm_scale_factor&#39;</span><span class="p">]</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="n">scale2</span> <span class="o">=</span> <span class="mi">1</span>
+                        <span class="n">warn</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s1">&#39;Dataset &quot;</span><span class="si">{</span><span class="n">dset</span><span class="si">}</span><span class="s1">&quot; does not have psm_scale_factor.&#39;</span>
+                        <span class="p">)</span>
+
+                    <span class="c1"># make time-series dataframes with one site of data</span>
+                    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                        <span class="p">{</span><span class="n">dset</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">h1</span><span class="p">[</span><span class="n">dset</span><span class="p">][:,</span> <span class="n">site1</span><span class="p">]</span> <span class="o">/</span> <span class="n">scale1</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">t1</span>
+                    <span class="p">)</span>
+                    <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                        <span class="p">{</span><span class="n">dset</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">h2</span><span class="p">[</span><span class="n">dset</span><span class="p">][:,</span> <span class="n">site2</span><span class="p">]</span> <span class="o">/</span> <span class="n">scale2</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">t2</span>
+                    <span class="p">)</span>
+
+                    <span class="c1"># check that the locations match</span>
+                    <span class="n">loc1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">meta1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">site1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+                    <span class="n">loc2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">meta2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">site2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+                    <span class="n">loc_check</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loc1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                        <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loc2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">loc_check</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                            <span class="s1">&#39;Temporal QA sites do not match. &#39;</span>
+                            <span class="s1">&#39;Site in file 1 has index </span><span class="si">{}</span><span class="s1"> and &#39;</span>
+                            <span class="s1">&#39;lat/lon </span><span class="si">{}</span><span class="s1">, site in file 2 has &#39;</span>
+                            <span class="s1">&#39;index </span><span class="si">{}</span><span class="s1"> and lat/lon </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">site1</span><span class="p">,</span> <span class="n">loc1</span><span class="p">,</span> <span class="n">site2</span><span class="p">,</span> <span class="n">loc2</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="s1">&#39;Plotting timeseries for site index </span><span class="si">{}</span><span class="s1"> in &#39;</span>
+                            <span class="s1">&#39;file 1 and site index </span><span class="si">{}</span><span class="s1"> in file 2 with &#39;</span>
+                            <span class="s1">&#39;lat/lon </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site1</span><span class="p">,</span> <span class="n">site2</span><span class="p">,</span> <span class="n">loc1</span><span class="p">)</span>
+                        <span class="p">)</span>
+
+                    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">days</span><span class="p">:</span>
+                            <span class="n">title</span> <span class="o">=</span> <span class="n">dset</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">site1</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span>
+                            <span class="p">)</span>
+                            <span class="n">t</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">(</span>
+                                <span class="n">df2</span><span class="p">,</span>
+                                <span class="n">df1</span><span class="p">,</span>
+                                <span class="n">title</span><span class="p">,</span>
+                                <span class="n">dset</span><span class="p">,</span>
+                                <span class="n">legend</span><span class="p">,</span>
+                                <span class="n">out_dir</span><span class="p">,</span>
+                                <span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">,</span>
+                                <span class="n">day</span><span class="o">=</span><span class="n">day</span><span class="p">,</span>
+                            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Spatial">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html#nsrdb.utilities.plots.Spatial">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Spatial</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Framework to perform NSRDB spatial QA via map plots.&quot;&quot;&quot;</span>
+
+    <span class="n">EXTENTS</span><span class="p">:</span> <span class="n">ClassVar</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;conus&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">127</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)},</span>
+        <span class="s1">&#39;nsrdb&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">190</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span> <span class="mi">61</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)},</span>
+        <span class="s1">&#39;canada&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">140</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">68</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">)},</span>
+        <span class="s1">&#39;east&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">130</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">62</span><span class="p">,</span> <span class="mi">62</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)},</span>
+        <span class="s1">&#39;west&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">62</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)},</span>
+        <span class="s1">&#39;full&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">170</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">62</span><span class="p">,</span> <span class="mi">62</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)},</span>
+        <span class="s1">&#39;wecc&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">127</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)},</span>
+        <span class="s1">&#39;south_america&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">85</span><span class="p">,</span> <span class="o">-</span><span class="mi">32</span><span class="p">),</span>
+            <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">59</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+            <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;global&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span>
+            <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+            <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;meteosat&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="mi">108</span><span class="p">),</span>
+            <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">54</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
+            <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;himawari&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span> <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)},</span>
+    <span class="p">}</span>
+
+<div class="viewcode-block" id="Spatial.multi_year">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html#nsrdb.utilities.plots.Spatial.multi_year">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">multi_year</span><span class="p">(</span>
+        <span class="n">year_range</span><span class="p">,</span>
+        <span class="n">out_dir</span><span class="p">,</span>
+        <span class="n">dsets</span><span class="p">,</span>
+        <span class="n">nsrdb_dir</span><span class="o">=</span><span class="s1">&#39;/projects/PXS/nsrdb/v3.0.1/&#39;</span><span class="p">,</span>
+        <span class="n">fname_base</span><span class="o">=</span><span class="s1">&#39;nsrdb_</span><span class="si">{year}</span><span class="s1">.h5&#39;</span><span class="p">,</span>
+        <span class="n">timesteps</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17520</span><span class="p">,</span> <span class="mi">8600</span><span class="p">),</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make map plots at timesteps for datasets in multiple NSRDB files.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        year_range : iterable</span>
+<span class="sd">            List of integer or string values to plot data for.</span>
+<span class="sd">        out_dir : str</span>
+<span class="sd">            Path to dump output plot files.</span>
+<span class="sd">        dsets : str | list</span>
+<span class="sd">            Name of target dataset(s) to plot</span>
+<span class="sd">        nsrdb_dir : str</span>
+<span class="sd">            Target resource file directory.</span>
+<span class="sd">        fname_base : str</span>
+<span class="sd">            Base nsrdb filename found in the nsrdb_dir. Should have a {year}</span>
+<span class="sd">            keyword.</span>
+<span class="sd">        timesteps : iterable</span>
+<span class="sd">            Timesteps (time indices) to make plots for.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fig : matplotlib.pyplot.figure</span>
+<span class="sd">            Plotting figure object.</span>
+<span class="sd">        ax : matplotlib.axes._subplots.AxesSubplot</span>
+<span class="sd">            Plotting axes object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">init_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">year_range</span><span class="p">:</span>
+            <span class="n">h5</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nsrdb_dir</span><span class="p">,</span> <span class="n">fname_base</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">))</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">dsets</span><span class="p">(</span>
+                <span class="n">h5</span><span class="p">,</span> <span class="n">dsets</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fmt_title</span><span class="p">(</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">og_title</span><span class="p">,</span> <span class="n">ti</span><span class="p">,</span> <span class="n">ts</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">file_ext</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Format the figure title with timestamp.&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">timedelta</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ti</span> <span class="o">+=</span> <span class="n">timedelta</span>
+
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">og_title</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">og_title</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">ti</span><span class="p">[</span><span class="n">ts</span><span class="p">]</span><span class="o">.</span><span class="n">month</span><span class="p">,</span>
+                <span class="n">ti</span><span class="p">[</span><span class="n">ts</span><span class="p">]</span><span class="o">.</span><span class="n">day</span><span class="p">,</span>
+                <span class="n">ti</span><span class="p">[</span><span class="n">ts</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">ti</span><span class="p">[</span><span class="n">ts</span><span class="p">]</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">ti</span><span class="p">[</span><span class="n">ts</span><span class="p">]</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">og_title</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">og_title</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">fname</span><span class="p">:</span>
+                <span class="n">fname</span> <span class="o">=</span> <span class="n">fname</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>
+
+        <span class="n">fname_out</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">ts</span><span class="p">,</span> <span class="n">file_ext</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fname_out</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">og_title</span>
+
+<div class="viewcode-block" id="Spatial.dsets">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html#nsrdb.utilities.plots.Spatial.dsets">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dsets</span><span class="p">(</span>
+        <span class="n">h5</span><span class="p">,</span>
+        <span class="n">dsets</span><span class="p">,</span>
+        <span class="n">out_dir</span><span class="p">,</span>
+        <span class="n">timesteps</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span>
+        <span class="n">fname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">file_ext</span><span class="o">=</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span>
+        <span class="n">sites</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">interval</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">timedelta</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make map style plots at several timesteps for a given dataset.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        h5 : str</span>
+<span class="sd">            Target resource file with path.</span>
+<span class="sd">        dsets : str | list</span>
+<span class="sd">            Name of target dataset(s) to plot</span>
+<span class="sd">        out_dir : str</span>
+<span class="sd">            Path to dump output plot files.</span>
+<span class="sd">        timesteps : iterable | slice</span>
+<span class="sd">            Timesteps (time indices) to make plots for. Slice will have faster</span>
+<span class="sd">            data extraction and will be later converted to an iterable.</span>
+<span class="sd">        fname : str</span>
+<span class="sd">            Filename without extension.</span>
+<span class="sd">        file_ext : str</span>
+<span class="sd">            File extension</span>
+<span class="sd">        sites : None | List | Slice</span>
+<span class="sd">            sites to plot.</span>
+<span class="sd">        interval : None | int</span>
+<span class="sd">            Interval to plots sites at, i.e. if 100, only 1 every 100 sites</span>
+<span class="sd">            will be plotted.</span>
+<span class="sd">        max_workers : int | None</span>
+<span class="sd">            Maximum number of workers to use (&gt;1 is parallel).</span>
+<span class="sd">        timedelta : datetime.timedelta</span>
+<span class="sd">            Time delta object to shift the time index printed inthe title</span>
+<span class="sd">            if {} is present in the title. This has no effect on the input</span>
+<span class="sd">            timesteps.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fig : matplotlib.pyplot.figure</span>
+<span class="sd">            Plotting figure object (Only returned if not parallel).</span>
+<span class="sd">        ax : matplotlib.axes._subplots.AxesSubplot</span>
+<span class="sd">            Plotting axes object (Only returned if not parallel).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">og_title</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dsets</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">dsets</span> <span class="o">=</span> <span class="p">[</span><span class="n">dsets</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_dir</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">h5</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Plotting &quot;</span><span class="si">{}</span><span class="s1">&quot; from </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">h5</span><span class="p">))</span>
+                <span class="n">attrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span>
+                <span class="n">dset_shape</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+
+                <span class="n">ti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;time_index&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">sites</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">])</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                        <span class="p">:,</span> <span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+                    <span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="n">sites</span><span class="p">])</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                        <span class="p">:,</span> <span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+                    <span class="p">]</span>
+            <span class="k">if</span> <span class="n">interval</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="p">),</span> <span class="p">:]</span>
+
+            <span class="k">if</span> <span class="s1">&#39;scale_factor&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+                <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;scale_factor&#39;</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="s1">&#39;psm_scale_factor&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+                <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;psm_scale_factor&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">scale_factor</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Could not find scale factor attr in h5: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h5</span><span class="p">))</span>
+
+            <span class="c1"># 2D array with timesteps</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dset_shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Importing data for &quot;</span><span class="si">{}</span><span class="s1">&quot;...&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">))</span>
+                <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">sites</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">][</span><span class="n">timesteps</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                            <span class="o">/</span> <span class="n">scale_factor</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">][</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">sites</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                            <span class="o">/</span> <span class="n">scale_factor</span>
+                        <span class="p">)</span>
+                <span class="k">if</span> <span class="n">interval</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="p">)]</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Finished importing data for &quot;</span><span class="si">{}</span><span class="s1">&quot;.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">))</span>
+
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+                    <span class="n">step</span> <span class="o">=</span> <span class="n">timesteps</span><span class="o">.</span><span class="n">step</span>
+                    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="n">timesteps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                        <span class="nb">range</span><span class="p">(</span><span class="n">timesteps</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">max_workers</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ts</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">timesteps</span><span class="p">):</span>
+                        <span class="n">df</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+                        <span class="n">fn_out</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">og_title</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">_fmt_title</span><span class="p">(</span>
+                            <span class="n">kwargs</span><span class="p">,</span>
+                            <span class="n">og_title</span><span class="p">,</span>
+                            <span class="n">ti</span><span class="p">,</span>
+                            <span class="n">ts</span><span class="p">,</span>
+                            <span class="n">fname</span><span class="p">,</span>
+                            <span class="n">dset</span><span class="p">,</span>
+                            <span class="n">file_ext</span><span class="p">,</span>
+                            <span class="n">timedelta</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">plot_geo_df</span><span class="p">(</span>
+                            <span class="n">df</span><span class="p">,</span> <span class="n">fn_out</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                        <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+                    <span class="k">with</span> <span class="n">SpawnProcessPool</span><span class="p">(</span>
+                        <span class="n">loggers</span><span class="o">=</span><span class="s1">&#39;nsrdb&#39;</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ts</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">timesteps</span><span class="p">):</span>
+                            <span class="n">df_par</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                            <span class="n">df_par</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+                            <span class="n">fn_out</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">og_title</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">_fmt_title</span><span class="p">(</span>
+                                <span class="n">kwargs</span><span class="p">,</span>
+                                <span class="n">og_title</span><span class="p">,</span>
+                                <span class="n">ti</span><span class="p">,</span>
+                                <span class="n">ts</span><span class="p">,</span>
+                                <span class="n">fname</span><span class="p">,</span>
+                                <span class="n">dset</span><span class="p">,</span>
+                                <span class="n">file_ext</span><span class="p">,</span>
+                                <span class="n">timedelta</span><span class="p">,</span>
+                            <span class="p">)</span>
+                            <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                                <span class="n">Spatial</span><span class="o">.</span><span class="n">plot_geo_df</span><span class="p">,</span>
+                                <span class="n">df_par</span><span class="p">,</span>
+                                <span class="n">fn_out</span><span class="p">,</span>
+                                <span class="n">out_dir</span><span class="p">,</span>
+                                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+                            <span class="p">)</span>
+
+            <span class="c1"># 1D array, no timesteps</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">h5</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">sites</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale_factor</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">][</span><span class="n">sites</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale_factor</span>
+
+                <span class="k">if</span> <span class="n">interval</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="p">)]</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+                <span class="n">fname_out</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">file_ext</span><span class="p">)</span>
+                <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">plot_geo_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">fname_out</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span></div>
+
+
+<div class="viewcode-block" id="Spatial.goes_cloud">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html#nsrdb.utilities.plots.Spatial.goes_cloud">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">goes_cloud</span><span class="p">(</span>
+        <span class="n">fpath</span><span class="p">,</span> <span class="n">dsets</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">nan_fill</span><span class="o">=-</span><span class="mi">15</span><span class="p">,</span> <span class="n">sparse_step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot datasets from a GOES cloud file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fpath : str</span>
+<span class="sd">            Target cloud file with path (either .nc or .h5).</span>
+<span class="sd">        dsets : str | list</span>
+<span class="sd">            Name of target dataset(s) to plot</span>
+<span class="sd">        out_dir : str</span>
+<span class="sd">            Path to dump output plot files.</span>
+<span class="sd">        nan_fill : int | float</span>
+<span class="sd">            Value to fill missing cloud data.</span>
+<span class="sd">        sparse_step : int</span>
+<span class="sd">            Step size to plot sites at a given interval (speeds things up).</span>
+<span class="sd">            sparse_step=1 will plot all datapoints.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fig : matplotlib.pyplot.figure</span>
+<span class="sd">            Plotting figure object.</span>
+<span class="sd">        ax : matplotlib.axes._subplots.AxesSubplot</span>
+<span class="sd">            Plotting axes object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.data_model.clouds</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+            <span class="n">CloudVar</span><span class="p">,</span>
+            <span class="n">CloudVarSingleH5</span><span class="p">,</span>
+            <span class="n">CloudVarSingleNC</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">fpath</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.nc&#39;</span><span class="p">):</span>
+            <span class="n">cld</span> <span class="o">=</span> <span class="n">CloudVarSingleNC</span><span class="p">(</span>
+                <span class="n">fpath</span><span class="p">,</span> <span class="n">pre_proc_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dsets</span><span class="o">=</span><span class="n">dsets</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cld</span> <span class="o">=</span> <span class="n">CloudVarSingleH5</span><span class="p">(</span>
+                <span class="n">fpath</span><span class="p">,</span> <span class="n">pre_proc_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dsets</span><span class="o">=</span><span class="n">dsets</span>
+            <span class="p">)</span>
+
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">CloudVar</span><span class="o">.</span><span class="n">get_timestamp</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">cld</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">cld</span><span class="o">.</span><span class="n">source_data</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span> <span class="o">=</span> <span class="n">nan_fill</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sparse_step</span><span class="p">)]</span>
+
+            <span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">dset</span><span class="p">)</span>
+
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">plot_geo_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span></div>
+
+
+<div class="viewcode-block" id="Spatial.plot_geo_df">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html#nsrdb.utilities.plots.Spatial.plot_geo_df">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_geo_df</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">,</span>
+        <span class="n">fname</span><span class="p">,</span>
+        <span class="n">out_dir</span><span class="p">,</span>
+        <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">),</span>
+        <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Longitude&#39;</span><span class="p">,</span>
+        <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Latitude&#39;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">title_loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+        <span class="n">cbar_label</span><span class="o">=</span><span class="s1">&#39;dset&#39;</span><span class="p">,</span>
+        <span class="n">marker_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span>
+        <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">127</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">),</span>
+        <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd_11&#39;</span><span class="p">,</span>
+        <span class="n">cbar_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+        <span class="n">extent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">shape_aspect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">shape_edge_color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+        <span class="n">shape_line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+        <span class="n">dark</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot a dataframe to verify the blending operation.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        df : pd.DataFrame</span>
+<span class="sd">            DataFrame with latitude/longitude in 1st/2nd columns, data in the</span>
+<span class="sd">            3rd column.</span>
+<span class="sd">        fname : str</span>
+<span class="sd">            Filename to save to including file extension (usually png).</span>
+<span class="sd">        out_dir : str</span>
+<span class="sd">            Output directory to save fname output.</span>
+<span class="sd">        labels : list | tuple</span>
+<span class="sd">            latitude/longitude column labels in the df.</span>
+<span class="sd">        xlabel : str</span>
+<span class="sd">            Label to put on the xaxis in the plot. Disabled if axis=&#39;off&#39;</span>
+<span class="sd">        ylabel : str</span>
+<span class="sd">            Label to put on the yaxis in the plot. Disabled if axis=&#39;off&#39;</span>
+<span class="sd">        title : str</span>
+<span class="sd">            Figure and file title.</span>
+<span class="sd">        title_loc : str</span>
+<span class="sd">            Location of title (center, left, right).</span>
+<span class="sd">        cbar_label : str</span>
+<span class="sd">            Label for the colorbar. Should usually include units of the plot.</span>
+<span class="sd">        marker_size : float</span>
+<span class="sd">            Marker size.</span>
+<span class="sd">            0.1 is good for CONUS at 4km.</span>
+<span class="sd">        marker : string</span>
+<span class="sd">            marker shape &#39;s&#39; is square marker.</span>
+<span class="sd">        xlim : list | tuple</span>
+<span class="sd">            Plot x limits (left limit, right limit) (longitude bounds).</span>
+<span class="sd">        ylim : list | tuple</span>
+<span class="sd">            Plot y limits (lower limit, upper limit) (latitude bounds).</span>
+<span class="sd">        figsize : tuple</span>
+<span class="sd">            Figure size inches (width, height).</span>
+<span class="sd">        cmap : str</span>
+<span class="sd">            Matplotlib colormap (Blues, OrRd, viridis)</span>
+<span class="sd">        cbar_range = None | tuple</span>
+<span class="sd">            Optional fixed range for the colormap.</span>
+<span class="sd">        dpi : int</span>
+<span class="sd">            Dots per inch.</span>
+<span class="sd">        extent : str</span>
+<span class="sd">            Optional extent kwarg to fix the axis bounds and figure size</span>
+<span class="sd">            from class.EXTENTS</span>
+<span class="sd">        axis : None | str</span>
+<span class="sd">            Option to turn axis &quot;off&quot;</span>
+<span class="sd">        alpha : float</span>
+<span class="sd">            Transparency value between 0 (transparent) and 1 (opaque)</span>
+<span class="sd">        shape : str</span>
+<span class="sd">            Filepath to a shape file to plot on top of df data (only the</span>
+<span class="sd">            boundaries are plotted).</span>
+<span class="sd">        shape_aspect : None | float</span>
+<span class="sd">            Optional aspect ratio to use on shape.</span>
+<span class="sd">        shape_edge_color : str | tuple</span>
+<span class="sd">            Color of the plotted shape edges</span>
+<span class="sd">        shape_line_width : float</span>
+<span class="sd">            Line width of the shape edges</span>
+<span class="sd">        bbox_inches : str</span>
+<span class="sd">            kwarg for saving figure.</span>
+<span class="sd">        dark : bool</span>
+<span class="sd">            Flag to turn on dark mode plots.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fig : matplotlib.pyplot.figure</span>
+<span class="sd">            Plotting figure object.</span>
+<span class="sd">        ax : matplotlib.axes._subplots.AxesSubplot</span>
+<span class="sd">            Plotting axes object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+        <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
+        <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">dark</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;#969696&#39;</span>
+            <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">extent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">EXTENTS</span><span class="p">:</span>
+            <span class="n">xlim</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">EXTENTS</span><span class="p">[</span><span class="n">extent</span><span class="o">.</span><span class="n">lower</span><span class="p">()][</span><span class="s1">&#39;xlim&#39;</span><span class="p">]</span>
+            <span class="n">ylim</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">EXTENTS</span><span class="p">[</span><span class="n">extent</span><span class="o">.</span><span class="n">lower</span><span class="p">()][</span><span class="s1">&#39;ylim&#39;</span><span class="p">]</span>
+            <span class="n">figsize</span> <span class="o">=</span> <span class="n">Spatial</span><span class="o">.</span><span class="n">EXTENTS</span><span class="p">[</span><span class="n">extent</span><span class="o">.</span><span class="n">lower</span><span class="p">()][</span><span class="s1">&#39;figsize&#39;</span><span class="p">]</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">)</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">facecolor</span><span class="p">)</span>
+            <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">textcolor</span>
+            <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelcolor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">textcolor</span>
+
+            <span class="k">if</span> <span class="n">cbar_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cbar_range</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]),</span>
+                <span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cbar_range</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">cbar_range</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cbar_range</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cbar_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cbar_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">cbar_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cbar_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s1">&#39;_&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cmap</span><span class="p">:</span>
+                <span class="n">custom_cmap</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span>
+
+                <span class="c1"># hack for colorbar if alpha is input</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                    <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                    <span class="n">vmin</span><span class="o">=</span><span class="n">cbar_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">vmax</span><span class="o">=</span><span class="n">cbar_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                    <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span>
+                    <span class="n">s</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span>
+                    <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                    <span class="n">vmin</span><span class="o">=</span><span class="n">cbar_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">vmax</span><span class="o">=</span><span class="n">cbar_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
+                <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">custom_cmap</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">nbins</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">cmap_name</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">nbins</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cmap_name</span><span class="p">)</span>
+                <span class="n">cmaplist</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)]</span>
+                <span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">cbar_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cbar_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">nbins</span><span class="p">))</span>
+                <span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span>
+                    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmap_name</span><span class="p">,</span> <span class="n">nbins</span><span class="p">),</span> <span class="n">cmaplist</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+
+                <span class="c1"># hack for colorbar if alpha is input</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                    <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span>
+                    <span class="n">s</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span>
+                    <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                    <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                    <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span>
+                    <span class="n">s</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span>
+                    <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                    <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+                <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">({</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4326&#39;</span><span class="p">})</span>
+                <span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">edgecolor</span><span class="o">=</span><span class="n">shape_edge_color</span><span class="p">,</span>
+                    <span class="n">linewidth</span><span class="o">=</span><span class="n">shape_line_width</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">shape_aspect</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">shape_aspect</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">xlabel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">xlabel</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">ylabel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ylabel</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">fname</span>
+            <span class="k">if</span> <span class="n">cbar_label</span> <span class="o">==</span> <span class="s1">&#39;dset&#39;</span><span class="p">:</span>
+                <span class="n">cbar_label</span> <span class="o">=</span> <span class="n">var</span>
+
+            <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">title_loc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+
+            <span class="n">cbar</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">custom_cmap</span> <span class="ow">and</span> <span class="n">cbar_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">cbar_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span>
+                <span class="n">int_bar</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bounds</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">int_bar</span><span class="p">:</span>
+                    <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.0f</span><span class="s1">&#39;</span>
+                <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
+                    <span class="n">c</span><span class="p">,</span>
+                    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                    <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+                    <span class="n">spacing</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span>
+                    <span class="n">ticks</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+                    <span class="n">boundaries</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span>
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">cbar</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ticks</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">getp</span><span class="p">(</span><span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="s1">&#39;yticklabels&#39;</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+                <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+                <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+                <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">cbar_label</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">ylim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">xlim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">bounds</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Axes bounds are: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bounds</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+
+            <span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.tiff&#39;</span><span class="p">):</span>
+                <span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+
+                <span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+                <span class="n">png1</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+                <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+                    <span class="n">png1</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span>
+                    <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span>
+                    <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+                    <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">png2</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">png1</span><span class="p">)</span>
+                <span class="n">png2</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+                <span class="n">png2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+                    <span class="n">out</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="n">bbox_inches</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span>
+                <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Saved figure: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># never break a full data pipeline on failed plots</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Could not plot &quot;</span><span class="si">{}</span><span class="s1">&quot;. Received the following &#39;</span>
+                <span class="s1">&#39;exception: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

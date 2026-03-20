@@ -1,0 +1,6 @@
+nsrdb.utilities.nearest\_neighbor.rad\_to\_dist
+===============================================
+
+.. currentmodule:: nsrdb.utilities.nearest_neighbor
+
+.. autofunction:: rad_to_dist

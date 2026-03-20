@@ -1,0 +1,38 @@
+nsrdb.gap\_fill.cloud\_fill.CloudGapFill
+========================================
+
+.. currentmodule:: nsrdb.gap_fill.cloud_fill
+
+.. autoclass:: CloudGapFill
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CloudGapFill.fill_cloud_cat
+      ~CloudGapFill.fill_cloud_prop
+      ~CloudGapFill.fill_cloud_type
+      ~CloudGapFill.fill_file
+      ~CloudGapFill.flag_missing_properties
+      ~CloudGapFill.handle_persistent_nan
+      ~CloudGapFill.log_fill_results
+      ~CloudGapFill.make_zeros
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CloudGapFill.CATS
+      ~CloudGapFill.FILL
+   
+   

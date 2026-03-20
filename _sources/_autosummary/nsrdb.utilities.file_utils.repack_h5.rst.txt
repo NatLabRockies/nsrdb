@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.repack\_h5
+======================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: repack_h5

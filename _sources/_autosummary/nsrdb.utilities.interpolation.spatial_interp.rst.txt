@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.spatial\_interp
+=============================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: spatial_interp

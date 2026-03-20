@@ -1,0 +1,30 @@
+nsrdb.data\_model.base\_handler.BaseDerivedVar
+==============================================
+
+.. currentmodule:: nsrdb.data_model.base_handler
+
+.. autoclass:: BaseDerivedVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BaseDerivedVar.derive
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BaseDerivedVar.DEPENDENCIES
+   
+   

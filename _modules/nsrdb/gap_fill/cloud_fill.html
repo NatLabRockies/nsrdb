@@ -1,0 +1,1129 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.gap_fill.cloud_fill &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/nsrdb.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nsrdb.gap_fill.cloud_fill</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nsrdb.gap_fill.cloud_fill</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Fri April 26 2019</span>
+
+<span class="sd">@author: gbuster</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassVar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">warn</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">farms</span><span class="w"> </span><span class="kn">import</span> <span class="n">CLEAR_TYPES</span><span class="p">,</span> <span class="n">CLOUD_TYPES</span><span class="p">,</span> <span class="n">ICE_TYPES</span><span class="p">,</span> <span class="n">SZA_LIM</span><span class="p">,</span> <span class="n">WATER_TYPES</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.file_handlers.file_system</span><span class="w"> </span><span class="kn">import</span> <span class="n">NSRDBFileSystem</span> <span class="k">as</span> <span class="n">NSRDBfs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.file_handlers.outputs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Outputs</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="CloudGapFill">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CloudGapFill</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Framework to fill gaps in cloud properties.&quot;&quot;&quot;</span>
+
+    <span class="c1"># cloud categories</span>
+    <span class="n">CATS</span><span class="p">:</span> <span class="n">ClassVar</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;water&#39;</span><span class="p">:</span> <span class="n">WATER_TYPES</span><span class="p">,</span> <span class="s1">&#39;ice&#39;</span><span class="p">:</span> <span class="n">ICE_TYPES</span><span class="p">}</span>
+
+    <span class="c1"># hard fill for sites that have full year w no data.</span>
+    <span class="n">FILL</span><span class="p">:</span> <span class="n">ClassVar</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;water&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;cld_opd_dcomp&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+            <span class="s1">&#39;cld_reff_dcomp&#39;</span><span class="p">:</span> <span class="mf">8.0</span><span class="p">,</span>
+            <span class="s1">&#39;cld_press_acha&#39;</span><span class="p">:</span> <span class="mf">800.0</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;ice&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;cld_opd_dcomp&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+            <span class="s1">&#39;cld_reff_dcomp&#39;</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span>
+            <span class="s1">&#39;cld_press_acha&#39;</span><span class="p">:</span> <span class="mf">250.0</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+<div class="viewcode-block" id="CloudGapFill.fill_cloud_cat">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.fill_cloud_cat">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fill_cloud_cat</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fill cloud properties of a given category (water, ice).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        category : str</span>
+<span class="sd">            &#39;water&#39; or &#39;ice&#39;</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud properties (single-property) with shape</span>
+<span class="sd">            (time x sites). Missing values must be NaN.</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with no missing values.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud properties with missing values filled for</span>
+<span class="sd">            cloud types in the specified category.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">types</span> <span class="o">=</span> <span class="n">CloudGapFill</span><span class="o">.</span><span class="n">CATS</span><span class="p">[</span><span class="n">category</span><span class="p">]</span>
+
+        <span class="c1"># make a copy of master cloud_prop for gap filling one category</span>
+        <span class="n">cloud_prop_fill</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">)</span>
+
+        <span class="c1"># find locations for current cloud property</span>
+        <span class="n">type_mask</span> <span class="o">=</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
+
+        <span class="c1"># set other locations to nan to not impede gap fill</span>
+        <span class="n">cloud_prop_fill</span><span class="p">[</span><span class="o">~</span><span class="n">type_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+        <span class="c1"># patch sites with just one good value (need this for short</span>
+        <span class="c1"># timeseries with just one or two good values)</span>
+        <span class="n">good_values</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop_fill</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">almost_all_nan</span> <span class="o">=</span> <span class="p">(</span><span class="n">good_values</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">good_values</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">almost_all_nan</span><span class="p">):</span>
+            <span class="n">cloud_prop_fill</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">almost_all_nan</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">cloud_prop_fill</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">almost_all_nan</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+            <span class="p">)</span>
+
+        <span class="c1"># patch sites with all missing values</span>
+        <span class="n">all_nan</span> <span class="o">=</span> <span class="n">good_values</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">all_nan</span><span class="p">):</span>
+            <span class="n">cloud_prop_fill</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">all_nan</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">999</span>
+
+        <span class="c1"># gap fill all missing values</span>
+        <span class="n">cloud_prop_fill</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">cloud_prop_fill</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Make sure sites with only NaN props stay as nan</span>
+        <span class="n">cloud_prop_fill</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">all_nan</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+        <span class="c1"># fill values for the specified cloud type</span>
+        <span class="n">cloud_prop</span><span class="p">[</span><span class="n">type_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_prop_fill</span><span class="p">[</span><span class="n">type_mask</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="k">return</span> <span class="n">cloud_prop</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.make_zeros">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.make_zeros">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_zeros</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="n">sza</span><span class="p">,</span> <span class="n">sza_lim</span><span class="o">=</span><span class="n">SZA_LIM</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set clear and night cloud properties to zero</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud properties (single-property) with shape</span>
+<span class="sd">            (time x sites).</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with no missing values.</span>
+<span class="sd">        sza : pd.DataFrame</span>
+<span class="sd">            DataFrame of solar zenith angle values to determine nighttime.</span>
+<span class="sd">        sza_lim : int | float</span>
+<span class="sd">            Value above which sza indicates nighttime (sun below horizon).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud properties with properties during clear and</span>
+<span class="sd">            night time timesteps set to zero.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># set clear and night cloud properties to zero</span>
+        <span class="n">cloud_prop</span><span class="p">[</span><span class="n">cloud_type</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">CLEAR_TYPES</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">cloud_prop</span><span class="p">[</span><span class="n">sza</span> <span class="o">&gt;</span> <span class="n">sza_lim</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="k">return</span> <span class="n">cloud_prop</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.handle_persistent_nan">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.handle_persistent_nan">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_persistent_nan</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle any remaining NaN property values and warn.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Name of the cloud property being filled.</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud property values. Fill should have been</span>
+<span class="sd">            attempted, this method catches any remaining NaN values.</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with no missing values.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud property values with no remaining NaN&#39;s.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop</span><span class="o">.</span><span class="n">values</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">n_tot</span> <span class="o">=</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;NaN values persist in &quot;</span><span class="si">{}</span><span class="s1">&quot; at </span><span class="si">{}</span><span class="s1"> sites out of </span><span class="si">{}</span><span class="s1"> &#39;</span>
+                <span class="s1">&#39;(</span><span class="si">{:.2f}</span><span class="s1">%) - </span><span class="si">{}</span><span class="s1"> total NaN values &#39;</span>
+                <span class="s1">&#39;out of </span><span class="si">{}</span><span class="s1"> total observations, </span><span class="si">{:.2f}</span><span class="s1">%).&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">dset</span><span class="p">,</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span>
+                    <span class="n">cloud_prop</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="o">/</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="n">count</span><span class="p">,</span>
+                    <span class="n">n_tot</span><span class="p">,</span>
+                    <span class="mi">100</span> <span class="o">*</span> <span class="n">count</span> <span class="o">/</span> <span class="n">n_tot</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="s1">&#39;These site indices have persistent NaN values: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="c1"># do a hard fix of remaining nan values</span>
+            <span class="k">for</span> <span class="n">cat</span><span class="p">,</span> <span class="n">types</span> <span class="ow">in</span> <span class="n">CloudGapFill</span><span class="o">.</span><span class="n">CATS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">types</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+                <span class="n">fill_val</span> <span class="o">=</span> <span class="n">CloudGapFill</span><span class="o">.</span><span class="n">FILL</span><span class="p">[</span><span class="n">cat</span><span class="p">][</span><span class="n">dset</span><span class="p">]</span>
+                <span class="n">cloud_prop</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">fill_val</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="s1">&#39;Filling </span><span class="si">{}</span><span class="s1"> persistent NaN values of &quot;</span><span class="si">{}</span><span class="s1">&quot; with &#39;</span>
+                    <span class="s1">&#39;a climatalogical average value </span><span class="si">{}</span><span class="s1"> for cloud &#39;</span>
+                    <span class="s1">&#39;category &quot;</span><span class="si">{}</span><span class="s1">&quot;.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">mask</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">dset</span><span class="p">,</span> <span class="n">fill_val</span><span class="p">,</span> <span class="n">cat</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cloud_prop</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.log_fill_results">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.log_fill_results">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_fill_results</span><span class="p">(</span><span class="n">fill_flag</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Log fill flag results.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags showing what data was filled and why.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Fill flag results for shape </span><span class="si">{}</span><span class="s1">:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fill_flag</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+        <span class="n">ntot</span> <span class="o">=</span> <span class="n">fill_flag</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">fill_flag</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="p">(</span><span class="n">fill_flag</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Flag </span><span class="si">{}</span><span class="s1"> has </span><span class="si">{}</span><span class="s1"> counts out of </span><span class="si">{}</span><span class="s1"> (</span><span class="si">{:.2f}</span><span class="s1">%)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">i</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">ntot</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">count</span> <span class="o">/</span> <span class="n">ntot</span>
+                <span class="p">)</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.fill_cloud_type">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.fill_cloud_type">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fill_cloud_type</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">,</span> <span class="n">fill_flag</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">missing</span><span class="o">=-</span><span class="mi">15</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fill the cloud type data.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with missing flags.</span>
+<span class="sd">        missing : int</span>
+<span class="sd">            Flag for missing cloud types.</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags showing what data was filled and why.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with missing values filled using the</span>
+<span class="sd">            temporal nearest neighbor.</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags showing what data was filled and why.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Filling cloud types.&#39;</span><span class="p">)</span>
+
+        <span class="n">df_convert</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">df_convert</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+
+        <span class="n">missing_mask</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">missing</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">missing</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">fill_flag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fill_flag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">cloud_type</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">fill_flag</span><span class="p">[</span><span class="n">missing_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="c1"># full timeseries with no cloud type. set to clear and warn</span>
+            <span class="n">fill_flag</span><span class="p">[:,</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="n">cloud_type</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> sites have missing cloud types for the &#39;</span>
+                <span class="s1">&#39;entire year.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="c1"># reset missing mask</span>
+            <span class="n">missing_mask</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span>
+                <span class="k">if</span> <span class="n">missing</span> <span class="o">&lt;</span> <span class="mi">0</span>
+                <span class="k">else</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">missing</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="n">cloud_type</span><span class="p">[</span><span class="n">missing_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">one_good</span> <span class="o">=</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">one_good</span><span class="p">):</span>
+                <span class="n">cloud_type</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">one_good</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">cloud_type</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">one_good</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">cloud_type</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
+
+        <span class="n">missing_mask</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">missing</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">missing</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Cloud type fill failed! </span><span class="si">{}</span><span class="s1"> cloud types are &#39;</span>
+                <span class="s1">&#39;still missing out of shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">missing_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">missing_mask</span><span class="o">.</span><span class="n">shape</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="n">bad</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">CLOUD_TYPES</span> <span class="o">+</span> <span class="n">CLEAR_TYPES</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">bad</span><span class="p">):</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Unknown cloud types have appeared! These are not &#39;</span>
+                <span class="s1">&#39;recognized: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">bad</span><span class="p">))</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">df_convert</span><span class="p">:</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="n">cloud_type</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="k">return</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="n">fill_flag</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.flag_missing_properties">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.flag_missing_properties">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">flag_missing_properties</span><span class="p">(</span>
+        <span class="n">prop_name</span><span class="p">,</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="n">sza</span><span class="p">,</span> <span class="n">fill_flag</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Look for missing cloud properties and set fill_flag accordingly.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        prop_name : str</span>
+<span class="sd">            Name of the cloud property being filled.</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud property values.</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with no missing values.</span>
+<span class="sd">        sza : pd.DataFrame</span>
+<span class="sd">            DataFrame of solar zenith angle values to determine nighttime.</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags showing what data was filled and why.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags with missing cloud property flags set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">missing_prop</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">cloud_type</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">CLOUD_TYPES</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">cloud_prop</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">sza</span> <span class="o">&lt;</span> <span class="n">SZA_LIM</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+        <span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">missing_prop</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fill_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">fill_flag</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s1">&#39;Cloud property &quot;</span><span class="si">{}</span><span class="s1">&quot; is being cleaned with </span><span class="si">{}</span><span class="s1"> &#39;</span>
+            <span class="s1">&#39;fill_flag=3 out of </span><span class="si">{}</span><span class="s1"> total observations (</span><span class="si">{:.2f}</span><span class="s1">%)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">prop_name</span><span class="p">,</span>
+                <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+                <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="mi">100</span> <span class="o">*</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="c1"># if full timeseries is missing properties but not type, set 4</span>
+        <span class="n">missing_full</span> <span class="o">=</span> <span class="p">(</span><span class="n">cloud_type</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">CLOUD_TYPES</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fill_flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span> <span class="o">|</span> <span class="p">(</span>
+            <span class="n">cloud_type</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">CLEAR_TYPES</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">sza</span> <span class="o">&gt;=</span> <span class="n">SZA_LIM</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">missing_full</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">mask_full</span> <span class="o">=</span> <span class="p">(</span><span class="n">fill_flag</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">missing_full</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">fill_flag</span><span class="p">[</span><span class="n">mask_full</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="s1">&#39;Cloud property &quot;</span><span class="si">{}</span><span class="s1">&quot; is being cleaned with </span><span class="si">{}</span><span class="s1"> &#39;</span>
+                <span class="s1">&#39;fill_flag=4 out of </span><span class="si">{}</span><span class="s1"> total observations (</span><span class="si">{:.2f}</span><span class="s1">%)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">prop_name</span><span class="p">,</span>
+                    <span class="n">mask_full</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+                    <span class="n">mask_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">mask_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="mi">100</span>
+                    <span class="o">*</span> <span class="n">mask_full</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="o">/</span> <span class="p">(</span><span class="n">mask_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">mask_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="s1">&#39;Cloud property &quot;</span><span class="si">{}</span><span class="s1">&quot; is being cleaned with </span><span class="si">{}</span><span class="s1"> sites &#39;</span>
+                <span class="s1">&#39;with fill_flag=4 out of </span><span class="si">{}</span><span class="s1"> total sites (</span><span class="si">{:.2f}</span><span class="s1">%)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">prop_name</span><span class="p">,</span>
+                    <span class="n">mask_full</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+                    <span class="n">mask_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="mi">100</span> <span class="o">*</span> <span class="n">mask_full</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">mask_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fill_flag</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.fill_cloud_prop">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.fill_cloud_prop">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fill_cloud_prop</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">prop_name</span><span class="p">,</span>
+        <span class="n">cloud_prop</span><span class="p">,</span>
+        <span class="n">cloud_type</span><span class="p">,</span>
+        <span class="n">sza</span><span class="p">,</span>
+        <span class="n">fill_flag</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">cloud_type_is_clean</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform full cloud property fill.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        prop_name : str</span>
+<span class="sd">            Name of the cloud property being filled.</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud property values.</span>
+<span class="sd">        cloud_type : pd.DataFrame</span>
+<span class="sd">            Integer cloud type data with no missing values.</span>
+<span class="sd">        sza : pd.DataFrame</span>
+<span class="sd">            DataFrame of solar zenith angle values to determine nighttime.</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags showing what data was filled and why.</span>
+<span class="sd">        cloud_type_is_clean : bool</span>
+<span class="sd">            Flag to show if cloud_type input has already been cleaned. default</span>
+<span class="sd">            is False so cloud_type will be cleaned in this method</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cloud_prop : pd.DataFrame</span>
+<span class="sd">            DataFrame of cloud property values with no remaining NaN&#39;s.</span>
+<span class="sd">        fill_flag : np.ndarray</span>
+<span class="sd">            Integer array of flags showing what data was filled and why.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Gap filling &quot;</span><span class="si">{}</span><span class="s1">&quot;.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prop_name</span><span class="p">))</span>
+
+        <span class="n">float_convert</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span>
+            <span class="n">cloud_prop</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span>
+        <span class="p">):</span>
+            <span class="n">float_convert</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">native_dtype</span> <span class="o">=</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">dtype</span>
+            <span class="n">cloud_prop</span> <span class="o">=</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="c1"># make dataframes</span>
+        <span class="n">df_convert</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">df_convert</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">cloud_prop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sza</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">sza</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sza</span><span class="p">)</span>
+
+        <span class="n">fill_flag</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">cloud_type</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">fill_flag</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">fill_flag</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cloud_type_is_clean</span><span class="p">:</span>
+            <span class="c1"># fill cloud types.</span>
+            <span class="n">cloud_type</span><span class="p">,</span> <span class="n">fill_flag</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">fill_cloud_type</span><span class="p">(</span>
+                <span class="n">cloud_type</span><span class="p">,</span> <span class="n">fill_flag</span><span class="o">=</span><span class="n">fill_flag</span>
+            <span class="p">)</span>
+
+        <span class="n">fill_flag</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">flag_missing_properties</span><span class="p">(</span>
+            <span class="n">prop_name</span><span class="p">,</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="n">sza</span><span class="p">,</span> <span class="n">fill_flag</span>
+        <span class="p">)</span>
+
+        <span class="c1"># set missing property values to NaN.</span>
+        <span class="n">cloud_prop</span><span class="p">[(</span><span class="n">cloud_prop</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+        <span class="c1"># perform gap fill for each cloud category seperately</span>
+        <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">CATS</span><span class="p">:</span>
+            <span class="c1"># make property fill for given cloud type set</span>
+            <span class="n">cloud_prop</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">fill_cloud_cat</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">)</span>
+
+        <span class="c1"># set clear and night cloud properties to zero</span>
+        <span class="n">cloud_prop</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">make_zeros</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="n">sza</span><span class="p">)</span>
+
+        <span class="c1"># handle persistent nan properties</span>
+        <span class="n">cloud_prop</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">handle_persistent_nan</span><span class="p">(</span>
+            <span class="n">prop_name</span><span class="p">,</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">cloud_type</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Cloud property still has &#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cloud_prop</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s1"> nan values out of &#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;shape </span><span class="si">{</span><span class="n">cloud_prop</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">!&#39;</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">df_convert</span><span class="p">:</span>
+            <span class="n">cloud_prop</span> <span class="o">=</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="k">if</span> <span class="n">float_convert</span><span class="p">:</span>
+            <span class="n">cloud_prop</span> <span class="o">=</span> <span class="n">cloud_prop</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">native_dtype</span><span class="p">)</span>
+
+        <span class="bp">cls</span><span class="o">.</span><span class="n">log_fill_results</span><span class="p">(</span><span class="n">fill_flag</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">fill_flag</span></div>
+
+
+<div class="viewcode-block" id="CloudGapFill.fill_file">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html#nsrdb.gap_fill.cloud_fill.CloudGapFill.fill_file">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fill_file</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">f_cloud</span><span class="p">,</span>
+        <span class="n">f_ancillary</span><span class="p">,</span>
+        <span class="n">rows</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">cols</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">col_chunk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gap fill cloud properties in an h5 file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f_cloud : str</span>
+<span class="sd">            File path to a cloud file with datasets &#39;cloud_type&#39;,</span>
+<span class="sd">            &#39;cloud_fill_flag&#39;, and some cloud property</span>
+<span class="sd">            dataset(s) with prefix &#39;cld_&#39;.</span>
+<span class="sd">        f_ancillary : str</span>
+<span class="sd">            File path containing solar_zenith_angle</span>
+<span class="sd">        rows : slice</span>
+<span class="sd">            Subset of rows to gap fill.</span>
+<span class="sd">        cols : slice</span>
+<span class="sd">            Subset of columns to gap fill.</span>
+<span class="sd">        col_chunk : None | int</span>
+<span class="sd">            Optional chunking method to gap fill one column chunk at a time</span>
+<span class="sd">            to reduce memory requirements. If provided, this should be an</span>
+<span class="sd">            integer specifying how many columns to work on at one time.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Patching cloud properties in file: &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">))</span>
+
+        <span class="k">with</span> <span class="n">NSRDBfs</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">,</span> <span class="n">use_rex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">dsets</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">dsets</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">shape</span>
+
+        <span class="k">if</span> <span class="n">col_chunk</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">slices</span> <span class="o">=</span> <span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">cols</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">cols</span><span class="o">.</span><span class="n">start</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">cols</span><span class="o">.</span><span class="n">stop</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">cols</span><span class="o">.</span><span class="n">stop</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>
+            <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span> <span class="o">/</span> <span class="n">col_chunk</span><span class="p">)</span>
+            <span class="n">arrays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+            <span class="n">slices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Gap fill will be run across the full data column &#39;</span>
+                <span class="s1">&#39;shape </span><span class="si">{}</span><span class="s1"> in </span><span class="si">{}</span><span class="s1"> column chunks with approximately </span><span class="si">{}</span><span class="s1"> &#39;</span>
+                <span class="s1">&#39;sites per chunk&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">slices</span><span class="p">),</span> <span class="n">col_chunk</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">cols</span> <span class="ow">in</span> <span class="n">slices</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Patching cloud properties for column slice: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="k">with</span> <span class="n">NSRDBfs</span><span class="p">(</span><span class="n">f_ancillary</span><span class="p">,</span> <span class="n">use_rex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">sza</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;solar_zenith_angle&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+
+            <span class="k">with</span> <span class="n">NSRDBfs</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">,</span> <span class="n">use_rex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">cloud_type</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;cloud_type&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+                <span class="n">fill_flag</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="s1">&#39;cloud_fill_flag&#39;</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">:</span>
+                    <span class="n">fill_flag</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;cloud_fill_flag&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+
+            <span class="n">cloud_type</span><span class="p">,</span> <span class="n">fill_flag</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">fill_cloud_type</span><span class="p">(</span>
+                <span class="n">cloud_type</span><span class="p">,</span> <span class="n">fill_flag</span><span class="o">=</span><span class="n">fill_flag</span>
+            <span class="p">)</span>
+
+            <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                    <span class="s1">&#39;Writing filled cloud types to </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">f</span><span class="p">[</span><span class="s1">&#39;cloud_type&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_type</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Write complete.&#39;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;cld_&#39;</span> <span class="ow">in</span> <span class="n">dset</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="n">NSRDBfs</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">,</span> <span class="n">use_rex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">cloud_prop</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+
+                    <span class="n">cloud_prop</span><span class="p">,</span> <span class="n">fill_flag</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">fill_cloud_prop</span><span class="p">(</span>
+                        <span class="n">dset</span><span class="p">,</span>
+                        <span class="n">cloud_prop</span><span class="p">,</span>
+                        <span class="n">cloud_type</span><span class="p">,</span>
+                        <span class="n">sza</span><span class="p">,</span>
+                        <span class="n">fill_flag</span><span class="o">=</span><span class="n">fill_flag</span><span class="p">,</span>
+                        <span class="n">cloud_type_is_clean</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+                    <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                            <span class="s1">&#39;Writing filled </span><span class="si">{}</span><span class="s1"> to </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">dset</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">)</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+                        <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_prop</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Write complete.&#39;</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                    <span class="s1">&#39;Writing fill flag to </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f_cloud</span><span class="p">))</span>
+                <span class="p">)</span>
+                <span class="n">f</span><span class="p">[</span><span class="s1">&#39;cloud_fill_flag&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">fill_flag</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Write complete&#39;</span><span class="p">)</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Job complete for columns: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cols</span><span class="p">))</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.gap_fill.irradiance_fill &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/nsrdb.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nsrdb.gap_fill.irradiance_fill</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nsrdb.gap_fill.irradiance_fill</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Wed Dec 12 2018</span>
+
+<span class="sd">@author: gbuster</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">warn</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">farms</span><span class="w"> </span><span class="kn">import</span> <span class="n">CLOUD_TYPES</span><span class="p">,</span> <span class="n">SZA_LIM</span>
+
+
+<div class="viewcode-block" id="missing_cld_props">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html#nsrdb.gap_fill.irradiance_fill.missing_cld_props">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">missing_cld_props</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">,</span> <span class="n">cld_opd_dcomp</span><span class="p">,</span> <span class="n">cld_reff_dcomp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Make a boolean mask showing where there are missing cloud properties.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cloud_type : np.ndarray</span>
+<span class="sd">        Array of integer cloud types.</span>
+<span class="sd">    cloud_opd_dcomp : np.ndarray</span>
+<span class="sd">        Array of cloud optical depths. Expected range is 0 - 160 with</span>
+<span class="sd">        missing values &lt;= 0.</span>
+<span class="sd">    cld_reff_dcomp : np.ndarray</span>
+<span class="sd">        Array of cloud effective particle radii. Expected range is 0 - 160</span>
+<span class="sd">        with missing values &lt;= 0.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    missing_props : np.ndarray</span>
+<span class="sd">        Boolean array with True values where there are clouds but no cloud</span>
+<span class="sd">        properties.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">missing_props</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">,</span> <span class="n">CLOUD_TYPES</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">cld_opd_dcomp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">cld_reff_dcomp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cld_opd_dcomp</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cld_reff_dcomp</span><span class="p">)))</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">missing_props</span></div>
+
+
+
+<div class="viewcode-block" id="make_fill_flag">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html#nsrdb.gap_fill.irradiance_fill.make_fill_flag">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_fill_flag</span><span class="p">(</span>
+    <span class="n">irrad</span><span class="p">,</span> <span class="n">cs_irrad</span><span class="p">,</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="n">missing_cld_props</span><span class="p">,</span> <span class="n">cloud_fill_flag</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Make a dataset indicating where to fill bad irradiance data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    irrad : np.ndarray</span>
+<span class="sd">        All-sky (cloudy + clear) irradiance data.</span>
+<span class="sd">    cs_irrad : np.ndarray</span>
+<span class="sd">        Clearsky (REST) irradiance data.</span>
+<span class="sd">    cloud_type : np.ndarray</span>
+<span class="sd">        Array of numerical cloud types.</span>
+<span class="sd">    missing_cld_props : np.ndarray</span>
+<span class="sd">        Boolean array flagging timesteps with missing cloud properties.</span>
+<span class="sd">    cloud_fill_flag : None | np.ndarray</span>
+<span class="sd">        Integer array of flags showing what data was previously filled and why.</span>
+<span class="sd">        None will create a new fill flag initialized as all zeros.</span>
+<span class="sd">        An array input will be interpreted as flags showing which cloud</span>
+<span class="sd">        properties have already been filled.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    fill_flag : np.ndarray</span>
+<span class="sd">        Array of integers signifying whether to fill the irradiance</span>
+<span class="sd">        data and the reason why.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Make a categorical numerical fill flag, uint8 is the default dtype of</span>
+    <span class="c1"># fill_flag as of 2021</span>
+    <span class="n">new_fill_flag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">irrad</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="c1"># make fill flags</span>
+    <span class="n">new_fill_flag</span><span class="p">[(</span><span class="n">cloud_type</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">new_fill_flag</span><span class="p">[:,</span> <span class="p">(</span><span class="n">cloud_type</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">new_fill_flag</span><span class="p">[</span><span class="n">missing_cld_props</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cs_irrad</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">new_fill_flag</span><span class="p">[:,</span> <span class="n">missing_cld_props</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="c1"># clearsky limit (fill flag 5) is filled in enforce_clearsky()</span>
+    <span class="n">new_fill_flag</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">irrad</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">irrad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">6</span>
+
+    <span class="k">if</span> <span class="n">cloud_fill_flag</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">new_fill_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cloud_fill_flag</span><span class="p">,</span> <span class="n">new_fill_flag</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_fill_flag</span></div>
+
+
+
+<div class="viewcode-block" id="gap_fill_irrad">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html#nsrdb.gap_fill.irradiance_fill.gap_fill_irrad">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gap_fill_irrad</span><span class="p">(</span>
+    <span class="n">irrad</span><span class="p">,</span> <span class="n">cs_irrad</span><span class="p">,</span> <span class="n">fill_flag</span><span class="p">,</span> <span class="n">return_csr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">flags_to_fill</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fill bad irradiance data using clearsky and nearest good cloudy data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    irrad : np.ndarray</span>
+<span class="sd">        Full FARMS + REST2 merged irradiance 2D array.</span>
+<span class="sd">    cs_irrad : np.ndarray</span>
+<span class="sd">        REST2 clearsky irradiance without bad or missing data.</span>
+<span class="sd">    fill_flag : np.ndarray</span>
+<span class="sd">        2D array with nonzero values where bad data must be filled.</span>
+<span class="sd">    return_csr : bool</span>
+<span class="sd">        If set to true, this function will return the clearsky ratio array.</span>
+<span class="sd">    flags_to_fill : None | list</span>
+<span class="sd">        List of fill_flag values to fill. None defaults to all nonzero flags.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    irrad : np.ndarray</span>
+<span class="sd">        Updated and patched irradiance numpy array.</span>
+<span class="sd">    csr : np.ndarray</span>
+<span class="sd">        Irradiance cloudy/clearsky ratio numpy array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># disable divide by zero warnings</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">seterr</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Default flags to fill to all nonzero values</span>
+    <span class="k">if</span> <span class="n">flags_to_fill</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">flags_to_fill</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">fill_flag</span><span class="p">)</span>
+        <span class="n">flags_to_fill</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flags_to_fill</span><span class="p">)</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># convert fill flag to boolean</span>
+    <span class="n">fill_flag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">fill_flag</span><span class="p">,</span> <span class="n">flags_to_fill</span><span class="p">)</span>
+
+    <span class="c1"># get the merged div by clearsky ratio dataframe</span>
+    <span class="n">csr</span> <span class="o">=</span> <span class="n">irrad</span> <span class="o">/</span> <span class="n">cs_irrad</span>
+
+    <span class="c1"># replace to-fill values with nan</span>
+    <span class="n">csr</span><span class="p">[</span><span class="n">fill_flag</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># assign sites csr=1 with all NaN or just one non-NaN but warn</span>
+    <span class="n">all_na</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">csr</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">csr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">all_na</span><span class="p">):</span>
+        <span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">all_na</span><span class="si">}</span><span class="s1"> sites exist with full NaN csr timeseries.&#39;</span><span class="p">)</span>
+        <span class="n">csr</span><span class="p">[:,</span> <span class="n">all_na</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="c1"># fill nan ratio values with nearest good ratio values</span>
+    <span class="n">csr</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">csr</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;bfill&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">values</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Set the cloud/clear ratio when it&#39;s nighttime</span>
+    <span class="n">csr</span><span class="p">[(</span><span class="n">cs_irrad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># fill values with (closest good ratio values X</span>
+    <span class="c1"># good clearsky data at the bad data index)</span>
+    <span class="n">irrad</span><span class="p">[</span><span class="n">fill_flag</span><span class="p">]</span> <span class="o">=</span> <span class="n">csr</span><span class="p">[</span><span class="n">fill_flag</span><span class="p">]</span> <span class="o">*</span> <span class="n">cs_irrad</span><span class="p">[</span><span class="n">fill_flag</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">return_csr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">irrad</span><span class="p">,</span> <span class="n">csr</span>
+    <span class="k">return</span> <span class="n">irrad</span></div>
+
+
+
+<div class="viewcode-block" id="enforce_clearsky">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html#nsrdb.gap_fill.irradiance_fill.enforce_clearsky">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enforce_clearsky</span><span class="p">(</span>
+    <span class="n">dni</span><span class="p">,</span> <span class="n">ghi</span><span class="p">,</span> <span class="n">cs_dni</span><span class="p">,</span> <span class="n">cs_ghi</span><span class="p">,</span> <span class="n">sza</span><span class="p">,</span> <span class="n">fill_flag</span><span class="p">,</span> <span class="n">sza_lim</span><span class="o">=</span><span class="n">SZA_LIM</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enforce a maximum irradiance equal to the clearsky irradiance.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dni : np.ndarray</span>
+<span class="sd">        All-sky (cloudy + clear) DNI.</span>
+<span class="sd">    ghi : np.ndarray</span>
+<span class="sd">        All-sky (cloudy + clear) GHI.</span>
+<span class="sd">    cs_dni : np.ndarray</span>
+<span class="sd">        Clearsky (REST) DNI.</span>
+<span class="sd">    cs_ghi : np.ndarray</span>
+<span class="sd">        Clearsky (REST) GHI.</span>
+<span class="sd">    sza : np.ndarray</span>
+<span class="sd">        Solar zenith angle in degrees.</span>
+<span class="sd">    fill_flag : None</span>
+<span class="sd">        Integer array of flags showing what data was previously filled and why.</span>
+<span class="sd">    sza_lim : int | float</span>
+<span class="sd">        Upper limit of SZA in degrees.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dni : np.ndarray</span>
+<span class="sd">        All-sky (cloudy + clear) DNI with max of clearsky values.</span>
+<span class="sd">    ghi : np.ndarray</span>
+<span class="sd">        All-sky (cloudy + clear) GHI with max of clearsky values.</span>
+<span class="sd">    fill_flag : np.ndarray</span>
+<span class="sd">        Array of integers signifying whether to fill the irradiance</span>
+<span class="sd">        data and the reason why.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">((</span><span class="n">dni</span> <span class="o">&gt;</span> <span class="n">cs_dni</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">ghi</span> <span class="o">&gt;</span> <span class="n">cs_ghi</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sza</span> <span class="o">&lt;</span> <span class="n">sza_lim</span><span class="p">)</span>
+    <span class="n">dni</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">cs_dni</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    <span class="n">ghi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">cs_ghi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    <span class="n">fill_flag</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="k">return</span> <span class="n">dni</span><span class="p">,</span> <span class="n">ghi</span><span class="p">,</span> <span class="n">fill_flag</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

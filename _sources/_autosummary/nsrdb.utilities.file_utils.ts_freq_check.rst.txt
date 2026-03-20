@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.ts\_freq\_check
+===========================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: ts_freq_check

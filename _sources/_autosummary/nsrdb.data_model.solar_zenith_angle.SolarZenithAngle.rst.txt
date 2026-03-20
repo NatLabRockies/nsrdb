@@ -1,0 +1,30 @@
+nsrdb.data\_model.solar\_zenith\_angle.SolarZenithAngle
+=======================================================
+
+.. currentmodule:: nsrdb.data_model.solar_zenith_angle
+
+.. autoclass:: SolarZenithAngle
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SolarZenithAngle.derive
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SolarZenithAngle.DEPENDENCIES
+   
+   

@@ -1,0 +1,6 @@
+nsrdb.utilities.statistics.rmse\_perc
+=====================================
+
+.. currentmodule:: nsrdb.utilities.statistics
+
+.. autofunction:: rmse_perc

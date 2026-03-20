@@ -1,0 +1,6 @@
+nsrdb.albedo.albedo.AlbedoError
+===============================
+
+.. currentmodule:: nsrdb.albedo.albedo
+
+.. autoexception:: AlbedoError

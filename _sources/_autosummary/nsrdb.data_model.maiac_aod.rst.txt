@@ -1,0 +1,31 @@
+nsrdb.data\_model.maiac\_aod
+============================
+
+.. automodule:: nsrdb.data_model.maiac_aod
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      MaiacVar
+   
+   
+
+   
+   
+   
+
+
+

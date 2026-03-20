@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.pd\_date\_range
+===========================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: pd_date_range

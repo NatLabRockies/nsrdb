@@ -1,0 +1,32 @@
+nsrdb.solar\_position.spa\_tables
+=================================
+
+.. automodule:: nsrdb.solar_position.spa_tables
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      DeltaTable
+      SPAtables
+   
+   
+
+   
+   
+   
+
+
+

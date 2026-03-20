@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.temporal\_lin
+===========================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: temporal_lin

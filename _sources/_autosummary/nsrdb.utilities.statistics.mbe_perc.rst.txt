@@ -1,0 +1,6 @@
+nsrdb.utilities.statistics.mbe\_perc
+====================================
+
+.. currentmodule:: nsrdb.utilities.statistics
+
+.. autofunction:: mbe_perc

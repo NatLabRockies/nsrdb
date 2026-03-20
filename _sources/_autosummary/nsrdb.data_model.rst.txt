@@ -1,0 +1,40 @@
+nsrdb.data\_model
+=================
+
+.. automodule:: nsrdb.data_model
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   albedo
+   asymmetry
+   base_handler
+   clouds
+   data_model
+   gfs
+   maiac_aod
+   merra
+   nrel_data
+   solar_zenith_angle
+   variable_factory
+

@@ -1,0 +1,32 @@
+nsrdb.data\_model.gfs.GfsFiles
+==============================
+
+.. currentmodule:: nsrdb.data_model.gfs
+
+.. autoclass:: GfsFiles
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GfsFiles.get
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GfsFiles.date_stamp
+      ~GfsFiles.files
+      ~GfsFiles.time_index
+   
+   

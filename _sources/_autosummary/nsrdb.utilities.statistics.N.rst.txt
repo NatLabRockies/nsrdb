@@ -1,0 +1,6 @@
+nsrdb.utilities.statistics.N
+============================
+
+.. currentmodule:: nsrdb.utilities.statistics
+
+.. autofunction:: N

@@ -1,0 +1,6 @@
+nsrdb.preprocessing.nasa\_data\_model.run\_jobs
+===============================================
+
+.. currentmodule:: nsrdb.preprocessing.nasa_data_model
+
+.. autofunction:: run_jobs

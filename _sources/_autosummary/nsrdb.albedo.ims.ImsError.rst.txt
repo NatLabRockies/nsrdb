@@ -1,0 +1,6 @@
+nsrdb.albedo.ims.ImsError
+=========================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autoexception:: ImsError

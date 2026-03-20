@@ -1,0 +1,6 @@
+nsrdb.gap\_fill.irradiance\_fill.enforce\_clearsky
+==================================================
+
+.. currentmodule:: nsrdb.gap_fill.irradiance_fill
+
+.. autofunction:: enforce_clearsky

@@ -1,0 +1,6 @@
+nsrdb.albedo.ims.ImsDataNotFoundError
+=====================================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autoexception:: ImsDataNotFoundError

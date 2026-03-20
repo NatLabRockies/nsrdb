@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.str\_replace\_dict
+==============================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: str_replace_dict

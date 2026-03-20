@@ -1,0 +1,32 @@
+nsrdb.gap\_fill
+===============
+
+.. automodule:: nsrdb.gap_fill
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   cloud_fill
+   irradiance_fill
+   mlclouds_fill
+

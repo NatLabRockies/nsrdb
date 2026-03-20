@@ -1,0 +1,44 @@
+﻿nsrdb
+=====
+
+.. automodule:: nsrdb
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   aggregation
+   albedo
+   all_sky
+   blend
+   cli
+   config
+   data_model
+   file_handlers
+   gap_fill
+   mymean
+   nsrdb
+   preprocessing
+   solar_position
+   tmy
+   utilities
+

@@ -1,0 +1,39 @@
+nsrdb.utilities.cli
+===================
+
+.. automodule:: nsrdb.utilities.cli
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      get_doys
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      BaseCLI
+      SlurmManager
+   
+   
+
+   
+   
+   
+
+
+

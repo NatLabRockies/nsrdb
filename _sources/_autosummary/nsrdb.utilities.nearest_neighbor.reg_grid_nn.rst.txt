@@ -1,0 +1,6 @@
+nsrdb.utilities.nearest\_neighbor.reg\_grid\_nn
+===============================================
+
+.. currentmodule:: nsrdb.utilities.nearest_neighbor
+
+.. autofunction:: reg_grid_nn

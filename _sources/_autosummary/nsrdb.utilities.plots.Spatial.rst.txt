@@ -1,0 +1,33 @@
+nsrdb.utilities.plots.Spatial
+=============================
+
+.. currentmodule:: nsrdb.utilities.plots
+
+.. autoclass:: Spatial
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Spatial.dsets
+      ~Spatial.goes_cloud
+      ~Spatial.multi_year
+      ~Spatial.plot_geo_df
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Spatial.EXTENTS
+   
+   

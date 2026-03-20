@@ -1,0 +1,6 @@
+nsrdb.albedo.modis.ModisError
+=============================
+
+.. currentmodule:: nsrdb.albedo.modis
+
+.. autoexception:: ModisError

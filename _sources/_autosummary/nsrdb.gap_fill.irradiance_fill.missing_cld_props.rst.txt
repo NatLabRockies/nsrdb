@@ -1,0 +1,6 @@
+nsrdb.gap\_fill.irradiance\_fill.missing\_cld\_props
+====================================================
+
+.. currentmodule:: nsrdb.gap_fill.irradiance_fill
+
+.. autofunction:: missing_cld_props

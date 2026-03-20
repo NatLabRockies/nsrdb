@@ -1,0 +1,31 @@
+nsrdb.albedo.modis\_v6\_download
+================================
+
+.. automodule:: nsrdb.albedo.modis_v6_download
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      daterange
+      main
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

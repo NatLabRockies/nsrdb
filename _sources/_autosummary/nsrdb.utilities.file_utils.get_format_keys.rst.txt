@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.get\_format\_keys
+=============================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: get_format_keys

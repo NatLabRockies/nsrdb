@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.albedo.temperature_model &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nsrdb.albedo.temperature_model.DataHandler" href="nsrdb.albedo.temperature_model.DataHandler.html" />
+    <link rel="prev" title="nsrdb.albedo.modis_v6_download.main" href="nsrdb.albedo.modis_v6_download.main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="nsrdb.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="nsrdb.albedo.html">nsrdb.albedo</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="nsrdb.html">nsrdb</a></li>
+          <li class="breadcrumb-item"><a href="nsrdb.albedo.html">nsrdb.albedo</a></li>
+      <li class="breadcrumb-item active">nsrdb.albedo.temperature_model</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/nrel/nsrdb/blob/main/docs/source/_autosummary/nsrdb.albedo.temperature_model.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-nsrdb.albedo.temperature_model">
+<span id="nsrdb-albedo-temperature-model"></span><h1>nsrdb.albedo.temperature_model<a class="headerlink" href="#module-nsrdb.albedo.temperature_model" title="Link to this heading"></a></h1>
+<p>Temperature based albedo model using MERRA data
+for calculations</p>
+<p>Created on Feb 23 2022</p>
+<p>&#64;author : bnb32</p>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="nsrdb.albedo.temperature_model.DataHandler.html#nsrdb.albedo.temperature_model.DataHandler" title="nsrdb.albedo.temperature_model.DataHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataHandler</span></code></a>()</p></td>
+<td><p>DataHandler for MERRA data used in albedo computations</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="nsrdb.albedo.temperature_model.TemperatureModel.html#nsrdb.albedo.temperature_model.TemperatureModel" title="nsrdb.albedo.temperature_model.TemperatureModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TemperatureModel</span></code></a>()</p></td>
+<td><p>Class to handle MERRA data and compute albedo.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nsrdb.albedo.modis_v6_download.main.html" class="btn btn-neutral float-left" title="nsrdb.albedo.modis_v6_download.main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nsrdb.albedo.temperature_model.DataHandler.html" class="btn btn-neutral float-right" title="nsrdb.albedo.temperature_model.DataHandler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

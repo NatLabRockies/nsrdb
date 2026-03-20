@@ -1,0 +1,49 @@
+nsrdb.gap\_fill.mlclouds\_fill.MLCloudsFill
+===========================================
+
+.. currentmodule:: nsrdb.gap_fill.mlclouds_fill
+
+.. autoclass:: MLCloudsFill
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MLCloudsFill.archive_cld_properties
+      ~MLCloudsFill.clean_array
+      ~MLCloudsFill.clean_data_model
+      ~MLCloudsFill.clean_feature_data
+      ~MLCloudsFill.fill_bad_cld_properties
+      ~MLCloudsFill.fill_ctype_press
+      ~MLCloudsFill.init_clean_arrays
+      ~MLCloudsFill.mark_complete_archived_files
+      ~MLCloudsFill.merra_clouds
+      ~MLCloudsFill.parse_feature_data
+      ~MLCloudsFill.predict_cld_properties
+      ~MLCloudsFill.preflight
+      ~MLCloudsFill.prep_chunk
+      ~MLCloudsFill.process_chunk
+      ~MLCloudsFill.run
+      ~MLCloudsFill.write_fill_flag
+      ~MLCloudsFill.write_filled_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MLCloudsFill.DEFAULT_MODEL
+      ~MLCloudsFill.dset_map
+      ~MLCloudsFill.h5_source
+      ~MLCloudsFill.phygnn_model
+   
+   

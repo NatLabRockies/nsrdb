@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.nn
+================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: nn

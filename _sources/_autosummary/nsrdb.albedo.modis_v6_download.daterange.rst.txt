@@ -1,0 +1,6 @@
+nsrdb.albedo.modis\_v6\_download.daterange
+==========================================
+
+.. currentmodule:: nsrdb.albedo.modis_v6_download
+
+.. autofunction:: daterange

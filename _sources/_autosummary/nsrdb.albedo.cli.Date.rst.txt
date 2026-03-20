@@ -1,0 +1,39 @@
+nsrdb.albedo.cli.Date
+=====================
+
+.. currentmodule:: nsrdb.albedo.cli
+
+.. autoclass:: Date
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Date.convert
+      ~Date.fail
+      ~Date.get_metavar
+      ~Date.get_missing_message
+      ~Date.shell_complete
+      ~Date.split_envvar_value
+      ~Date.to_info_dict
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Date.arity
+      ~Date.envvar_list_splitter
+      ~Date.is_composite
+      ~Date.name
+   
+   

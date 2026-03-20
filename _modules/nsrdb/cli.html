@@ -1,0 +1,1613 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.cli &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_autosummary/nsrdb.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nsrdb.cli</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nsrdb.cli</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;NSRDB Command Line Interface (CLI).&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gaps</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gaps.batch</span><span class="w"> </span><span class="kn">import</span> <span class="n">BatchJob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gaps.cli.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span> <span class="k">as</span> <span class="n">gaps_pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex</span><span class="w"> </span><span class="kn">import</span> <span class="n">safe_json_load</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex.utilities.loggers</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_logger</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.aggregation.aggregation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Manager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.blend.blend</span><span class="w"> </span><span class="kn">import</span> <span class="n">Blender</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.config.create_configs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CreateConfigs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.file_handlers.collection</span><span class="w"> </span><span class="kn">import</span> <span class="n">Collector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.nsrdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">NSRDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.tmy</span><span class="w"> </span><span class="kn">import</span> <span class="n">TmyRunner</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModuleName</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.utilities.cli</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCLI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.utilities.file_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ts_freq_check</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="DictOrFile">
+<a class="viewcode-back" href="../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DictOrFile</span><span class="p">(</span><span class="n">click</span><span class="o">.</span><span class="n">ParamType</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Dict or file click input argument type.&quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;dict_or_file&#39;</span>
+
+<div class="viewcode-block" id="DictOrFile.convert">
+<a class="viewcode-back" href="../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile.convert">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert to dict or return as None.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s1">&#39;Could not load </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1"> as a dictionary. Make sure &#39;</span>
+                    <span class="s1">&#39;you provide a valid string representation&#39;</span>
+                <span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;Cannot recognize input type: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ctx</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="n">CONFIG_TYPE</span> <span class="o">=</span> <span class="n">DictOrFile</span><span class="p">()</span>
+
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;NSRDB config file json or dict for a single module.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;NSRDB command line interface.</span>
+
+<span class="sd">    Try using the following commands to pull up the help pages for the</span>
+<span class="sd">    respective NSRDB CLIs::</span>
+
+<span class="sd">        $ python -m nsrdb.cli --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli create-configs --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli pipeline --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli data-model --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli ml-cloud-fill --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli daily-all-sky --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli collect-data-model --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli tmy --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli blend --help</span>
+
+<span class="sd">        $ python -m nsrdb.cli aggregate --help</span>
+
+<span class="sd">    Each of these commands can be run with a config_file or a dictionary</span>
+<span class="sd">    (represented as a string) provided through the `-c` argument. A typical</span>
+<span class="sd">    config file might look like::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;logging&quot;: {&quot;log_level&quot;: &quot;DEBUG&quot;},</span>
+<span class="sd">            &quot;&lt;command name&gt;&quot;: {&#39;run_name&#39;: ...,</span>
+<span class="sd">                               **kwargs},</span>
+<span class="sd">            &quot;direct&quot;: {more kwargs},</span>
+<span class="sd">            &quot;execution_control&quot;: {&quot;option&quot;: &quot;kestrel&quot;, ...}</span>
+<span class="sd">            &quot;another command&quot;: {...},</span>
+<span class="sd">            ...</span>
+<span class="sd">            ]</span>
+<span class="sd">        }</span>
+
+<span class="sd">    The &quot;run_name&quot; key will be prepended to each kicked off job. e.g.</span>
+<span class="sd">    &lt;run_name&gt;_0, &lt;run_name&gt;_1, ... for multiple jobs from the same cli module.</span>
+<span class="sd">    The &quot;direct&quot; key is used to provide arguments to multiple commands. This</span>
+<span class="sd">    removes the need for duplication in the case of multiple commands having</span>
+<span class="sd">    the same argument values. &quot;execution_control&quot; is used to provide arguments</span>
+<span class="sd">    to the SLURM manager for HPC submissions or to select local execution with</span>
+<span class="sd">    {&quot;option&quot;: &quot;local&quot;}</span>
+
+<span class="sd">    To do a standard CONUS / Full Disc run use the following commands::</span>
+
+<span class="sd">        $ CONFIG=&#39;{&quot;year&quot;: &lt;year&gt;, &quot;out_dir&quot;: &lt;out_dir&gt;}&#39;</span>
+
+<span class="sd">        $ python -m nsrdb.cli create-configs -c ${CONFIG} -r full</span>
+
+<span class="sd">        $ cd &lt;out_dir&gt;</span>
+
+<span class="sd">        $ bash run.sh (run this until all main steps are complete)</span>
+
+<span class="sd">        $ cd post_proc</span>
+
+<span class="sd">        $ bash run.sh (run this until all post-proc steps are complete)</span>
+
+<span class="sd">    See the help pages of the module CLIs for more details on the config files</span>
+<span class="sd">    for each CLI.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: D301</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">ensure_object</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;CONFIG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;VERBOSE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">verbose</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;LOG_LEVEL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;DEBUG&#39;</span> <span class="k">if</span> <span class="n">verbose</span> <span class="k">else</span> <span class="s1">&#39;INFO&#39;</span>
+
+    <span class="n">init_logger</span><span class="p">(</span><span class="s1">&#39;nsrdb&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;LOG_LEVEL&#39;</span><span class="p">],</span> <span class="n">log_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">init_logger</span><span class="p">(</span><span class="s1">&#39;gaps&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;LOG_LEVEL&#39;</span><span class="p">],</span> <span class="n">log_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">invoke_without_command</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">exists</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;NSRDB pipeline configuration json file.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--cancel&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to cancel all jobs associated with a given pipeline.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--monitor&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to monitor pipeline jobs continuously. &#39;</span>
+    <span class="s1">&#39;Default is not to monitor (kick off jobs and exit).&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--background&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to monitor pipeline jobs continuously in the &#39;</span>
+    <span class="s1">&#39;background using the nohup command. This only works with the &#39;</span>
+    <span class="s1">&#39;--monitor flag. Note that the stdout/stderr will not be &#39;</span>
+    <span class="s1">&#39;captured, but you can set a pipeline log_file to capture logs.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pipeline</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">cancel</span><span class="p">,</span> <span class="n">monitor</span><span class="p">,</span> <span class="n">background</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute multiple steps in an NSRDB pipeline.</span>
+
+<span class="sd">    Typically, a good place to start is to set up an nsrdb job with a pipeline</span>
+<span class="sd">    config that points to several NSRDB modules that you want to run in serial.</span>
+<span class="sd">    You would call the nsrdb pipeline CLI using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config_pipeline.json pipeline</span>
+
+<span class="sd">    A typical nsrdb pipeline config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;logging&quot;: {&quot;log_level&quot;: &quot;DEBUG&quot;},</span>
+<span class="sd">            &quot;pipeline&quot;: [</span>
+<span class="sd">                {&quot;data-model&quot;: &quot;./config_nsrdb.json&quot;},</span>
+<span class="sd">                {&quot;ml-cloud-fill&quot;: &quot;./config_nsrdb.json&quot;},</span>
+<span class="sd">                {&quot;daily-all-sky&quot;: &quot;./config_nsrdb.json&quot;},</span>
+<span class="sd">                {&quot;collect-data-model&quot;: &quot;./config_nsrdb.json&quot;},</span>
+<span class="sd">            ]</span>
+<span class="sd">        }</span>
+
+<span class="sd">    See the other CLI help pages for what the respective module configs</span>
+<span class="sd">    require.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: D301</span>
+
+    <span class="n">ctx</span><span class="o">.</span><span class="n">ensure_object</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;VERBOSE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">verbose</span> <span class="ow">or</span> <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;VERBOSE&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">gaps_pipeline</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">cancel</span><span class="p">,</span> <span class="n">monitor</span><span class="p">,</span> <span class="n">background</span><span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Either a path to a .json config file or a dictionary. Needs to</span>
+<span class="s2">    include at least a &quot;year&quot; key. If input is a dictionary the dictionary</span>
+<span class="s2">    needs to provided in a string format::</span>
+
+<span class="s2">        $ &#39;{&quot;year&quot;: 2019, &quot;freq&quot;: &quot;5min&quot;}&#39;</span>
+
+<span class="s2">    </span><span class="se">\b</span>
+<span class="s2">    Available keys:</span>
+<span class="s2">        year (year to run),</span>
+<span class="s2">        freq (target time step. e.g. &quot;5min&quot;),</span>
+<span class="s2">        out_dir (parent directory for run directory),</span>
+<span class="s2">        satellite (east/west),</span>
+<span class="s2">        spatial (meta file resolution, e.g. &quot;2km&quot; or &quot;4km&quot;),</span>
+<span class="s2">        extent (full/conus),</span>
+<span class="s2">        basename (string to prepend to files and job names),</span>
+<span class="s2">        meta_file (e.g. &quot;surfrad_meta.csv&quot;. Auto populated if None.),</span>
+<span class="s2">        doy_range (All days of year if None).</span>
+
+<span class="s2">    </span><span class="se">\b</span>
+<span class="s2">    default_kwargs = {</span>
+<span class="s2">        &quot;basename&quot;: &quot;nsrdb&quot;,</span>
+<span class="s2">        &quot;freq&quot;: &quot;5min&quot;,</span>
+<span class="s2">        &quot;satellite&quot;: &quot;east&quot;,</span>
+<span class="s2">        &quot;extent&quot;: &quot;conus&quot;,</span>
+<span class="s2">        &quot;out_dir&quot;: &quot;./&quot;,</span>
+<span class="s2">        &quot;spatial&quot;: &quot;4km&quot;,</span>
+<span class="s2">        &quot;meta_file&quot; : None,</span>
+<span class="s2">        &quot;doy_range&quot;: None</span>
+<span class="s2">    }&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--run_type&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-r&#39;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="s1">&#39;surfrad&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Run type to create configs for. Can be &quot;surfrad&quot; (just writes a</span>
+<span class="s2">    single template config with any provided kwargs replaced, with a surfrad</span>
+<span class="s2">    meta file), &quot;full&quot; (generates all config and pipline files for the given</span>
+<span class="s2">    year, including all domain main runs, blending, aggregation, and</span>
+<span class="s2">    collection), or &quot;main&quot; (for standard run without post-processing, with</span>
+<span class="s2">    data-model, ml-cloud-fill, all-sky, and collect-data-model), &quot;aggregate&quot;</span>
+<span class="s2">    (for aggregating post-2018 data to pre-2018 resolution), &quot;blend&quot; (for</span>
+<span class="s2">    blending east and west domains into a single domain), or &quot;post&quot; (for all</span>
+<span class="s2">    blending / aggregation / collection for a given year)&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--all_domains&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-ad&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Flag to generate config files for all domains. If True config files</span>
+<span class="s2">    for east/west and conus/full will be generated. (just full if year is</span>
+<span class="s2">    &lt; 2018). satellite, extent, spatial, freq, and meta_file will be auto</span>
+<span class="s2">    populated.&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--collect&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-col&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Flag to generate config files for module collection. This applies</span>
+<span class="s2">    to run_type = &quot;aggregate&quot; or &quot;blend&quot;.&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_configs</span><span class="p">(</span>
+    <span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">run_type</span><span class="o">=</span><span class="s1">&#39;surfrad&#39;</span><span class="p">,</span> <span class="n">all_domains</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create config files for standard NSRDB runs using config templates.</span>
+
+<span class="sd">    To generate all full_disc / conus run directories for east /</span>
+<span class="sd">    west regions, each with main routine config files contained run the</span>
+<span class="sd">    following::</span>
+
+<span class="sd">    $ CONFIG=&#39;{&quot;year&quot;: 2020, &quot;out_dir&quot;: &quot;./&quot;}&#39;</span>
+
+<span class="sd">    $ python -m nsrdb.cli create-configs --run_type full -c ${CONFIG}</span>
+
+<span class="sd">    Additionally, conus / full_disc blend configs, aggregation config,</span>
+<span class="sd">    collection config, and a post processing pipeline config with all these</span>
+<span class="sd">    steps will be written to a &quot;post_proc&quot; directory so that post-processing</span>
+<span class="sd">    can be run simply with::</span>
+
+<span class="sd">    $ python -m nsrdb.cli pipeline -c config_pipeline_post.json</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ctx</span><span class="o">.</span><span class="n">ensure_object</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">func_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;collect_</span><span class="si">{</span><span class="n">run_type</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">collect</span> <span class="k">else</span> <span class="n">run_type</span>
+    <span class="n">func_name</span> <span class="o">=</span> <span class="s1">&#39;main_all&#39;</span> <span class="k">if</span> <span class="n">run_type</span> <span class="o">==</span> <span class="s1">&#39;main&#39;</span> <span class="ow">and</span> <span class="n">all_domains</span> <span class="k">else</span> <span class="n">func_name</span>
+    <span class="n">valid_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="s1">&#39;aggregate&#39;</span><span class="p">,</span> <span class="s1">&#39;blend&#39;</span><span class="p">,</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;surfrad&#39;</span><span class="p">]</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">&#39;Received unknown &quot;run_type&quot; </span><span class="si">{</span><span class="n">run_type</span><span class="si">}</span><span class="s1">. Accepted values are &#39;</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">valid_types</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">CreateConfigs</span><span class="p">,</span> <span class="n">func_name</span><span class="p">),</span> <span class="n">msg</span>
+    <span class="n">config_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">CreateConfigs</span><span class="p">,</span> <span class="n">func_name</span><span class="p">)</span>
+    <span class="n">config_func</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file or dict of kwargs for NSRDB.run_data_model()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">data_model</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run daily data-model and save output files.</span>
+
+<span class="sd">    You would call the nsrdb data-model module using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config.json data-model</span>
+
+<span class="sd">    A typical config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;collect-data-model&quot;: {...},</span>
+<span class="sd">            &quot;daily-all-sky&quot;: {...},</span>
+<span class="sd">            &quot;data-model&quot;: {</span>
+<span class="sd">                &quot;dist_lim&quot;: 2.0,</span>
+<span class="sd">                &quot;doy_range&quot;: [1, 367],</span>
+<span class="sd">                &quot;factory_kwargs&quot;: {</span>
+<span class="sd">                  &quot;cld_opd_dcomp&quot;: ...</span>
+<span class="sd">                  &quot;cld_press_acha&quot;: ...</span>
+<span class="sd">                  &quot;cld_reff_dcomp&quot;: ...</span>
+<span class="sd">                  &quot;cloud_fraction&quot;: ...</span>
+<span class="sd">                  &quot;cloud_probability&quot;: ...</span>
+<span class="sd">                  &quot;cloud_type&quot;: ...</span>
+<span class="sd">                  &quot;refl_0_65um_nom&quot;: ...</span>
+<span class="sd">                  &quot;refl_0_65um_nom_stddev_3x3&quot;: ...</span>
+<span class="sd">                  &quot;refl_3_75um_nom&quot;: ...</span>
+<span class="sd">                  &quot;surface_albedo&quot;: ...</span>
+<span class="sd">                  &quot;temp_11_0um_nom&quot;: ...</span>
+<span class="sd">                  &quot;temp_11_0um_nom_stddev_3x3&quot;: ...</span>
+<span class="sd">                  &quot;temp_3_75um_nom&quot;: ...</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;max_workers&quot;: null,</span>
+<span class="sd">                &quot;max_workers_regrid&quot;: 16,</span>
+<span class="sd">                &quot;mlclouds&quot;: true</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;direct&quot;: {</span>
+<span class="sd">                &quot;log_level&quot;: &quot;INFO&quot;,</span>
+<span class="sd">                &quot;name&quot;: ...</span>
+<span class="sd">                &quot;freq&quot;: &quot;5min&quot;</span>
+<span class="sd">                &quot;grid&quot;: &quot;/projects/pxs/reference_grids/surfrad_meta.csv,</span>
+<span class="sd">                &quot;out_dir&quot;: &quot;./&quot;,</span>
+<span class="sd">                &quot;max_workers&quot;: 32,</span>
+<span class="sd">                &quot;year&quot;: &quot;2018&quot;</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;execution_control&quot;: {</span>
+<span class="sd">                &quot;option&quot;: &quot;kestrel&quot;,</span>
+<span class="sd">                &quot;alloc&quot;: &quot;pxs&quot;,</span>
+<span class="sd">                &quot;feature&quot;: &quot;--qos=normal&quot;,</span>
+<span class="sd">                &quot;walltime&quot;: 40</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;ml-cloud-fill&quot;: {...}</span>
+<span class="sd">        }</span>
+
+<span class="sd">    See the other CLI help pages for what the respective module configs</span>
+<span class="sd">    require.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: D301</span>
+
+    <span class="n">config_dict</span> <span class="o">=</span> <span class="n">safe_json_load</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">config</span>
+    <span class="n">direct</span> <span class="o">=</span> <span class="n">config_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;direct&#39;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Config must include &quot;freq&quot; key.&#39;</span>
+    <span class="k">assert</span> <span class="s1">&#39;freq&#39;</span> <span class="ow">in</span> <span class="n">config_dict</span> <span class="ow">or</span> <span class="s1">&#39;freq&#39;</span> <span class="ow">in</span> <span class="n">direct</span><span class="p">,</span> <span class="n">msg</span>
+    <span class="n">nsrdb_freq</span> <span class="o">=</span> <span class="n">config_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;freq&#39;</span><span class="p">,</span> <span class="n">direct</span><span class="p">[</span><span class="s1">&#39;freq&#39;</span><span class="p">])</span>
+    <span class="n">ts_freq_check</span><span class="p">(</span><span class="n">nsrdb_freq</span><span class="p">)</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_multiday</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">DATA_MODEL</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">run_data_model</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file or dict with kwargs for NSRDB.ml_cloud_fill()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ml_cloud_fill</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gap fill cloud properties using mlclouds.</span>
+
+<span class="sd">    You would call the nsrdb ml-cloud-fill module using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config.json ml-cloud-fill</span>
+
+<span class="sd">    A typical config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;collect-data-model&quot;: {...},</span>
+<span class="sd">            &quot;daily-all-sky&quot;: {...},</span>
+<span class="sd">            &quot;data-model&quot;: {...},</span>
+<span class="sd">            &quot;direct&quot;: {...},</span>
+<span class="sd">            &quot;execution_control&quot;: {</span>
+<span class="sd">                &quot;option&quot;: &quot;kestrel&quot;,</span>
+<span class="sd">                &quot;alloc&quot;: &quot;pxs&quot;,</span>
+<span class="sd">                &quot;feature&quot;: &quot;--qos=normal&quot;,</span>
+<span class="sd">                &quot;walltime&quot;: 40</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;ml-cloud-fill&quot;: {</span>
+<span class="sd">                &quot;col_chunk&quot;: 10000,</span>
+<span class="sd">                &quot;fill_all&quot;: false,</span>
+<span class="sd">                &quot;max_workers&quot;: 4</span>
+<span class="sd">                &quot;model_path&quot;: ...</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+
+<span class="sd">    See the other CLI help pages for what the respective module configs</span>
+<span class="sd">    require.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: D301</span>
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_multiday</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">ML_CLOUD_FILL</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">ml_cloud_fill</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+        <span class="s1">&#39;Path to config file or dict with kwargs for &#39;</span>
+        <span class="s1">&#39;NSRDB.run_daily_all_sky()&#39;</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">daily_all_sky</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run all-sky physics model on daily data-model output.</span>
+
+<span class="sd">    You would call the nsrdb daily-all-sky module using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config.json daily-all-sky</span>
+
+<span class="sd">    A typical config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;collect-data-model&quot;: {...},</span>
+<span class="sd">            &quot;daily-all-sky&quot;: {</span>
+<span class="sd">                &quot;disc_on&quot;: false,</span>
+<span class="sd">                &quot;out_dir&quot;: &quot;./all_sky&quot;,</span>
+<span class="sd">                &quot;year&quot;: 2018,</span>
+<span class="sd">                &quot;grid&quot;: &quot;/projects/pxs/reference_grids/surfrad_meta.csv&quot;,</span>
+<span class="sd">                &quot;freq&quot;: &quot;5min&quot;</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;data-model&quot;: {...},</span>
+<span class="sd">            &quot;direct&quot;: {...},</span>
+<span class="sd">            &quot;execution_control&quot;: {</span>
+<span class="sd">                &quot;option&quot;: &quot;kestrel&quot;,</span>
+<span class="sd">                &quot;alloc&quot;: &quot;pxs&quot;,</span>
+<span class="sd">                &quot;feature&quot;: &quot;--qos=normal&quot;,</span>
+<span class="sd">                &quot;walltime&quot;: 40</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;ml-cloud-fill&quot;: {...}</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa : D301</span>
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_multiday</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">DAILY_ALL_SKY</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">run_daily_all_sky</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file or dict with kwargs for NSRDB.cloud_fill()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cloud_fill</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gap fill cloud properties in a collect-data-model output file, using</span>
+<span class="sd">    legacy gap-fill method.&quot;&quot;&quot;</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_multichunk</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">CLOUD_FILL</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">gap_fill_clouds</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file or dict with kwargs for NSRDB.run_all_sky()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_sky</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run all-sky physics model on collected data model output files.&quot;&quot;&quot;</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_multichunk</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">ALL_SKY</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">run_all_sky</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+        <span class="s1">&#39;Path to config file or dict with kwargs for &#39;</span>
+        <span class="s1">&#39;NSRDB.collect_data_model()&#39;</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_data_model</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect data-model output files to a single site-chunked output file.</span>
+
+<span class="sd">    You would call the nsrdb collect-data-model module using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config.json collect-data-model</span>
+
+<span class="sd">    A typical config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;collect-data-model&quot;: {</span>
+<span class="sd">                &quot;final&quot;: true,</span>
+<span class="sd">                &quot;max_workers&quot;: 10,</span>
+<span class="sd">                &quot;n_chunks&quot;: 1,</span>
+<span class="sd">                &quot;memory&quot;: 178,</span>
+<span class="sd">                &quot;n_writes&quot;: 1,</span>
+<span class="sd">                &quot;walltime&quot;: 48</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;daily-all-sky&quot;: {...},</span>
+<span class="sd">            &quot;data-model&quot;: {...},</span>
+<span class="sd">            &quot;direct&quot;: {...},</span>
+<span class="sd">            &quot;execution_control&quot;: {</span>
+<span class="sd">                &quot;option&quot;: &quot;kestrel&quot;,</span>
+<span class="sd">                &quot;alloc&quot;: &quot;pxs&quot;,</span>
+<span class="sd">                &quot;feature&quot;: &quot;--qos=normal&quot;,</span>
+<span class="sd">                &quot;walltime&quot;: 40</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;ml-cloud-fill&quot;: {...}</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa : D301</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">BaseCLI</span><span class="o">.</span><span class="n">from_config_preflight</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_DATA_MODEL</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;n_chunks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;n_chunks&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;n_writes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;n_writes&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;final&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">fnames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">OUTS</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">min_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fnames</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;clearsky&#39;</span><span class="p">,</span> <span class="s1">&#39;irradiance&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">collect_files</span> <span class="o">=</span> <span class="n">fnames</span> <span class="k">if</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;final&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="n">min_files</span>
+
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;collect-data-model was marked as final but n_chunks != 1&#39;</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;final&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;n_chunks&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">),</span> <span class="n">msg</span>
+
+    <span class="k">for</span> <span class="n">i_chunk</span><span class="p">,</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span>
+        <span class="nb">range</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;n_chunks&#39;</span><span class="p">]),</span> <span class="n">collect_files</span>
+    <span class="p">):</span>
+        <span class="n">log_id</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i_chunk</span><span class="p">)])</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;i_chunk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_chunk</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;i_fname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fnames</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;job_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;RUN_NAME&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">log_id</span><span class="si">}</span><span class="s1">&#39;</span>
+
+        <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_job</span><span class="p">(</span>
+            <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+            <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_DATA_MODEL</span><span class="p">,</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">collect_data_model</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+            <span class="n">log_id</span><span class="o">=</span><span class="n">log_id</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file or dict with kwargs for NSRDB.collect_final()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_final</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect chunked files with final data into final full files.&quot;&quot;&quot;</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">BaseCLI</span><span class="o">.</span><span class="n">from_config_preflight</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_FINAL</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i_fname</span><span class="p">,</span> <span class="n">fname</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">OUTS</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
+        <span class="n">log_id</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;job_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;RUN_NAME&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">log_id</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;i_fname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_fname</span>
+        <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_job</span><span class="p">(</span>
+            <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+            <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_FINAL</span><span class="p">,</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">NSRDB</span><span class="o">.</span><span class="n">collect_final</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+            <span class="n">log_id</span><span class="o">=</span><span class="n">log_id</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">CONFIG_TYPE</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file or dict with kwargs for NSRDB.collect_daily()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_daily</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect daily files into a final file.&quot;&quot;&quot;</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_single</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_DAILY</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">Collector</span><span class="o">.</span><span class="n">collect_daily</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file with kwargs for NSRDB.blend_files()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">blend</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Blend files from separate domains (e.g. east / west) into a single</span>
+<span class="sd">    domain.&quot;&quot;&quot;</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">BaseCLI</span><span class="o">.</span><span class="n">from_config_preflight</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">BLEND</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">file_tags</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;file_tag&#39;</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="n">file_tags</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">file_tags</span>
+        <span class="k">if</span> <span class="n">file_tags</span> <span class="o">!=</span> <span class="s1">&#39;all&#39;</span>
+        <span class="k">else</span> <span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">NSRDB</span><span class="o">.</span><span class="n">OUTS</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">file_tags</span> <span class="o">=</span> <span class="n">file_tags</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_tags</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">file_tags</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">file_tag</span> <span class="ow">in</span> <span class="n">file_tags</span><span class="p">:</span>
+        <span class="n">log_id</span> <span class="o">=</span> <span class="n">file_tag</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;job_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;RUN_NAME&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">log_id</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;file_tag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_tag</span>
+        <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_job</span><span class="p">(</span>
+            <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+            <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">BLEND</span><span class="p">,</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">Blender</span><span class="o">.</span><span class="n">run_full</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+            <span class="n">log_id</span><span class="o">=</span><span class="n">log_id</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file with kwargs for Collector.collect_dir()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_blend</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect blended files into a single file with multiple datasets.&quot;&quot;&quot;</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_single</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_BLEND</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">Collector</span><span class="o">.</span><span class="n">collect_dir</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file with kwargs for NSRDB.aggregate_files()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">aggregate</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate data files to a lower resolution.</span>
+
+<span class="sd">    NOTE: Used to create data files from high-resolution years (2018+) which</span>
+<span class="sd">    match resolution of low-resolution years (pre 2018)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_multichunk</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">AGGREGATE</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">Manager</span><span class="o">.</span><span class="n">run_chunk</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file with kwargs for Collector.collect_dir()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_aggregate</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect aggregate data files into a single file with multiple</span>
+<span class="sd">    datasets.&quot;&quot;&quot;</span>
+
+    <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_single</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_AGGREGATE</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">Collector</span><span class="o">.</span><span class="n">collect_dir</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_run_or_collect_tmy</span><span class="p">(</span>
+    <span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">):</span>
+    <span class="n">mod_name</span> <span class="o">=</span> <span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_TMY</span> <span class="k">if</span> <span class="n">collect</span> <span class="k">else</span> <span class="n">ModuleName</span><span class="o">.</span><span class="n">TMY</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">BaseCLI</span><span class="o">.</span><span class="n">from_config_preflight</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+        <span class="n">module_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">tmy_types</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;tmy_types&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;tmy&#39;</span><span class="p">,</span> <span class="s1">&#39;tgy&#39;</span><span class="p">,</span> <span class="s1">&#39;tdy&#39;</span><span class="p">])</span>
+    <span class="n">fn_out</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;fn_out&#39;</span><span class="p">,</span> <span class="s1">&#39;tmy.h5&#39;</span><span class="p">)</span>
+    <span class="n">out_dir</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;out_dir&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">tmy_type</span> <span class="ow">in</span> <span class="n">tmy_types</span><span class="p">:</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="n">TmyRunner</span><span class="o">.</span><span class="n">collect</span> <span class="k">if</span> <span class="n">collect</span> <span class="k">else</span> <span class="n">TmyRunner</span><span class="o">.</span><span class="n">tmy</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;tmy_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmy_type</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;out_dir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">tmy_type</span><span class="si">}</span><span class="s1">/&#39;</span><span class="p">)</span>
+        <span class="n">config</span><span class="p">[</span><span class="s1">&#39;job_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;RUN_NAME&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">tmy_type</span><span class="si">}</span><span class="s1">&#39;</span>
+
+        <span class="k">if</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">fn_out</span><span class="p">:</span>
+            <span class="n">config</span><span class="p">[</span><span class="s1">&#39;fn_out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fn_out</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tmy_type</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">config</span><span class="p">[</span><span class="s1">&#39;fn_out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fn_out</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">tmy_type</span><span class="si">}</span><span class="s1">.h5&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">node_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;n_nodes&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span>
+            <span class="n">log_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">tmy_type</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">node_index</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="n">config</span><span class="p">[</span><span class="s1">&#39;job_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;RUN_NAME&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">log_id</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="n">config</span><span class="p">[</span><span class="s1">&#39;node_index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node_index</span>
+            <span class="n">BaseCLI</span><span class="o">.</span><span class="n">kickoff_job</span><span class="p">(</span>
+                <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span>
+                <span class="n">module_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>
+                <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span>
+                <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+                <span class="n">log_id</span><span class="o">=</span><span class="n">tmy_type</span><span class="p">,</span>
+            <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file with kwargs for TmyRunner.tmy()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tmy</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create tmy files for given input files.</span>
+
+<span class="sd">    You would call the nsrdb tmy module using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config.json tmy</span>
+
+<span class="sd">    A typical config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;tmy&quot;: {},</span>
+<span class="sd">            &quot;collect-tmy&quot;: {&quot;purge_chunks&quot;: True},</span>
+<span class="sd">            &quot;direct&quot;: {</span>
+<span class="sd">                &quot;sites_per_worker&quot;: 50,</span>
+<span class="sd">                &quot;site_slice&quot;: [0, 100],</span>
+<span class="sd">                &quot;tmy_types&quot;: [&#39;tmy&#39;, &#39;tdy&#39;, &#39;tgy&#39;],</span>
+<span class="sd">                &quot;nsrdb_base_fp&quot;: &#39;./nsrdb_*_{}.h5&#39;,</span>
+<span class="sd">                &quot;years&quot;: [2000, ..., 2022],</span>
+<span class="sd">                &quot;out_dir&quot;: &#39;./&quot;,</span>
+<span class="sd">                &quot;fn_out&quot;: &#39;tmy_2000_2022.h5&#39;</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa : D301</span>
+
+    <span class="n">_run_or_collect_tmy</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="p">,</span>
+        <span class="n">config</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span>
+        <span class="n">collect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to config file with kwargs for TmyRunner.collect()&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_tmy</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect the previously generated tmy file chunks.</span>
+
+<span class="sd">    You would call the nsrdb collect-tmy module using::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config.json collect-tmy</span>
+
+<span class="sd">    A typical config.json file might look like this::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;tmy&quot;: {},</span>
+<span class="sd">            &quot;collect-tmy&quot;: {&quot;purge_chunks&quot;: True},</span>
+<span class="sd">            &quot;direct&quot;: {</span>
+<span class="sd">                &quot;sites_per_worker&quot;: 50,</span>
+<span class="sd">                &quot;site_slice&quot;: [0, 100],</span>
+<span class="sd">                &quot;tmy_types&quot;: [&#39;tmy&#39;, &#39;tdy&#39;, &#39;tgy&#39;],</span>
+<span class="sd">                &quot;nsrdb_base_fp&quot;: &#39;./nsrdb_*_{}.h5&#39;,</span>
+<span class="sd">                &quot;years&quot;: [2000, ..., 2022],</span>
+<span class="sd">                &quot;out_dir&quot;: &#39;./&quot;,</span>
+<span class="sd">                &quot;fn_out&quot;: &#39;tmy_2000_2022.h5&#39;</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa : D301</span>
+
+    <span class="n">_run_or_collect_tmy</span><span class="p">(</span>
+        <span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">pipeline_step</span><span class="o">=</span><span class="n">pipeline_step</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@main</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">invoke_without_command</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-c&#39;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">exists</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;NSRDB batch configuration json or csv file.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--dry-run&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to do a dry run (make batch dirs without running).&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--cancel&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to cancel all jobs associated with a given pipeline.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--delete&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to delete all batch job sub directories associated &#39;</span>
+    <span class="s1">&#39;with the batch_jobs.csv in the current batch config directory.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;--monitor-background&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to monitor all batch pipelines continuously &#39;</span>
+    <span class="s1">&#39;in the background using the nohup command. Note that the &#39;</span>
+    <span class="s1">&#39;stdout/stderr will not be captured, but you can set a &#39;</span>
+    <span class="s1">&#39;pipeline &quot;log_file&quot; to capture logs.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s1">&#39;-v&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Flag to turn on debug logging. Default is False.&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">batch</span><span class="p">(</span>
+    <span class="n">ctx</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">dry_run</span><span class="p">,</span> <span class="n">cancel</span><span class="p">,</span> <span class="n">delete</span><span class="p">,</span> <span class="n">monitor_background</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create and run multiple NSRDB project directories based on batch</span>
+<span class="sd">    permutation logic.</span>
+
+<span class="sd">    The NSRDB batch module (built on the gaps batch functionality) is a way to</span>
+<span class="sd">    create and run many NSRDB pipeline projects based on permutations of</span>
+<span class="sd">    key-value pairs in the run config files. A user configures the batch file</span>
+<span class="sd">    by creating one or more &quot;sets&quot; that contain one or more arguments (keys</span>
+<span class="sd">    found in config files) that are to be parameterized. For example, in the</span>
+<span class="sd">    config below, two NSRDB pipelines will be created where year is set to</span>
+<span class="sd">    2020 and 2021 in config_nsrdb.json::</span>
+
+<span class="sd">        \b</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;pipeline_config&quot;: &quot;./config_pipeline.json&quot;,</span>
+<span class="sd">            &quot;sets&quot;: [</span>
+<span class="sd">              {</span>
+<span class="sd">                &quot;args&quot;: {</span>
+<span class="sd">                  &quot;year&quot;: [2020, 2021],</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;files&quot;: [&quot;./config_nsrdb.json&quot;],</span>
+<span class="sd">                &quot;set_tag&quot;: &quot;set1&quot;</span>
+<span class="sd">              }</span>
+<span class="sd">        }</span>
+
+<span class="sd">    Run the batch module with::</span>
+
+<span class="sd">        $ python -m nsrdb.cli -c config_batch.json batch</span>
+
+<span class="sd">    Note that you can use multiple &quot;sets&quot; to isolate parameter permutations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa : D301</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">ensure_object</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;VERBOSE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">verbose</span> <span class="ow">or</span> <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;VERBOSE&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">BatchJob</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cancel</span><span class="p">:</span>
+        <span class="n">batch</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">delete</span><span class="p">:</span>
+        <span class="n">batch</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">batch</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">dry_run</span><span class="o">=</span><span class="n">dry_run</span><span class="p">,</span> <span class="n">monitor_background</span><span class="o">=</span><span class="n">monitor_background</span><span class="p">)</span>
+
+
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">DATA_MODEL</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_model</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">CLOUD_FILL</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_fill</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">ALL_SKY</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_sky</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">DAILY_ALL_SKY</span><span class="p">]</span> <span class="o">=</span> <span class="n">daily_all_sky</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">ML_CLOUD_FILL</span><span class="p">]</span> <span class="o">=</span> <span class="n">ml_cloud_fill</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">BLEND</span><span class="p">]</span> <span class="o">=</span> <span class="n">blend</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">AGGREGATE</span><span class="p">]</span> <span class="o">=</span> <span class="n">aggregate</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_DATA_MODEL</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_data_model</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_FINAL</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_final</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_DAILY</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_daily</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">TMY</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmy</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_BLEND</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_blend</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_AGGREGATE</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_aggregate</span>
+<span class="n">Pipeline</span><span class="o">.</span><span class="n">COMMANDS</span><span class="p">[</span><span class="n">ModuleName</span><span class="o">.</span><span class="n">COLLECT_TMY</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_tmy</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">main</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="p">{})</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Error running NSRDB CLI.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

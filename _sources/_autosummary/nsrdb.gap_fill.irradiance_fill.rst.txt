@@ -1,0 +1,33 @@
+nsrdb.gap\_fill.irradiance\_fill
+================================
+
+.. automodule:: nsrdb.gap_fill.irradiance_fill
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      enforce_clearsky
+      gap_fill_irrad
+      make_fill_flag
+      missing_cld_props
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

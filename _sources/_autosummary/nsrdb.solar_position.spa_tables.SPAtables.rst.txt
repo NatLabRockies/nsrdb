@@ -1,0 +1,36 @@
+nsrdb.solar\_position.spa\_tables.SPAtables
+===========================================
+
+.. currentmodule:: nsrdb.solar_position.spa_tables
+
+.. autoclass:: SPAtables
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SPAtables.NUTATION_ABCD_TABLE
+      ~SPAtables.NUTATION_YTERM_TABLE
+      ~SPAtables.TABLE_LBR_DICT
+      ~SPAtables.helio_lat_table
+      ~SPAtables.helio_long_table
+      ~SPAtables.helio_radius_table
+      ~SPAtables.nutation_abcd_table
+      ~SPAtables.nutation_yterm_table
+   
+   

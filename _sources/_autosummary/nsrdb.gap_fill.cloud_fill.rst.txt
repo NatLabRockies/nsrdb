@@ -1,0 +1,31 @@
+nsrdb.gap\_fill.cloud\_fill
+===========================
+
+.. automodule:: nsrdb.gap_fill.cloud_fill
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      CloudGapFill
+   
+   
+
+   
+   
+   
+
+
+

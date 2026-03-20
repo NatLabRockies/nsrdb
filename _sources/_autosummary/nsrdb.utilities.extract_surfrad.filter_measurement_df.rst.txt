@@ -1,0 +1,6 @@
+nsrdb.utilities.extract\_surfrad.filter\_measurement\_df
+========================================================
+
+.. currentmodule:: nsrdb.utilities.extract_surfrad
+
+.. autofunction:: filter_measurement_df

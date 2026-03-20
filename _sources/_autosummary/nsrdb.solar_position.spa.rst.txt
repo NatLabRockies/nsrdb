@@ -1,0 +1,31 @@
+nsrdb.solar\_position.spa
+=========================
+
+.. automodule:: nsrdb.solar_position.spa
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      SPA
+   
+   
+
+   
+   
+   
+
+
+

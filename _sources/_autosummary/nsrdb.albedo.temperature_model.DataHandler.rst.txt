@@ -1,0 +1,25 @@
+nsrdb.albedo.temperature\_model.DataHandler
+===========================================
+
+.. currentmodule:: nsrdb.albedo.temperature_model
+
+.. autoclass:: DataHandler
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataHandler.get_data
+      ~DataHandler.get_grid
+   
+   
+
+   
+   
+   

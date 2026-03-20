@@ -1,0 +1,32 @@
+nsrdb.albedo.ims.MetaFiles
+==========================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autoclass:: MetaFiles
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MetaFiles.lat_file
+      ~MetaFiles.lat_remote
+      ~MetaFiles.lon_file
+      ~MetaFiles.lon_remote
+   
+   

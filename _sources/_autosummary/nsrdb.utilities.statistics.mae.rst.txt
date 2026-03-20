@@ -1,0 +1,6 @@
+nsrdb.utilities.statistics.mae
+==============================
+
+.. currentmodule:: nsrdb.utilities.statistics
+
+.. autofunction:: mae

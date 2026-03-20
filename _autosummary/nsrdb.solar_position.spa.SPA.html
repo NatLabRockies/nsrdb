@@ -1,0 +1,1433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.solar_position.spa.SPA &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nsrdb.solar_position.spa_tables" href="nsrdb.solar_position.spa_tables.html" />
+    <link rel="prev" title="nsrdb.solar_position.spa" href="nsrdb.solar_position.spa.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="nsrdb.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="nsrdb.solar_position.html">nsrdb.solar_position</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="nsrdb.html">nsrdb</a></li>
+          <li class="breadcrumb-item"><a href="nsrdb.solar_position.html">nsrdb.solar_position</a></li>
+          <li class="breadcrumb-item"><a href="nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a></li>
+      <li class="breadcrumb-item active">nsrdb.solar_position.spa.SPA</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/nrel/nsrdb/blob/main/docs/source/_autosummary/nsrdb.solar_position.spa.SPA.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nsrdb-solar-position-spa-spa">
+<h1>nsrdb.solar_position.spa.SPA<a class="headerlink" href="#nsrdb-solar-position-spa-spa" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Solar position algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest in meters</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.aberration_correction" title="nsrdb.solar_position.spa.SPA.aberration_correction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aberration_correction</span></code></a>(r)</p></td>
+<td><p>Compute aberration correction</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_elevation" title="nsrdb.solar_position.spa.SPA.apparent_elevation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_elevation</span></code></a>(time_index, lat_lon[, ...])</p></td>
+<td><p>Compute the solar elevation after atmospheric refraction correction</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_elevation_angle" title="nsrdb.solar_position.spa.SPA.apparent_elevation_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_elevation_angle</span></code></a>(e0[, pres, temp, ...])</p></td>
+<td><p>The apparent topocentric elevation angle after refraction</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_position" title="nsrdb.solar_position.spa.SPA.apparent_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_position</span></code></a>(time_index, lat_lon[, ...])</p></td>
+<td><p>Compute the solar position after atmospheric refraction correction - elevation - zenith</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_sidereal_time" title="nsrdb.solar_position.spa.SPA.apparent_sidereal_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_sidereal_time</span></code></a>(v0, delta_psi, e)</p></td>
+<td><p>Compute apparent sidereal time</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_solar_position" title="nsrdb.solar_position.spa.SPA.apparent_solar_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_solar_position</span></code></a>([pressure, ...])</p></td>
+<td><p>Compute the apparent (atmospheric refraction corrected) solar position for all locations and times: - elevation (e) - zenith (theta)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_sun_longitude" title="nsrdb.solar_position.spa.SPA.apparent_sun_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_sun_longitude</span></code></a>(beta, delta_psi, delta_u)</p></td>
+<td><p>Compute apparent sun longitude</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.apparent_zenith" title="nsrdb.solar_position.spa.SPA.apparent_zenith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apparent_zenith</span></code></a>(time_index, lat_lon[, elev, ...])</p></td>
+<td><p>Compute the solar zenith angle after atmospheric refraction correction</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.atmospheric_refraction_correction" title="nsrdb.solar_position.spa.SPA.atmospheric_refraction_correction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atmospheric_refraction_correction</span></code></a>(e0[, ...])</p></td>
+<td><p>Compute the atmospheric refraction correction value for all sites</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.azimuth" title="nsrdb.solar_position.spa.SPA.azimuth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">azimuth</span></code></a>(time_index, lat_lon[, elev, delta_t])</p></td>
+<td><p>Compute the solar elevation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.elevation" title="nsrdb.solar_position.spa.SPA.elevation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elevation</span></code></a>(time_index, lat_lon[, elev, delta_t])</p></td>
+<td><p>Compute the solar elevation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.equation_of_time" title="nsrdb.solar_position.spa.SPA.equation_of_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equation_of_time</span></code></a>(jme, alpha, delta_psi, e)</p></td>
+<td><p>Equation of time</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.equatorial_horizontal_parallax" title="nsrdb.solar_position.spa.SPA.equatorial_horizontal_parallax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equatorial_horizontal_parallax</span></code></a>(r)</p></td>
+<td><p>Computes equatorial horizonatl parallax</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.geocentric_latitude" title="nsrdb.solar_position.spa.SPA.geocentric_latitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geocentric_latitude</span></code></a>(heliocentric_latitude)</p></td>
+<td><p>Compute geocentric latitude from heliocentric Latitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.geocentric_longitude" title="nsrdb.solar_position.spa.SPA.geocentric_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geocentric_longitude</span></code></a>(heliocentric_longitude)</p></td>
+<td><p>Compute geocentric longitude from heliocentric longitude</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.geocentric_sun_position" title="nsrdb.solar_position.spa.SPA.geocentric_sun_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geocentric_sun_position</span></code></a>(lamd, e, beta)</p></td>
+<td><p>Compute geocentric sun position</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.heliocentric_latitude" title="nsrdb.solar_position.spa.SPA.heliocentric_latitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heliocentric_latitude</span></code></a>(jme)</p></td>
+<td><p>Compute heliocentric latitude</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.heliocentric_longitude" title="nsrdb.solar_position.spa.SPA.heliocentric_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heliocentric_longitude</span></code></a>(jme)</p></td>
+<td><p>Compute heliocentric Longitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.heliocentric_radius_vector" title="nsrdb.solar_position.spa.SPA.heliocentric_radius_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heliocentric_radius_vector</span></code></a>(jme)</p></td>
+<td><p>Compute heliocentric radius</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.local_hour_angle" title="nsrdb.solar_position.spa.SPA.local_hour_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_hour_angle</span></code></a>(v, obs_lon, alpha)</p></td>
+<td><p>Compute local hour angle measured westward from south</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.mean_anomaly_moon" title="nsrdb.solar_position.spa.SPA.mean_anomaly_moon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_anomaly_moon</span></code></a>(jce)</p></td>
+<td><p>Compute mean moon anomaly</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.mean_anomaly_sun" title="nsrdb.solar_position.spa.SPA.mean_anomaly_sun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_anomaly_sun</span></code></a>(jce)</p></td>
+<td><p>Compute mean sun anomaly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.mean_ecliptic_obliquity" title="nsrdb.solar_position.spa.SPA.mean_ecliptic_obliquity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_ecliptic_obliquity</span></code></a>(jme)</p></td>
+<td><p>Compute mean ecliptic obliquity</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.mean_elongation" title="nsrdb.solar_position.spa.SPA.mean_elongation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_elongation</span></code></a>(jce)</p></td>
+<td><p>Compute mean elongation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.mean_sidereal_time" title="nsrdb.solar_position.spa.SPA.mean_sidereal_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_sidereal_time</span></code></a>(jd, jc)</p></td>
+<td><p>Compute mean sidereal time</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.moon_argument_latitude" title="nsrdb.solar_position.spa.SPA.moon_argument_latitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moon_argument_latitude</span></code></a>(jce)</p></td>
+<td><p>Compute moon latitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.moon_ascending_longitude" title="nsrdb.solar_position.spa.SPA.moon_ascending_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moon_ascending_longitude</span></code></a>(jce)</p></td>
+<td><p>Compute moon ascending longitude</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.nutation_coefficients" title="nsrdb.solar_position.spa.SPA.nutation_coefficients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nutation_coefficients</span></code></a>(jce)</p></td>
+<td><p>Compute the nutation coefficients: x0 = mean elongation x1 = mean sun anomaly x2 = mean moon anomaly x3 = moon latitude x4 = moon ascending longitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.nutation_position" title="nsrdb.solar_position.spa.SPA.nutation_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nutation_position</span></code></a>(jce)</p></td>
+<td><p>Compute nutation longitude for all timesteps</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.observer_xy" title="nsrdb.solar_position.spa.SPA.observer_xy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">observer_xy</span></code></a>(obs_lat, obs_elev)</p></td>
+<td><p>Compute the observer x and y terms</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.parallax_sun_right_ascension" title="nsrdb.solar_position.spa.SPA.parallax_sun_right_ascension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallax_sun_right_ascension</span></code></a>(obs_x, xi, H, delta)</p></td>
+<td><p>Computer sun right ascension parallax</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.position" title="nsrdb.solar_position.spa.SPA.position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">position</span></code></a>(time_index, lat_lon[, elev, delta_t])</p></td>
+<td><p>Compute the solar position: - elevation - azimuth - zenith</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.solar_position" title="nsrdb.solar_position.spa.SPA.solar_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solar_position</span></code></a>([delta_t])</p></td>
+<td><p>Compute the solar position for all locations and times: - elevation (e0) - azimuth (phi) - zenith (theta0)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.sun_mean_longitude" title="nsrdb.solar_position.spa.SPA.sun_mean_longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sun_mean_longitude</span></code></a>(jme)</p></td>
+<td><p>Compute mean sun longitude for all timesteps</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.topocentric_local_hour_angle" title="nsrdb.solar_position.spa.SPA.topocentric_local_hour_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topocentric_local_hour_angle</span></code></a>(H, delta_alpha)</p></td>
+<td><p>Compute topocentric local hour angle</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.topocentric_solar_position" title="nsrdb.solar_position.spa.SPA.topocentric_solar_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topocentric_solar_position</span></code></a>(obs_lat, ...)</p></td>
+<td><p>Compute the topocentric sun position: elevation and azimuth - without atmospheric correction</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.topocentric_sun_declination" title="nsrdb.solar_position.spa.SPA.topocentric_sun_declination"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topocentric_sun_declination</span></code></a>(obs_x, obs_y, ...)</p></td>
+<td><p>Compute topocentric sun position: right ascention and declination</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.topocentric_zenith_angle" title="nsrdb.solar_position.spa.SPA.topocentric_zenith_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topocentric_zenith_angle</span></code></a>(e)</p></td>
+<td><p>Topocentric zenith angle</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.true_ecliptic_obliquity" title="nsrdb.solar_position.spa.SPA.true_ecliptic_obliquity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">true_ecliptic_obliquity</span></code></a>(e0, delta_eps)</p></td>
+<td><p>Compute true ecliptic obliquity</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.zenith" title="nsrdb.solar_position.spa.SPA.zenith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zenith</span></code></a>(time_index, lat_lon[, elev, delta_t])</p></td>
+<td><p>Compute the solar elevation</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.altitude" title="nsrdb.solar_position.spa.SPA.altitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altitude</span></code></a></p></td>
+<td><p>elevation above sea-level of site(s)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.latitude" title="nsrdb.solar_position.spa.SPA.latitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">latitude</span></code></a></p></td>
+<td><p>Latitudes of site(s)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.longitude" title="nsrdb.solar_position.spa.SPA.longitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">longitude</span></code></a></p></td>
+<td><p>longitude of site(s)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nsrdb.solar_position.spa.SPA.time_index" title="nsrdb.solar_position.spa.SPA.time_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_index</span></code></a></p></td>
+<td><p>Datetime stamp(s) of interest</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py property">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.time_index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_index</span></span><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.time_index" title="Link to this definition"></a></dt>
+<dd><p>Datetime stamp(s) of interest</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_index</strong> (<em>pandas.DatetimeIndex</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.latitude">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latitude</span></span><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.latitude" title="Link to this definition"></a></dt>
+<dd><p>Latitudes of site(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lat</strong> (<em>ndarray</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.longitude">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">longitude</span></span><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.longitude" title="Link to this definition"></a></dt>
+<dd><p>longitude of site(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lon</strong> (<em>ndarray</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.altitude">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">altitude</span></span><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.altitude" title="Link to this definition"></a></dt>
+<dd><p>elevation above sea-level of site(s)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.heliocentric_longitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heliocentric_longitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.heliocentric_longitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.heliocentric_longitude" title="Link to this definition"></a></dt>
+<dd><p>Compute heliocentric Longitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jme</strong> (<em>ndarray</em>) – Julian ephemeris millennium</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>lon</strong> (<em>ndarray</em>) – Heliocentric longitude in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.heliocentric_latitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heliocentric_latitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.heliocentric_latitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.heliocentric_latitude" title="Link to this definition"></a></dt>
+<dd><p>Compute heliocentric latitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jme</strong> (<em>ndarray</em>) – Julian ephemeris millennium</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>b</strong> (<em>ndarray</em>) – Heliocentric longitude in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.heliocentric_radius_vector">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heliocentric_radius_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.heliocentric_radius_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.heliocentric_radius_vector" title="Link to this definition"></a></dt>
+<dd><p>Compute heliocentric radius</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jme</strong> (<em>ndarray</em>) – Julian ephemeris millennium</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>r</strong> (<em>ndarray</em>) – Heliocentric radius in radians</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.geocentric_longitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geocentric_longitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heliocentric_longitude</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.geocentric_longitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.geocentric_longitude" title="Link to this definition"></a></dt>
+<dd><p>Compute geocentric longitude from heliocentric longitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>heliocentric_longitude</strong> (<em>ndarray</em>) – heliocentric longitude for each available timestep</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>theta</strong> (<em>ndarray</em>) – geocentric longitude for each available timestep</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.geocentric_latitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geocentric_latitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heliocentric_latitude</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.geocentric_latitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.geocentric_latitude" title="Link to this definition"></a></dt>
+<dd><p>Compute geocentric latitude from heliocentric Latitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>heliocentric_latitude</strong> (<em>ndarray</em>) – heliocentric latitude for each available timestep</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>beta</strong> (<em>ndarray</em>) – geocentric latitude for each available timestep</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.mean_elongation">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mean_elongation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.mean_elongation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.mean_elongation" title="Link to this definition"></a></dt>
+<dd><p>Compute mean elongation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>x0</strong> (<em>ndarray</em>) – Mean elogation for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.mean_anomaly_sun">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mean_anomaly_sun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.mean_anomaly_sun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.mean_anomaly_sun" title="Link to this definition"></a></dt>
+<dd><p>Compute mean sun anomaly</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>x1</strong> (<em>ndarray</em>) – Mean sun anomaly for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.mean_anomaly_moon">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mean_anomaly_moon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.mean_anomaly_moon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.mean_anomaly_moon" title="Link to this definition"></a></dt>
+<dd><p>Compute mean moon anomaly</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>x2</strong> (<em>ndarray</em>) – Mean moon anomaly for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.moon_argument_latitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moon_argument_latitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.moon_argument_latitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.moon_argument_latitude" title="Link to this definition"></a></dt>
+<dd><p>Compute moon latitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>x3</strong> (<em>ndarray</em>) – Moon latitude for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.moon_ascending_longitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moon_ascending_longitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.moon_ascending_longitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.moon_ascending_longitude" title="Link to this definition"></a></dt>
+<dd><p>Compute moon ascending longitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>x4</strong> (<em>ndarray</em>) – Moon ascending longitude for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.nutation_coefficients">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nutation_coefficients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.nutation_coefficients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.nutation_coefficients" title="Link to this definition"></a></dt>
+<dd><p>Compute the nutation coefficients:
+x0 = mean elongation
+x1 = mean sun anomaly
+x2 = mean moon anomaly
+x3 = moon latitude
+x4 = moon ascending longitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>x_arr</strong> (<em>ndarray</em>) – Array of nutation coeffiecients [x0, x1, x2, x3, x4]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.nutation_position">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nutation_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jce</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.nutation_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.nutation_position" title="Link to this definition"></a></dt>
+<dd><p>Compute nutation longitude for all timesteps</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jce</strong> (<em>ndarray</em>) – Julian ephemeris century for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>delta_psi</strong> (<em>ndarray</em>) – nutation longitude</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.mean_ecliptic_obliquity">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mean_ecliptic_obliquity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.mean_ecliptic_obliquity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.mean_ecliptic_obliquity" title="Link to this definition"></a></dt>
+<dd><p>Compute mean ecliptic obliquity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jme</strong> (<em>ndarray</em>) – Julian ephemeris millennium for all timesteps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e0</strong> (<em>ndarray</em>) – Mean ecliptic obliquity for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.true_ecliptic_obliquity">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">true_ecliptic_obliquity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_eps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.true_ecliptic_obliquity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.true_ecliptic_obliquity" title="Link to this definition"></a></dt>
+<dd><p>Compute true ecliptic obliquity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>e0</strong> (<em>ndarray</em>) – Mean elciptic obliquity</p></li>
+<li><p><strong>delta_eps</strong> (<em>ndarray</em>) – Nutation obliquity</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e</strong> (<em>ndarray</em>) – True ecliptic obliquity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.aberration_correction">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aberration_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.aberration_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.aberration_correction" title="Link to this definition"></a></dt>
+<dd><p>Compute aberration correction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>r</strong> (<em>ndarray</em>) – Heliocentric or earth radius vector</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>delta_u</strong> (<em>ndarray</em>) – Aberation correction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_sun_longitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apparent_sun_longitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_u</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_sun_longitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_sun_longitude" title="Link to this definition"></a></dt>
+<dd><p>Compute apparent sun longitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>beta</strong> (<em>ndarray</em>) – Geocentric latitude</p></li>
+<li><p><strong>delta_psi</strong> (<em>ndarray</em>) – Nutation longitude</p></li>
+<li><p><strong>delta_u</strong> (<em>ndarray</em>) – Aberration correction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>lamd</strong> (<em>ndarray</em>) – Apparent sun longitude</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.mean_sidereal_time">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mean_sidereal_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.mean_sidereal_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.mean_sidereal_time" title="Link to this definition"></a></dt>
+<dd><p>Compute mean sidereal time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jd</strong> (<em>ndarray</em>) – Julian day for all timesteps</p></li>
+<li><p><strong>jc</strong> (<em>ndarray</em>) – Julian century for all timesteps</p></li>
+<li><p><strong>v0</strong> (<em>ndarray</em>) – Mean sidereal time in degrees</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_sidereal_time">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apparent_sidereal_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_sidereal_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_sidereal_time" title="Link to this definition"></a></dt>
+<dd><p>Compute apparent sidereal time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v0</strong> (<em>ndarray</em>) – Mean sidreal time</p></li>
+<li><p><strong>delta_psi</strong> (<em>ndarray</em>) – Nutation longitude</p></li>
+<li><p><strong>e</strong> (<em>ndarray</em>) – True ecliptic obliquity</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>v</strong> (<em>ndarray</em>) – Apparent sidereal time degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.geocentric_sun_position">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geocentric_sun_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lamd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.geocentric_sun_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.geocentric_sun_position" title="Link to this definition"></a></dt>
+<dd><p>Compute geocentric sun position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lamd</strong> (<em>ndarray</em>) – Apparent sun longitude</p></li>
+<li><p><strong>e</strong> (<em>ndarray</em>) – True ecliptic obliquity</p></li>
+<li><p><strong>beta</strong> (<em>ndarray</em>) – Geocentric latitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>alpha</strong> (<em>ndarray</em>) – Geocentric sun right ascension in degrees</p></li>
+<li><p><strong>delta</strong> (<em>ndarray</em>) – Geocentric sun delication in degrees</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.local_hour_angle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_hour_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.local_hour_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.local_hour_angle" title="Link to this definition"></a></dt>
+<dd><p>Compute local hour angle measured westward from south</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> (<em>ndarray</em>) – Apparent sidreal time</p></li>
+<li><p><strong>obs_lon</strong> (<em>ndarray</em>) – Observers longitudes</p></li>
+<li><p><strong>alpha</strong> (<em>ndarray</em>) – Sun right ascension</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>H</strong> (<em>ndarray</em>) – Local hour angle in degrees from westward from south</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.equatorial_horizontal_parallax">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">equatorial_horizontal_parallax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.equatorial_horizontal_parallax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.equatorial_horizontal_parallax" title="Link to this definition"></a></dt>
+<dd><p>Computes equatorial horizonatl parallax</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>r</strong> (<em>ndarray</em>) – heliocentric or earth radius vector</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>xi</strong> (<em>ndarray</em>) – Equatorial horizontal parallax</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.observer_xy">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">observer_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_elev</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.observer_xy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.observer_xy" title="Link to this definition"></a></dt>
+<dd><p>Compute the observer x and y terms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_lat</strong> (<em>ndarray</em>) – Observers latitudes</p></li>
+<li><p><strong>obs_elev</strong> (<em>ndarray</em>) – Observers elevations (above sealevel in m)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>obs_x</strong> (<em>ndarray</em>) – Observers x terms</p></li>
+<li><p><strong>obs_y</strong> (<em>ndarray</em>) – Observers y terms</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.parallax_sun_right_ascension">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parallax_sun_right_ascension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.parallax_sun_right_ascension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.parallax_sun_right_ascension" title="Link to this definition"></a></dt>
+<dd><p>Computer sun right ascension parallax</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_x</strong> (<em>ndarray</em>) – Observers x terms</p></li>
+<li><p><strong>xi</strong> (<em>ndarray</em>) – Equatorial horizontal parallax</p></li>
+<li><p><strong>H</strong> (<em>ndarray</em>) – Local hour angle</p></li>
+<li><p><strong>delta</strong> (<em>ndarray</em>) – Geocentric sun declination</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>delta_alpha</strong> (<em>ndarray</em>) – Sun right ascension parallax</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.topocentric_sun_declination">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topocentric_sun_declination</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.topocentric_sun_declination"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.topocentric_sun_declination" title="Link to this definition"></a></dt>
+<dd><p>Compute topocentric sun position: right ascention and declination</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_x</strong> (<em>ndarray</em>) – Observers x terms</p></li>
+<li><p><strong>obs_y</strong> (<em>ndarray</em>) – Observers y terms</p></li>
+<li><p><strong>xi</strong> (<em>ndarray</em>) – Equatorial horizontal parallax</p></li>
+<li><p><strong>H</strong> (<em>ndarray</em>) – Local hour angle</p></li>
+<li><p><strong>delta</strong> (<em>ndarray</em>) – Geocentric sun declination</p></li>
+<li><p><strong>delta_alpha</strong> (<em>ndarray</em>) – Sun right ascensoin parallax</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>delta_prime</strong> (<em>ndarray</em>) – Topocentric sun declination angle in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.topocentric_local_hour_angle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topocentric_local_hour_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.topocentric_local_hour_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.topocentric_local_hour_angle" title="Link to this definition"></a></dt>
+<dd><p>Compute topocentric local hour angle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>H</strong> (<em>ndarray</em>) – Local hour angle</p></li>
+<li><p><strong>delta_alpha</strong> (<em>ndarray</em>) – Sun right ascension parallax</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>H_prime</strong> (<em>ndarray</em>) – Topocentric local hour angle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.topocentric_solar_position">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topocentric_solar_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.topocentric_solar_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.topocentric_solar_position" title="Link to this definition"></a></dt>
+<dd><p>Compute the topocentric sun position: elevation and azimuth
+- without atmospheric correction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_lat</strong> (<em>ndarray</em>) – Observers latitudes</p></li>
+<li><p><strong>obs_elev</strong> (<em>ndarray</em>) – Observers elevations</p></li>
+<li><p><strong>xi</strong> (<em>ndarray</em>) – Equatorial horizontal parallax</p></li>
+<li><p><strong>H</strong> (<em>ndarray</em>) – Local hour angle</p></li>
+<li><p><strong>delta</strong> (<em>ndarray</em>) – Geocentric sun declination</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>e0</strong> (<em>ndarray</em>) – Topocentric elevation angle in degrees</p></li>
+<li><p><strong>phi</strong> (<em>ndarray</em>) – Topocentric azimuth angle</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.atmospheric_refraction_correction">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">atmospheric_refraction_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1013.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atmos_refract</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5667</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.atmospheric_refraction_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.atmospheric_refraction_correction" title="Link to this definition"></a></dt>
+<dd><p>Compute the atmospheric refraction correction value for all
+sites</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>e0</strong> (<em>ndarray</em>) – Topocentric elevation angle</p></li>
+<li><p><strong>pres</strong> (<em>ndarray</em>) – Pressure at all sites in millibars</p></li>
+<li><p><strong>temp</strong> (<em>ndarray</em>) – Temperature at all sites in C</p></li>
+<li><p><strong>atmos_refract</strong> (<em>float</em>) – Atmospheric refraction constant</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>delta_e</strong> (<em>ndarray</em>) – Atmospheric refraction correction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_elevation_angle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apparent_elevation_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1013.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atmos_refract</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5667</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_elevation_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_elevation_angle" title="Link to this definition"></a></dt>
+<dd><p>The apparent topocentric elevation angle after refraction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>e0</strong> (<em>ndarray</em>) – Topocentric elevation angle</p></li>
+<li><p><strong>pres</strong> (<em>ndarray</em>) – Pressure at all sites in millibar</p></li>
+<li><p><strong>temp</strong> (<em>ndarray</em>) – Temperature at all sites in C</p></li>
+<li><p><strong>atmos_refract</strong> (<em>float</em>) – Atmospheric refraction constant</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e</strong> (<em>ndarray</em>) – Apparent topocentric elevation angle after refraction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.topocentric_zenith_angle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topocentric_zenith_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.topocentric_zenith_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.topocentric_zenith_angle" title="Link to this definition"></a></dt>
+<dd><p>Topocentric zenith angle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> (<em>ndarray</em>) – Topocentric elevation angle</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>theta</strong> (<em>ndarray</em>) – Topocentric zenith angle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.sun_mean_longitude">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sun_mean_longitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.sun_mean_longitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.sun_mean_longitude" title="Link to this definition"></a></dt>
+<dd><p>Compute mean sun longitude for all timesteps</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jme</strong> (<em>ndarray</em>) – Julian ephemeris millennium</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> (<em>ndarray</em>) – Mean sun longitude</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.equation_of_time">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">equation_of_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.equation_of_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.equation_of_time" title="Link to this definition"></a></dt>
+<dd><p>Equation of time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jme</strong> (<em>ndarray</em>) – Julian ephemeris millennium</p></li>
+<li><p><strong>alpha</strong> (<em>ndarray</em>) – geocentric sun right ascension</p></li>
+<li><p><strong>delta_psi</strong> (<em>ndarray</em>) – nutation longitude</p></li>
+<li><p><strong>e</strong> (<em>ndarray</em>) – True ecliptic obliquity</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>E</strong> (<em>ndarray</em>) – Equation of time values for all timesteps</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.solar_position">
+<span class="sig-name descname"><span class="pre">solar_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.solar_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.solar_position" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar position for all locations and times:
+- elevation (e0)
+- azimuth (phi)
+- zenith (theta0)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>e0</strong> (<em>ndarray</em>) – Solar elevation in degrees</p></li>
+<li><p><strong>phi</strong> (<em>ndarray</em>) – Solar azimuth in degrees</p></li>
+<li><p><strong>theta0</strong> (<em>ndarray</em>) – Solar zenith in degrees</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_solar_position">
+<span class="sig-name descname"><span class="pre">apparent_solar_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1013.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atmospheric_refraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5667</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_solar_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_solar_position" title="Link to this definition"></a></dt>
+<dd><p>Compute the apparent (atmospheric refraction corrected) solar position
+for all locations and times:
+- elevation (e)
+- zenith (theta)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure</strong> (<em>ndarray</em>) – Pressure at all sites in millibar</p></li>
+<li><p><strong>temperature</strong> (<em>ndarray</em>) – Temperature at all sites in C</p></li>
+<li><p><strong>atmospheric_refract</strong> (<em>float</em>) – Atmospheric refraction constant</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>e</strong> (<em>ndarray</em>) – Solar elevation after atmospheric refraction correction in degrees</p></li>
+<li><p><strong>theta</strong> (<em>ndarray</em>) – Solar zenith after atmospheric refraction correction in degrees</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.position">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.position" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar position:
+- elevation
+- azimuth
+- zenith</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>e0</strong> (<em>ndarray</em>) – Solar elevation in degrees</p></li>
+<li><p><strong>phi</strong> (<em>ndarray</em>) – Solar azimuth in degrees</p></li>
+<li><p><strong>theta0</strong> (<em>ndarray</em>) – Solar zenith in degrees</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.elevation">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.elevation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.elevation" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e0</strong> (<em>ndarray</em>) – Solar elevation in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.azimuth">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">azimuth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.azimuth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.azimuth" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>phi</strong> (<em>ndarray</em>) – Solar azimuth in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.zenith">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zenith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.zenith"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.zenith" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>theta0</strong> (<em>ndarray</em>) – Solar zenith in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_position">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apparent_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1013.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atmospheric_refraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5667</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_position" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar position after atmospheric refraction correction
+- elevation
+- zenith</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>pressure</strong> (<em>ndarray</em>) – Pressure at all sites in millibar</p></li>
+<li><p><strong>temperature</strong> (<em>ndarray</em>) – Temperature at all sites in C</p></li>
+<li><p><strong>atmospheric_refract</strong> (<em>float</em>) – Atmospheric refraction constant</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>e</strong> (<em>ndarray</em>) – Solar elevation after atmospheric refraction correction in degrees</p></li>
+<li><p><strong>theta</strong> (<em>ndarray</em>) – Solar zenith after atmospheric refraction correction in degrees</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_elevation">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apparent_elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1013.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atmospheric_refraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5667</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_elevation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_elevation" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar elevation after atmospheric refraction correction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>pressure</strong> (<em>ndarray</em>) – Pressure at all sites in millibar</p></li>
+<li><p><strong>temperature</strong> (<em>ndarray</em>) – Temperature at all sites in C</p></li>
+<li><p><strong>atmospheric_refract</strong> (<em>float</em>) – Atmospheric refraction constant</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e</strong> (<em>ndarray</em>) – Solar elevation after atmospheric refraction correction in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nsrdb.solar_position.spa.SPA.apparent_zenith">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apparent_zenith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1013.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atmospheric_refraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5667</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nsrdb/solar_position/spa.html#SPA.apparent_zenith"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nsrdb.solar_position.spa.SPA.apparent_zenith" title="Link to this definition"></a></dt>
+<dd><p>Compute the solar zenith angle after atmospheric refraction correction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_index</strong> (<em>ndarray | pandas.DatetimeIndex | str</em>) – Datetime stamps of interest</p></li>
+<li><p><strong>lat_lon</strong> (<em>ndarray</em>) – (latitude, longitude) for site(s) of interest</p></li>
+<li><p><strong>elev</strong> (<em>ndarray</em>) – Elevation above sea-level for site(s) of interest</p></li>
+<li><p><strong>pressure</strong> (<em>ndarray</em>) – Pressure at all sites in millibar</p></li>
+<li><p><strong>temperature</strong> (<em>ndarray</em>) – Temperature at all sites in C</p></li>
+<li><p><strong>atmospheric_refract</strong> (<em>float</em>) – Atmospheric refraction constant</p></li>
+<li><p><strong>delta_t</strong> (<em>float | None</em>) – Difference between terrestrial time and UT1. Dependent on year.
+None will infer delta_t value from time index (recommended).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>theta</strong> (<em>ndarray</em>) – Solar zenith after atmospheric refraction correction in degrees</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nsrdb.solar_position.spa.html" class="btn btn-neutral float-left" title="nsrdb.solar_position.spa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nsrdb.solar_position.spa_tables.html" class="btn btn-neutral float-right" title="nsrdb.solar_position.spa_tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

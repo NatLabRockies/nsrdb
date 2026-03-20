@@ -1,0 +1,37 @@
+nsrdb.data\_model.clouds.CloudCoords
+====================================
+
+.. currentmodule:: nsrdb.data_model.clouds
+
+.. autoclass:: CloudCoords
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CloudCoords.calc_sensor_azimuth
+      ~CloudCoords.check_file
+      ~CloudCoords.correct_coords
+      ~CloudCoords.dist_to_latitude
+      ~CloudCoords.dist_to_longitude
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CloudCoords.DEFAULT_NADIR_E
+      ~CloudCoords.DEFAULT_NADIR_W
+      ~CloudCoords.EARTH_RADIUS
+      ~CloudCoords.REQUIRED
+   
+   

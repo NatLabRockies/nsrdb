@@ -1,0 +1,6 @@
+nsrdb.albedo.ims.download
+=========================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autofunction:: download

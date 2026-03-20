@@ -1,0 +1,2023 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.solar_position.spa &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/nsrdb.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nsrdb.solar_position.spa</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nsrdb.solar_position.spa</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">NREL&#39;s solar position algorithm (SPA)</span>
+
+<span class="sd">Usage:</span>
+<span class="sd">with h5py.File(nsrdb_file, &#39;r&#39;) as f:</span>
+<span class="sd">    time_index = f[&#39;time_index&#39;][...] # (t) likely 8760, 17520, 105120</span>
+<span class="sd">    meta = f[&#39;meta&#39;][site_gids]</span>
+<span class="sd">    lat_lon = meta[[&#39;latitude&#39;, &#39;longitude&#39;]] # (n, 2)</span>
+<span class="sd">    elev = meta[&#39;elevation&#39;] # (n)</span>
+<span class="sd">    P = f[&#39;pressure&#39;][:, site_gids] # (t, n)</span>
+<span class="sd">    T = f[&#39;air_temperature&#39;][:, site_gids] # (t, n)</span>
+
+<span class="sd">apparent_zenith_angle = SPA.zenith(time_index, lat_lon, elev=elev,</span>
+<span class="sd">                                   pressure=P, temperature=T)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.solar_position.spa_tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeltaTable</span><span class="p">,</span> <span class="n">SPAtables</span>
+
+<span class="n">SPA_TABLES</span> <span class="o">=</span> <span class="n">SPAtables</span><span class="p">()</span>
+<span class="n">DELTA_TABLE</span> <span class="o">=</span> <span class="n">DeltaTable</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="SPA">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SPA</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Solar position algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">time_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">time_index</span><span class="p">]</span>
+
+            <span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">time_index</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_time_index</span> <span class="o">=</span> <span class="n">time_index</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lat_lon</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">lat_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lat_lon</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lat_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">lat_lon</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">elev</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_elev</span> <span class="o">=</span> <span class="n">elev</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">time_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Datetime stamp(s) of interest</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        time_index : pandas.DatetimeIndex</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time_index</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">latitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Latitudes of site(s)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lat : ndarray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lat_lon</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">lat</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">longitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        longitude of site(s)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lon : ndarray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lat_lon</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">lon</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">altitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        elevation above sea-level of site(s)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elev</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_delta_t</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a delta t value for start of time index</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        delta_t : float</span>
+<span class="sd">            Delta-t value for the first date in the time index.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_pydatetime</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+        <span class="n">delta_t</span> <span class="o">=</span> <span class="n">DELTA_TABLE</span><span class="p">[</span><span class="n">date</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">delta_t</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert UTC datetime index into:</span>
+<span class="sd">        - Julian day</span>
+<span class="sd">        - Julian ephemeris day</span>
+<span class="sd">        - Julian century</span>
+<span class="sd">        - Julian ephemeris century</span>
+<span class="sd">        - Julian ephemeris millennium</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        jd : ndarray</span>
+<span class="sd">            Julian day</span>
+<span class="sd">        jde : ndarray</span>
+<span class="sd">            Julian ephemeris day</span>
+<span class="sd">        jc : ndarray</span>
+<span class="sd">            Julian century</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">delta_t</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">delta_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_delta_t</span><span class="p">()</span>
+
+        <span class="n">jd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_index</span><span class="o">.</span><span class="n">to_julian_date</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">jde</span> <span class="o">=</span> <span class="n">jd</span> <span class="o">+</span> <span class="n">delta_t</span> <span class="o">/</span> <span class="mi">86400</span>
+        <span class="n">jc</span> <span class="o">=</span> <span class="p">(</span><span class="n">jd</span> <span class="o">-</span> <span class="mi">2451545</span><span class="p">)</span> <span class="o">/</span> <span class="mi">36525</span>
+        <span class="n">jce</span> <span class="o">=</span> <span class="p">(</span><span class="n">jde</span> <span class="o">-</span> <span class="mi">2451545</span><span class="p">)</span> <span class="o">/</span> <span class="mi">36525</span>
+        <span class="n">jme</span> <span class="o">=</span> <span class="n">jce</span> <span class="o">/</span> <span class="mi">10</span>
+
+        <span class="k">return</span> <span class="n">jd</span><span class="p">,</span> <span class="n">jde</span><span class="p">,</span> <span class="n">jc</span><span class="p">,</span> <span class="n">jce</span><span class="p">,</span> <span class="n">jme</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_helicocentric_vector</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">jme</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform heliocentric array to vector calculation:</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        arr : ndarray</span>
+<span class="sd">            Array to compute vector from</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        out : ndarray</span>
+<span class="sd">            heliocentric value for each input timestep</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">jme</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">jme</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">*</span> <span class="n">jme</span><span class="p">),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">out</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">jme</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)))</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">8</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+<div class="viewcode-block" id="SPA.heliocentric_longitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.heliocentric_longitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">heliocentric_longitude</span><span class="p">(</span><span class="n">jme</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute heliocentric Longitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lon : ndarray</span>
+<span class="sd">            Heliocentric longitude in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">_helicocentric_vector</span><span class="p">(</span><span class="n">SPA_TABLES</span><span class="o">.</span><span class="n">helio_long_table</span><span class="p">,</span> <span class="n">jme</span><span class="p">)</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span>
+        <span class="k">return</span> <span class="n">lon</span></div>
+
+
+<div class="viewcode-block" id="SPA.heliocentric_latitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.heliocentric_latitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">heliocentric_latitude</span><span class="p">(</span><span class="n">jme</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute heliocentric latitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        b : ndarray</span>
+<span class="sd">            Heliocentric longitude in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">_helicocentric_vector</span><span class="p">(</span><span class="n">SPA_TABLES</span><span class="o">.</span><span class="n">helio_lat_table</span><span class="p">,</span> <span class="n">jme</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">b</span></div>
+
+
+<div class="viewcode-block" id="SPA.heliocentric_radius_vector">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.heliocentric_radius_vector">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">heliocentric_radius_vector</span><span class="p">(</span><span class="n">jme</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute heliocentric radius</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r : ndarray</span>
+<span class="sd">            Heliocentric radius in radians</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">_helicocentric_vector</span><span class="p">(</span><span class="n">SPA_TABLES</span><span class="o">.</span><span class="n">helio_radius_table</span><span class="p">,</span> <span class="n">jme</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span></div>
+
+
+<div class="viewcode-block" id="SPA.geocentric_longitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.geocentric_longitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">geocentric_longitude</span><span class="p">(</span><span class="n">heliocentric_longitude</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute geocentric longitude from heliocentric longitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        heliocentric_longitude : ndarray</span>
+<span class="sd">            heliocentric longitude for each available timestep</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        theta : ndarray</span>
+<span class="sd">            geocentric longitude for each available timestep</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">heliocentric_longitude</span> <span class="o">+</span> <span class="mf">180.0</span>
+        <span class="k">return</span> <span class="n">theta</span> <span class="o">%</span> <span class="mi">360</span></div>
+
+
+<div class="viewcode-block" id="SPA.geocentric_latitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.geocentric_latitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">geocentric_latitude</span><span class="p">(</span><span class="n">heliocentric_latitude</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute geocentric latitude from heliocentric Latitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        heliocentric_latitude : ndarray</span>
+<span class="sd">            heliocentric latitude for each available timestep</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        beta : ndarray</span>
+<span class="sd">            geocentric latitude for each available timestep</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">heliocentric_latitude</span>
+        <span class="k">return</span> <span class="n">beta</span></div>
+
+
+<div class="viewcode-block" id="SPA.mean_elongation">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.mean_elongation">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mean_elongation</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute mean elongation</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        x0 : ndarray</span>
+<span class="sd">            Mean elogation for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">297.85036</span>
+            <span class="o">+</span> <span class="mf">445267.111480</span> <span class="o">*</span> <span class="n">jce</span>
+            <span class="o">-</span> <span class="mf">0.0019142</span> <span class="o">*</span> <span class="n">jce</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">jce</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">189474</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">x0</span></div>
+
+
+<div class="viewcode-block" id="SPA.mean_anomaly_sun">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.mean_anomaly_sun">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mean_anomaly_sun</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute mean sun anomaly</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        x1 : ndarray</span>
+<span class="sd">            Mean sun anomaly for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">357.52772</span>
+            <span class="o">+</span> <span class="mf">35999.050340</span> <span class="o">*</span> <span class="n">jce</span>
+            <span class="o">-</span> <span class="mf">0.0001603</span> <span class="o">*</span> <span class="n">jce</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">-</span> <span class="n">jce</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">300000</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">x1</span></div>
+
+
+<div class="viewcode-block" id="SPA.mean_anomaly_moon">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.mean_anomaly_moon">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mean_anomaly_moon</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute mean moon anomaly</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        x2 : ndarray</span>
+<span class="sd">            Mean moon anomaly for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">134.96298</span>
+            <span class="o">+</span> <span class="mf">477198.867398</span> <span class="o">*</span> <span class="n">jce</span>
+            <span class="o">+</span> <span class="mf">0.0086972</span> <span class="o">*</span> <span class="n">jce</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">jce</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">56250</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">x2</span></div>
+
+
+<div class="viewcode-block" id="SPA.moon_argument_latitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.moon_argument_latitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">moon_argument_latitude</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute moon latitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        x3 : ndarray</span>
+<span class="sd">            Moon latitude for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x3</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">93.27191</span>
+            <span class="o">+</span> <span class="mf">483202.017538</span> <span class="o">*</span> <span class="n">jce</span>
+            <span class="o">-</span> <span class="mf">0.0036825</span> <span class="o">*</span> <span class="n">jce</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">jce</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">327270</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">x3</span></div>
+
+
+<div class="viewcode-block" id="SPA.moon_ascending_longitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.moon_ascending_longitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">moon_ascending_longitude</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute moon ascending longitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        x4 : ndarray</span>
+<span class="sd">            Moon ascending longitude for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x4</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">125.04452</span>
+            <span class="o">-</span> <span class="mf">1934.136261</span> <span class="o">*</span> <span class="n">jce</span>
+            <span class="o">+</span> <span class="mf">0.0020708</span> <span class="o">*</span> <span class="n">jce</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">jce</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">450000</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">x4</span></div>
+
+
+<div class="viewcode-block" id="SPA.nutation_coefficients">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.nutation_coefficients">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nutation_coefficients</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the nutation coefficients:</span>
+<span class="sd">        x0 = mean elongation</span>
+<span class="sd">        x1 = mean sun anomaly</span>
+<span class="sd">        x2 = mean moon anomaly</span>
+<span class="sd">        x3 = moon latitude</span>
+<span class="sd">        x4 = moon ascending longitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        x_arr : ndarray</span>
+<span class="sd">            Array of nutation coeffiecients [x0, x1, x2, x3, x4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">mean_elongation</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">mean_anomaly_sun</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">mean_anomaly_moon</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="n">x3</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">moon_argument_latitude</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="n">x4</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">moon_ascending_longitude</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="SPA.nutation_position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.nutation_position">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nutation_position</span><span class="p">(</span><span class="n">jce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute nutation longitude for all timesteps</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jce : ndarray</span>
+<span class="sd">            Julian ephemeris century for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        delta_psi : ndarray</span>
+<span class="sd">            nutation longitude</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">nut_arr</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">nutation_coefficients</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="n">nut_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">SPA_TABLES</span><span class="o">.</span><span class="n">nutation_yterm_table</span><span class="p">,</span> <span class="n">nut_arr</span><span class="p">))</span>
+
+        <span class="n">abcd</span> <span class="o">=</span> <span class="n">SPA_TABLES</span><span class="o">.</span><span class="n">nutation_abcd_table</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">abcd</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">abcd</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">abcd</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">abcd</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">argsin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">nut_arr</span><span class="p">)</span>
+        <span class="n">delta_psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">jce</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">argsin</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span>
+        <span class="n">delta_psi</span> <span class="o">/=</span> <span class="mi">36000000</span>
+
+        <span class="n">argcos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">nut_arr</span><span class="p">)</span>
+        <span class="n">delta_eps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">jce</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">argcos</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span>
+        <span class="n">delta_eps</span> <span class="o">/=</span> <span class="mi">36000000</span>
+
+        <span class="k">return</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">delta_eps</span></div>
+
+
+<div class="viewcode-block" id="SPA.mean_ecliptic_obliquity">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.mean_ecliptic_obliquity">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mean_ecliptic_obliquity</span><span class="p">(</span><span class="n">jme</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute mean ecliptic obliquity</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium for all timesteps</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Mean ecliptic obliquity for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">jme</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">/</span> <span class="mi">10</span>
+        <span class="n">e0_coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="mf">84381.448</span><span class="p">,</span>
+                <span class="o">-</span><span class="mf">4680.93</span><span class="p">,</span>
+                <span class="o">-</span><span class="mf">1.55</span><span class="p">,</span>
+                <span class="mf">1999.25</span><span class="p">,</span>
+                <span class="o">-</span><span class="mf">51.38</span><span class="p">,</span>
+                <span class="o">-</span><span class="mf">249.67</span><span class="p">,</span>
+                <span class="o">-</span><span class="mf">39.05</span><span class="p">,</span>
+                <span class="mf">7.12</span><span class="p">,</span>
+                <span class="mf">27.87</span><span class="p">,</span>
+                <span class="mf">5.79</span><span class="p">,</span>
+                <span class="mf">2.45</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="n">e0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">e0_coeff</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">e0</span></div>
+
+
+<div class="viewcode-block" id="SPA.true_ecliptic_obliquity">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.true_ecliptic_obliquity">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">true_ecliptic_obliquity</span><span class="p">(</span><span class="n">e0</span><span class="p">,</span> <span class="n">delta_eps</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute true ecliptic obliquity</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Mean elciptic obliquity</span>
+<span class="sd">        delta_eps : ndarray</span>
+<span class="sd">            Nutation obliquity</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            True ecliptic obliquity</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">e0</span> <span class="o">/</span> <span class="mi">3600</span> <span class="o">+</span> <span class="n">delta_eps</span>
+        <span class="k">return</span> <span class="n">e</span></div>
+
+
+<div class="viewcode-block" id="SPA.aberration_correction">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.aberration_correction">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">aberration_correction</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute aberration correction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        r : ndarray</span>
+<span class="sd">            Heliocentric or earth radius vector</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        delta_u : ndarray</span>
+<span class="sd">            Aberation correction</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">delta_u</span> <span class="o">=</span> <span class="o">-</span><span class="mf">20.4898</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3600</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">delta_u</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_sun_longitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_sun_longitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_sun_longitude</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">delta_u</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute apparent sun longitude</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        beta : ndarray</span>
+<span class="sd">            Geocentric latitude</span>
+<span class="sd">        delta_psi : ndarray</span>
+<span class="sd">            Nutation longitude</span>
+<span class="sd">        delta_u : ndarray</span>
+<span class="sd">            Aberration correction</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lamd : ndarray</span>
+<span class="sd">            Apparent sun longitude</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lamd</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">delta_psi</span> <span class="o">+</span> <span class="n">delta_u</span>
+        <span class="k">return</span> <span class="n">lamd</span></div>
+
+
+<div class="viewcode-block" id="SPA.mean_sidereal_time">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.mean_sidereal_time">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mean_sidereal_time</span><span class="p">(</span><span class="n">jd</span><span class="p">,</span> <span class="n">jc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute mean sidereal time</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jd : ndarray</span>
+<span class="sd">            Julian day for all timesteps</span>
+<span class="sd">        jc : ndarray</span>
+<span class="sd">            Julian century for all timesteps</span>
+
+<span class="sd">        v0 : ndarray</span>
+<span class="sd">            Mean sidereal time in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v0</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">280.46061837</span>
+            <span class="o">+</span> <span class="mf">360.98564736629</span> <span class="o">*</span> <span class="p">(</span><span class="n">jd</span> <span class="o">-</span> <span class="mi">2451545</span><span class="p">)</span>
+            <span class="o">+</span> <span class="mf">0.000387933</span> <span class="o">*</span> <span class="n">jc</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">-</span> <span class="n">jc</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">38710000</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">v0</span> <span class="o">%</span> <span class="mf">360.0</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_sidereal_time">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_sidereal_time">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_sidereal_time</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute apparent sidereal time</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        v0 : ndarray</span>
+<span class="sd">            Mean sidreal time</span>
+<span class="sd">        delta_psi : ndarray</span>
+<span class="sd">            Nutation longitude</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            True ecliptic obliquity</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        v : ndarray</span>
+<span class="sd">            Apparent sidereal time degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">+</span> <span class="n">delta_psi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">v</span></div>
+
+
+<div class="viewcode-block" id="SPA.geocentric_sun_position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.geocentric_sun_position">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">geocentric_sun_position</span><span class="p">(</span><span class="n">lamd</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute geocentric sun position</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lamd : ndarray</span>
+<span class="sd">            Apparent sun longitude</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            True ecliptic obliquity</span>
+<span class="sd">        beta : ndarray</span>
+<span class="sd">            Geocentric latitude</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        alpha : ndarray</span>
+<span class="sd">            Geocentric sun right ascension in degrees</span>
+<span class="sd">        delta : ndarray</span>
+<span class="sd">            Geocentric sun delication in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lamd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">lamd</span><span class="p">)</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lamd</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lamd</span><span class="p">)</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">denom</span><span class="p">))</span> <span class="o">%</span> <span class="mi">360</span>
+
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span>
+            <span class="n">lamd</span>
+        <span class="p">)</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">delta</span></div>
+
+
+<div class="viewcode-block" id="SPA.local_hour_angle">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.local_hour_angle">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">local_hour_angle</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">obs_lon</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute local hour angle measured westward from south</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        v : ndarray</span>
+<span class="sd">            Apparent sidreal time</span>
+<span class="sd">        obs_lon : ndarray</span>
+<span class="sd">            Observers longitudes</span>
+<span class="sd">        alpha : ndarray</span>
+<span class="sd">            Sun right ascension</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        H : ndarray</span>
+<span class="sd">            Local hour angle in degrees from westward from south</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">obs_lon</span> <span class="o">-</span> <span class="n">alpha</span>
+        <span class="k">return</span> <span class="n">H</span> <span class="o">%</span> <span class="mi">360</span></div>
+
+
+<div class="viewcode-block" id="SPA.equatorial_horizontal_parallax">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.equatorial_horizontal_parallax">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">equatorial_horizontal_parallax</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes equatorial horizonatl parallax</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        r : ndarray</span>
+<span class="sd">            heliocentric or earth radius vector</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        xi : ndarray</span>
+<span class="sd">            Equatorial horizontal parallax</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">xi</span> <span class="o">=</span> <span class="mf">8.794</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3600</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">xi</span></div>
+
+
+<div class="viewcode-block" id="SPA.observer_xy">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.observer_xy">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">observer_xy</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">,</span> <span class="n">obs_elev</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the observer x and y terms</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obs_lat : ndarray</span>
+<span class="sd">            Observers latitudes</span>
+<span class="sd">        obs_elev : ndarray</span>
+<span class="sd">            Observers elevations (above sealevel in m)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        obs_x : ndarray</span>
+<span class="sd">            Observers x terms</span>
+<span class="sd">        obs_y : ndarray</span>
+<span class="sd">            Observers y terms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obs_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="mf">0.99664719</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">))</span>
+        <span class="n">obs_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">+</span> <span class="n">obs_elev</span> <span class="o">/</span> <span class="mi">6378140</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span>
+        <span class="n">obs_y</span> <span class="o">=</span> <span class="mf">0.99664719</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">+</span> <span class="n">obs_elev</span> <span class="o">/</span> <span class="mi">6378140</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obs_x</span><span class="p">,</span> <span class="n">obs_y</span></div>
+
+
+<div class="viewcode-block" id="SPA.parallax_sun_right_ascension">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.parallax_sun_right_ascension">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parallax_sun_right_ascension</span><span class="p">(</span><span class="n">obs_x</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computer sun right ascension parallax</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obs_x : ndarray</span>
+<span class="sd">            Observers x terms</span>
+<span class="sd">        xi : ndarray</span>
+<span class="sd">            Equatorial horizontal parallax</span>
+<span class="sd">        H : ndarray</span>
+<span class="sd">            Local hour angle</span>
+<span class="sd">        delta : ndarray</span>
+<span class="sd">            Geocentric sun declination</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        delta_alpha : ndarray</span>
+<span class="sd">            Sun right ascension parallax</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="o">-</span><span class="n">obs_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+        <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">obs_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+        <span class="n">delta_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">denom</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">delta_alpha</span></div>
+
+
+<div class="viewcode-block" id="SPA.topocentric_sun_declination">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.topocentric_sun_declination">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">topocentric_sun_declination</span><span class="p">(</span><span class="n">obs_x</span><span class="p">,</span> <span class="n">obs_y</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">delta_alpha</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute topocentric sun position: right ascention and declination</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obs_x : ndarray</span>
+<span class="sd">            Observers x terms</span>
+<span class="sd">        obs_y : ndarray</span>
+<span class="sd">            Observers y terms</span>
+<span class="sd">        xi : ndarray</span>
+<span class="sd">            Equatorial horizontal parallax</span>
+<span class="sd">        H : ndarray</span>
+<span class="sd">            Local hour angle</span>
+<span class="sd">        delta : ndarray</span>
+<span class="sd">            Geocentric sun declination</span>
+<span class="sd">        delta_alpha : ndarray</span>
+<span class="sd">            Sun right ascensoin parallax</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        delta_prime : ndarray</span>
+<span class="sd">            Topocentric sun declination angle in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Topocentric sun right ascension angle in degrees</span>
+        <span class="c1"># alpha_prime = alpha + delta_alpha</span>
+
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+        <span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+        <span class="n">delta_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">delta_alpha</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">obs_y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta_alpha</span><span class="p">)</span>
+        <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">obs_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+        <span class="n">delta_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">denom</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">delta_prime</span></div>
+
+
+<div class="viewcode-block" id="SPA.topocentric_local_hour_angle">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.topocentric_local_hour_angle">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">topocentric_local_hour_angle</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">delta_alpha</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute topocentric local hour angle</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        H : ndarray</span>
+<span class="sd">            Local hour angle</span>
+<span class="sd">        delta_alpha : ndarray</span>
+<span class="sd">            Sun right ascension parallax</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        H_prime : ndarray</span>
+<span class="sd">            Topocentric local hour angle</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">H_prime</span> <span class="o">=</span> <span class="n">H</span> <span class="o">-</span> <span class="n">delta_alpha</span>
+        <span class="k">return</span> <span class="n">H_prime</span></div>
+
+
+<div class="viewcode-block" id="SPA.topocentric_solar_position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.topocentric_solar_position">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">topocentric_solar_position</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">,</span> <span class="n">obs_elev</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the topocentric sun position: elevation and azimuth</span>
+<span class="sd">        - without atmospheric correction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obs_lat : ndarray</span>
+<span class="sd">            Observers latitudes</span>
+<span class="sd">        obs_elev : ndarray</span>
+<span class="sd">            Observers elevations</span>
+<span class="sd">        xi : ndarray</span>
+<span class="sd">            Equatorial horizontal parallax</span>
+<span class="sd">        H : ndarray</span>
+<span class="sd">            Local hour angle</span>
+<span class="sd">        delta : ndarray</span>
+<span class="sd">            Geocentric sun declination</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Topocentric elevation angle in degrees</span>
+<span class="sd">        phi : ndarray</span>
+<span class="sd">            Topocentric azimuth angle</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obs_x</span><span class="p">,</span> <span class="n">obs_y</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">observer_xy</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">,</span> <span class="n">obs_elev</span><span class="p">)</span>
+        <span class="n">delta_alpha</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">parallax_sun_right_ascension</span><span class="p">(</span><span class="n">obs_x</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+        <span class="n">delta_prime</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">topocentric_sun_declination</span><span class="p">(</span>
+            <span class="n">obs_x</span><span class="p">,</span> <span class="n">obs_y</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">delta_alpha</span>
+        <span class="p">)</span>
+        <span class="n">H_prime</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">topocentric_local_hour_angle</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">delta_alpha</span><span class="p">)</span>
+
+        <span class="n">obs_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span>
+        <span class="n">delta_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">delta_prime</span><span class="p">)</span>
+        <span class="n">H_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">H_prime</span><span class="p">)</span>
+        <span class="n">e0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta_prime</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span>
+            <span class="n">delta_prime</span>
+        <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">H_prime</span><span class="p">)</span>
+        <span class="n">e0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">e0</span><span class="p">))</span>
+
+        <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">H_prime</span><span class="p">)</span>
+        <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">H_prime</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span>
+            <span class="n">delta_prime</span>
+        <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">obs_lat</span><span class="p">)</span>
+        <span class="n">gamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">denom</span><span class="p">))</span> <span class="o">%</span> <span class="mi">360</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">+</span> <span class="mi">180</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span>
+        <span class="k">return</span> <span class="n">e0</span><span class="p">,</span> <span class="n">phi</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_check_shape</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check shape of arr and transpose if needed</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        arr : ndarray</span>
+<span class="sd">            Array of interest</span>
+<span class="sd">        shape : tuple</span>
+<span class="sd">            Desired shape</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        arr : ndarray</span>
+<span class="sd">            arr with proper shape (if possible)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">T</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;Cannot convert array of shape </span><span class="si">{}</span><span class="s1"> to &#39;</span>
+                <span class="s1">&#39;desired final shape </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">arr</span>
+
+<div class="viewcode-block" id="SPA.atmospheric_refraction_correction">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.atmospheric_refraction_correction">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">atmospheric_refraction_correction</span><span class="p">(</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">pres</span><span class="o">=</span><span class="mf">1013.25</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">atmos_refract</span><span class="o">=</span><span class="mf">0.5667</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the atmospheric refraction correction value for all</span>
+<span class="sd">        sites</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Topocentric elevation angle</span>
+<span class="sd">        pres : ndarray</span>
+<span class="sd">            Pressure at all sites in millibars</span>
+<span class="sd">        temp : ndarray</span>
+<span class="sd">            Temperature at all sites in C</span>
+<span class="sd">        atmos_refract : float</span>
+<span class="sd">            Atmospheric refraction constant</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        delta_e : ndarray</span>
+<span class="sd">            Atmospheric refraction correction</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pres</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">pres</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">_check_shape</span><span class="p">(</span><span class="n">pres</span><span class="p">,</span> <span class="n">e0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">_check_shape</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">e0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="c1"># switch sets delta_e when the sun is below the horizon</span>
+        <span class="n">switch</span> <span class="o">=</span> <span class="n">e0</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.26667</span> <span class="o">+</span> <span class="n">atmos_refract</span><span class="p">)</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">e0</span> <span class="o">+</span> <span class="mf">10.3</span> <span class="o">/</span> <span class="p">(</span><span class="n">e0</span> <span class="o">+</span> <span class="mf">5.11</span><span class="p">))</span>
+        <span class="n">delta_e</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="n">pres</span> <span class="o">/</span> <span class="mf">1010.0</span><span class="p">)</span>
+            <span class="o">*</span> <span class="p">(</span><span class="mf">283.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">273</span> <span class="o">+</span> <span class="n">temp</span><span class="p">))</span>
+            <span class="o">*</span> <span class="mf">1.02</span>
+            <span class="o">/</span> <span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">))</span>
+        <span class="p">)</span> <span class="o">*</span> <span class="n">switch</span>
+        <span class="k">return</span> <span class="n">delta_e</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_elevation_angle">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_elevation_angle">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_elevation_angle</span><span class="p">(</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">pres</span><span class="o">=</span><span class="mf">1013.25</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">atmos_refract</span><span class="o">=</span><span class="mf">0.5667</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The apparent topocentric elevation angle after refraction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Topocentric elevation angle</span>
+<span class="sd">        pres : ndarray</span>
+<span class="sd">            Pressure at all sites in millibar</span>
+<span class="sd">        temp : ndarray</span>
+<span class="sd">            Temperature at all sites in C</span>
+<span class="sd">        atmos_refract : float</span>
+<span class="sd">            Atmospheric refraction constant</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            Apparent topocentric elevation angle after refraction</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">atmos_refract</span>
+        <span class="n">delta_e</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">atmospheric_refraction_correction</span><span class="p">(</span>
+            <span class="n">e0</span><span class="p">,</span> <span class="n">pres</span><span class="o">=</span><span class="n">pres</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="n">temp</span><span class="p">,</span> <span class="n">atmos_refract</span><span class="o">=</span><span class="n">a</span>
+        <span class="p">)</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">e0</span> <span class="o">+</span> <span class="n">delta_e</span>
+        <span class="k">return</span> <span class="n">e</span></div>
+
+
+<div class="viewcode-block" id="SPA.topocentric_zenith_angle">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.topocentric_zenith_angle">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">topocentric_zenith_angle</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Topocentric zenith angle</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            Topocentric elevation angle</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        theta : ndarray</span>
+<span class="sd">            Topocentric zenith angle</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">-</span> <span class="n">e</span>
+        <span class="k">return</span> <span class="n">theta</span></div>
+
+
+<div class="viewcode-block" id="SPA.sun_mean_longitude">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.sun_mean_longitude">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sun_mean_longitude</span><span class="p">(</span><span class="n">jme</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute mean sun longitude for all timesteps</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        M : ndarray</span>
+<span class="sd">            Mean sun longitude</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">280.4664567</span>
+            <span class="o">+</span> <span class="mf">360007.6982779</span> <span class="o">*</span> <span class="n">jme</span>
+            <span class="o">+</span> <span class="mf">0.03032028</span> <span class="o">*</span> <span class="n">jme</span><span class="o">**</span><span class="mi">2</span>
+            <span class="o">+</span> <span class="n">jme</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">49931</span>
+            <span class="o">-</span> <span class="n">jme</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">15300</span>
+            <span class="o">-</span> <span class="n">jme</span><span class="o">**</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2000000</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">M</span></div>
+
+
+<div class="viewcode-block" id="SPA.equation_of_time">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.equation_of_time">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">equation_of_time</span><span class="p">(</span><span class="n">jme</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Equation of time</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        jme : ndarray</span>
+<span class="sd">            Julian ephemeris millennium</span>
+<span class="sd">        alpha : ndarray</span>
+<span class="sd">            geocentric sun right ascension</span>
+<span class="sd">        delta_psi : ndarray</span>
+<span class="sd">            nutation longitude</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            True ecliptic obliquity</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        E : ndarray</span>
+<span class="sd">            Equation of time values for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="n">SPA</span><span class="o">.</span><span class="n">sun_mean_longitude</span><span class="p">(</span><span class="n">jme</span><span class="p">)</span>
+        <span class="n">E</span> <span class="o">=</span> <span class="n">M</span> <span class="o">-</span> <span class="mf">0.0057183</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">delta_psi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="c1"># limit between 0 and 360</span>
+        <span class="n">E</span> <span class="o">%=</span> <span class="mi">360</span>
+        <span class="c1"># convert to minutes</span>
+        <span class="n">E</span> <span class="o">*=</span> <span class="mi">4</span>
+        <span class="n">greater</span> <span class="o">=</span> <span class="n">E</span> <span class="o">&gt;</span> <span class="mi">20</span>
+        <span class="n">less</span> <span class="o">=</span> <span class="n">E</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">20</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="p">(</span><span class="n">E</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">E</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">E</span> <span class="o">=</span> <span class="n">greater</span> <span class="o">*</span> <span class="p">(</span><span class="n">E</span> <span class="o">-</span> <span class="mi">1440</span><span class="p">)</span> <span class="o">+</span> <span class="n">less</span> <span class="o">*</span> <span class="p">(</span><span class="n">E</span> <span class="o">+</span> <span class="mi">1440</span><span class="p">)</span> <span class="o">+</span> <span class="n">other</span> <span class="o">*</span> <span class="n">E</span>
+        <span class="k">return</span> <span class="n">E</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_temporal_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solely time dependant parameters for SPA:</span>
+<span class="sd">        - Apparent sidereal time (v)</span>
+<span class="sd">        - Geocentric sun right ascension angle (alpha)</span>
+<span class="sd">        - Geocentric sun delcination angle (delta)</span>
+<span class="sd">        - Equatorial horizontal parallax (xi)</span>
+<span class="sd">        - Equation of time (eot)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        v : ndarray</span>
+<span class="sd">            Apparent sidereal time degrees</span>
+<span class="sd">        alpha : ndarray</span>
+<span class="sd">            Geocentric sun right ascension in degrees</span>
+<span class="sd">        delta : ndarray</span>
+<span class="sd">            Geocentric sun delication in degrees</span>
+<span class="sd">        xi : ndarray</span>
+<span class="sd">            Equatorial horizontal parallax in degrees</span>
+<span class="sd">        eot : ndarray</span>
+<span class="sd">            Equation of time values for all timesteps</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">jd</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">jc</span><span class="p">,</span> <span class="n">jce</span><span class="p">,</span> <span class="n">jme</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_time</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">heliocentric_radius_vector</span><span class="p">(</span><span class="n">jme</span><span class="p">)</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">heliocentric_longitude</span><span class="p">(</span><span class="n">jme</span><span class="p">)</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">heliocentric_latitude</span><span class="p">(</span><span class="n">jme</span><span class="p">)</span>
+        <span class="n">Theta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">geocentric_longitude</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">geocentric_latitude</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+        <span class="n">delta_psi</span><span class="p">,</span> <span class="n">delta_epsilon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nutation_position</span><span class="p">(</span><span class="n">jce</span><span class="p">)</span>
+        <span class="n">epsilon0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_ecliptic_obliquity</span><span class="p">(</span><span class="n">jme</span><span class="p">)</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">true_ecliptic_obliquity</span><span class="p">(</span><span class="n">epsilon0</span><span class="p">,</span> <span class="n">delta_epsilon</span><span class="p">)</span>
+        <span class="n">delta_tau</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aberration_correction</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+        <span class="n">lamd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apparent_sun_longitude</span><span class="p">(</span><span class="n">Theta</span><span class="p">,</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">delta_tau</span><span class="p">)</span>
+        <span class="n">v0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_sidereal_time</span><span class="p">(</span><span class="n">jd</span><span class="p">,</span> <span class="n">jc</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apparent_sidereal_time</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+        <span class="n">alpha</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">geocentric_sun_position</span><span class="p">(</span><span class="n">lamd</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+        <span class="n">xi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">equatorial_horizontal_parallax</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+        <span class="n">eot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">equation_of_time</span><span class="p">(</span><span class="n">jme</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">delta_psi</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">eot</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_elevation_azimuth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar elevation and azimuth locations and times</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Solar elevation in degrees</span>
+<span class="sd">        phi : ndarray</span>
+<span class="sd">            Solar azimuth in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_temporal_params</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_hour_angle</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topocentric_solar_position</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">altitude</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">delta</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">e0</span><span class="p">,</span> <span class="n">phi</span>
+
+<div class="viewcode-block" id="SPA.solar_position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.solar_position">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">solar_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar position for all locations and times:</span>
+<span class="sd">        - elevation (e0)</span>
+<span class="sd">        - azimuth (phi)</span>
+<span class="sd">        - zenith (theta0)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Solar elevation in degrees</span>
+<span class="sd">        phi : ndarray</span>
+<span class="sd">            Solar azimuth in degrees</span>
+<span class="sd">        theta0 : ndarray</span>
+<span class="sd">            Solar zenith in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># compute temporal params</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elevation_azimuth</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="n">theta0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topocentric_zenith_angle</span><span class="p">(</span><span class="n">e0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">e0</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">theta0</span><span class="o">.</span><span class="n">T</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_solar_position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_solar_position">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_solar_position</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="mf">1013.25</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="mf">0.5667</span><span class="p">,</span>
+        <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the apparent (atmospheric refraction corrected) solar position</span>
+<span class="sd">        for all locations and times:</span>
+<span class="sd">        - elevation (e)</span>
+<span class="sd">        - zenith (theta)</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pressure : ndarray</span>
+<span class="sd">            Pressure at all sites in millibar</span>
+<span class="sd">        temperature : ndarray</span>
+<span class="sd">            Temperature at all sites in C</span>
+<span class="sd">        atmospheric_refract : float</span>
+<span class="sd">            Atmospheric refraction constant</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            Solar elevation after atmospheric refraction correction in degrees</span>
+<span class="sd">        theta : ndarray</span>
+<span class="sd">            Solar zenith after atmospheric refraction correction in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elevation_azimuth</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apparent_elevation_angle</span><span class="p">(</span>
+            <span class="n">e0</span><span class="p">,</span>
+            <span class="n">pres</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span>
+            <span class="n">temp</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+            <span class="n">atmos_refract</span><span class="o">=</span><span class="n">atmospheric_refraction</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topocentric_zenith_angle</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">e</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">theta</span><span class="o">.</span><span class="n">T</span></div>
+
+
+<div class="viewcode-block" id="SPA.position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.position">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">position</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar position:</span>
+<span class="sd">        - elevation</span>
+<span class="sd">        - azimuth</span>
+<span class="sd">        - zenith</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Solar elevation in degrees</span>
+<span class="sd">        phi : ndarray</span>
+<span class="sd">            Solar azimuth in degrees</span>
+<span class="sd">        theta0 : ndarray</span>
+<span class="sd">            Solar zenith in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta0</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">solar_position</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">e0</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta0</span></div>
+
+
+<div class="viewcode-block" id="SPA.elevation">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.elevation">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">elevation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar elevation</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e0 : ndarray</span>
+<span class="sd">            Solar elevation in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">e0</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">solar_position</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">e0</span></div>
+
+
+<div class="viewcode-block" id="SPA.azimuth">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.azimuth">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">azimuth</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar elevation</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        phi : ndarray</span>
+<span class="sd">            Solar azimuth in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">solar_position</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">phi</span></div>
+
+
+<div class="viewcode-block" id="SPA.zenith">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.zenith">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zenith</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar elevation</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        theta0 : ndarray</span>
+<span class="sd">            Solar zenith in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">solar_position</span><span class="p">(</span><span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">theta</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_position">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_position">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_position</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">time_index</span><span class="p">,</span>
+        <span class="n">lat_lon</span><span class="p">,</span>
+        <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="mf">1013.25</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="mf">0.5667</span><span class="p">,</span>
+        <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar position after atmospheric refraction correction</span>
+<span class="sd">        - elevation</span>
+<span class="sd">        - zenith</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        pressure : ndarray</span>
+<span class="sd">            Pressure at all sites in millibar</span>
+<span class="sd">        temperature : ndarray</span>
+<span class="sd">            Temperature at all sites in C</span>
+<span class="sd">        atmospheric_refract : float</span>
+<span class="sd">            Atmospheric refraction constant</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            Solar elevation after atmospheric refraction correction in degrees</span>
+<span class="sd">        theta : ndarray</span>
+<span class="sd">            Solar zenith after atmospheric refraction correction in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">atmospheric_refraction</span>
+        <span class="n">e</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">apparent_solar_position</span><span class="p">(</span>
+            <span class="n">pressure</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+            <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="n">a</span><span class="p">,</span>
+            <span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="n">theta</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_elevation">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_elevation">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_elevation</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">time_index</span><span class="p">,</span>
+        <span class="n">lat_lon</span><span class="p">,</span>
+        <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="mf">1013.25</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="mf">0.5667</span><span class="p">,</span>
+        <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar elevation after atmospheric refraction correction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        pressure : ndarray</span>
+<span class="sd">            Pressure at all sites in millibar</span>
+<span class="sd">        temperature : ndarray</span>
+<span class="sd">            Temperature at all sites in C</span>
+<span class="sd">        atmospheric_refract : float</span>
+<span class="sd">            Atmospheric refraction constant</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        e : ndarray</span>
+<span class="sd">            Solar elevation after atmospheric refraction correction in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">atmospheric_refraction</span>
+        <span class="n">e</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">apparent_solar_position</span><span class="p">(</span>
+            <span class="n">pressure</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+            <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="n">a</span><span class="p">,</span>
+            <span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">e</span></div>
+
+
+<div class="viewcode-block" id="SPA.apparent_zenith">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html#nsrdb.solar_position.spa.SPA.apparent_zenith">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apparent_zenith</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">time_index</span><span class="p">,</span>
+        <span class="n">lat_lon</span><span class="p">,</span>
+        <span class="n">elev</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">pressure</span><span class="o">=</span><span class="mf">1013.25</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="mf">0.5667</span><span class="p">,</span>
+        <span class="n">delta_t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the solar zenith angle after atmospheric refraction correction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_index : ndarray | pandas.DatetimeIndex | str</span>
+<span class="sd">            Datetime stamps of interest</span>
+<span class="sd">        lat_lon : ndarray</span>
+<span class="sd">            (latitude, longitude) for site(s) of interest</span>
+<span class="sd">        elev : ndarray</span>
+<span class="sd">            Elevation above sea-level for site(s) of interest</span>
+<span class="sd">        pressure : ndarray</span>
+<span class="sd">            Pressure at all sites in millibar</span>
+<span class="sd">        temperature : ndarray</span>
+<span class="sd">            Temperature at all sites in C</span>
+<span class="sd">        atmospheric_refract : float</span>
+<span class="sd">            Atmospheric refraction constant</span>
+<span class="sd">        delta_t : float | None</span>
+<span class="sd">            Difference between terrestrial time and UT1. Dependent on year.</span>
+<span class="sd">            None will infer delta_t value from time index (recommended).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        theta : ndarray</span>
+<span class="sd">            Solar zenith after atmospheric refraction correction in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spa</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">time_index</span><span class="p">,</span> <span class="n">lat_lon</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="n">elev</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">atmospheric_refraction</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">spa</span><span class="o">.</span><span class="n">apparent_solar_position</span><span class="p">(</span>
+            <span class="n">pressure</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span>
+            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+            <span class="n">atmospheric_refraction</span><span class="o">=</span><span class="n">a</span><span class="p">,</span>
+            <span class="n">delta_t</span><span class="o">=</span><span class="n">delta_t</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">theta</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+nsrdb.data\_model.merra.MerraVar
+================================
+
+.. currentmodule:: nsrdb.data_model.merra
+
+.. autoclass:: MerraVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MerraVar.pre_flight
+      ~MerraVar.scale_data
+      ~MerraVar.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MerraVar.DEFAULT_DIR
+      ~MerraVar.MERRA_ELEV
+      ~MerraVar.NN_METHOD
+      ~MerraVar.attrs
+      ~MerraVar.cache_file
+      ~MerraVar.chunks
+      ~MerraVar.data_source
+      ~MerraVar.date
+      ~MerraVar.date_stamp
+      ~MerraVar.description
+      ~MerraVar.doy
+      ~MerraVar.dset_name
+      ~MerraVar.dtype
+      ~MerraVar.elevation_correct
+      ~MerraVar.file
+      ~MerraVar.file_set
+      ~MerraVar.final_dtype
+      ~MerraVar.grid
+      ~MerraVar.mask
+      ~MerraVar.name
+      ~MerraVar.next_date
+      ~MerraVar.next_date_stamp
+      ~MerraVar.next_file
+      ~MerraVar.next_file_exists
+      ~MerraVar.next_pattern
+      ~MerraVar.pattern
+      ~MerraVar.physical_max
+      ~MerraVar.physical_min
+      ~MerraVar.scale_factor
+      ~MerraVar.source_data
+      ~MerraVar.source_dir
+      ~MerraVar.spatial_method
+      ~MerraVar.temporal_method
+      ~MerraVar.time_index
+      ~MerraVar.units
+      ~MerraVar.var_meta
+   
+   

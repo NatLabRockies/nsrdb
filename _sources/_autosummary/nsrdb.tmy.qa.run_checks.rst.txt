@@ -1,0 +1,6 @@
+nsrdb.tmy.qa.run\_checks
+========================
+
+.. currentmodule:: nsrdb.tmy.qa
+
+.. autofunction:: run_checks

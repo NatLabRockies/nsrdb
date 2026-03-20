@@ -1,0 +1,36 @@
+nsrdb.albedo.ims.ImsFileAcquisition
+===================================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autoclass:: ImsFileAcquisition
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ImsFileAcquisition.get_file
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ImsFileAcquisition.EARLIEST_1KM
+      ~ImsFileAcquisition.EARLIEST_4KM
+      ~ImsFileAcquisition.EARLIEST_VER_1_2
+      ~ImsFileAcquisition.EARLIEST_VER_1_3
+      ~ImsFileAcquisition.FILE_PATTERN
+      ~ImsFileAcquisition.PIXELS
+      ~ImsFileAcquisition.data
+   
+   

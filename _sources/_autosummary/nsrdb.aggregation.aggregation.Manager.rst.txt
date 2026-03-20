@@ -1,0 +1,41 @@
+nsrdb.aggregation.aggregation.Manager
+=====================================
+
+.. currentmodule:: nsrdb.aggregation.aggregation
+
+.. autoclass:: Manager
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Manager.DEFAULT_METHOD
+      ~Manager.add_temporal
+      ~Manager.get_dset_attrs
+      ~Manager.knn
+      ~Manager.parse_data
+      ~Manager.preflight
+      ~Manager.run_chunk
+      ~Manager.run_nn
+      ~Manager.write_output
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Manager.AGG_METHODS
+      ~Manager.meta
+      ~Manager.meta_chunk
+      ~Manager.time_index
+   
+   

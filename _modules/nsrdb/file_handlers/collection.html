@@ -1,0 +1,1475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nsrdb.file_handlers.collection &mdash; nsrdb 4.1.3.dev54+g454dc58b8 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2b7c224"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            nsrdb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/installation_usage.html">Installation and Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-1-install-from-pip-recommended-for-analysts">Option 1: Install from PIP (recommended for analysts):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../misc/installation.html#option-2-clone-repo-recommended-for-developers">Option 2: Clone repo (recommended for developers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../misc/installation.html#nsrdb-versions">NSRDB Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/albedo.html">Albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/albedo.html#welcome-to-the-nsrdb-albedo-library">Welcome to the NSRDB Albedo Library!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#albedo-processing-steps-for-the-nsrdb">Albedo Processing Steps for the NSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/albedo.html#downloading-modis-data">Downloading MODIS data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/all_sky.html">All Sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/all_sky.html#welcome-to-the-pxs-all-sky-irradiance-model">Welcome to the PXS All-Sky Irradiance Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/all_sky.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/config.html">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/config.html#nsrdb-dataset-config-meta-data">NSRDB Dataset Config / Meta Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview/data_model.html">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../overview/data_model.html#welcome-to-the-nsrdb-data-model">Welcome to the NSRDB Data Model!</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../overview/data_model.html#data-sources">Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/nsrdb.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.html">nsrdb.aggregation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.html">nsrdb.aggregation.aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Aggregation.html">nsrdb.aggregation.aggregation.Aggregation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.Manager.html">nsrdb.aggregation.aggregation.Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.aggregation.aggregation.MetaManager.html">nsrdb.aggregation.aggregation.MetaManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.html">nsrdb.albedo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.html">nsrdb.albedo.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.CompositeAlbedoDay.html">nsrdb.albedo.albedo.CompositeAlbedoDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.ModisClipper.html">nsrdb.albedo.albedo.ModisClipper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.albedo.AlbedoError.html">nsrdb.albedo.albedo.AlbedoError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.html">nsrdb.albedo.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.get_node_cmd.html">nsrdb.albedo.cli.get_node_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.cli.Date.html">nsrdb.albedo.cli.Date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.html">nsrdb.albedo.ims</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.download.html">nsrdb.albedo.ims.download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.get_dt.html">nsrdb.albedo.ims.get_dt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.uncompress.html">nsrdb.albedo.ims.uncompress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataAcquisition.html">nsrdb.albedo.ims.ImsDataAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDay.html">nsrdb.albedo.ims.ImsDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsFileAcquisition.html">nsrdb.albedo.ims.ImsFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsGapFill.html">nsrdb.albedo.ims.ImsGapFill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.MetaFiles.html">nsrdb.albedo.ims.MetaFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsDataNotFoundError.html">nsrdb.albedo.ims.ImsDataNotFoundError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.ims.ImsError.html">nsrdb.albedo.ims.ImsError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.html">nsrdb.albedo.modis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisDay.html">nsrdb.albedo.modis.ModisDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisFileAcquisition.html">nsrdb.albedo.modis.ModisFileAcquisition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis.ModisError.html">nsrdb.albedo.modis.ModisError</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.html">nsrdb.albedo.modis_v6_download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.daterange.html">nsrdb.albedo.modis_v6_download.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.modis_v6_download.main.html">nsrdb.albedo.modis_v6_download.main</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.html">nsrdb.albedo.temperature_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.DataHandler.html">nsrdb.albedo.temperature_model.DataHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.albedo.temperature_model.TemperatureModel.html">nsrdb.albedo.temperature_model.TemperatureModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.html">nsrdb.all_sky</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.html">nsrdb.all_sky.all_sky</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky.html">nsrdb.all_sky.all_sky.all_sky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5.html">nsrdb.all_sky.all_sky.all_sky_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.all_sky.all_sky_h5_parallel.html">nsrdb.all_sky.all_sky.all_sky_h5_parallel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.html">nsrdb.all_sky.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.all_sky.utilities.scale_all_sky_outputs.html">nsrdb.all_sky.utilities.scale_all_sky_outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.html">nsrdb.blend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.html">nsrdb.blend.blend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.blend.blend.Blender.html">nsrdb.blend.blend.Blender</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.html">nsrdb.cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html">nsrdb.cli.DictOrFile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.cli.DictOrFile.html#nsrdb.cli.DictOrFile"><code class="docutils literal notranslate"><span class="pre">DictOrFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.config.html">nsrdb.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.html">nsrdb.config.create_configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.config.create_configs.CreateConfigs.html">nsrdb.config.create_configs.CreateConfigs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.html">nsrdb.data_model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.html">nsrdb.data_model.albedo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.albedo.AlbedoVar.html">nsrdb.data_model.albedo.AlbedoVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.html">nsrdb.data_model.asymmetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.asymmetry.AsymVar.html">nsrdb.data_model.asymmetry.AsymVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.html">nsrdb.data_model.base_handler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.AncillaryVarHandler.html">nsrdb.data_model.base_handler.AncillaryVarHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.base_handler.BaseDerivedVar.html">nsrdb.data_model.base_handler.BaseDerivedVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.html">nsrdb.data_model.clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudCoords.html">nsrdb.data_model.clouds.CloudCoords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVar.html">nsrdb.data_model.clouds.CloudVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingle.html">nsrdb.data_model.clouds.CloudVarSingle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleH5.html">nsrdb.data_model.clouds.CloudVarSingleH5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.clouds.CloudVarSingleNC.html">nsrdb.data_model.clouds.CloudVarSingleNC</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.html">nsrdb.data_model.data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.data_model.DataModel.html">nsrdb.data_model.data_model.DataModel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.html">nsrdb.data_model.gfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsDewPoint.html">nsrdb.data_model.gfs.GfsDewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsFiles.html">nsrdb.data_model.gfs.GfsFiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVar.html">nsrdb.data_model.gfs.GfsVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.gfs.GfsVarSingle.html">nsrdb.data_model.gfs.GfsVarSingle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.html">nsrdb.data_model.maiac_aod</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.maiac_aod.MaiacVar.html">nsrdb.data_model.maiac_aod.MaiacVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.html">nsrdb.data_model.merra</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.DewPoint.html">nsrdb.data_model.merra.DewPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.MerraVar.html">nsrdb.data_model.merra.MerraVar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.merra.RelativeHumidity.html">nsrdb.data_model.merra.RelativeHumidity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.html">nsrdb.data_model.nrel_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.nrel_data.NrelVar.html">nsrdb.data_model.nrel_data.NrelVar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.html">nsrdb.data_model.solar_zenith_angle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.solar_zenith_angle.SolarZenithAngle.html">nsrdb.data_model.solar_zenith_angle.SolarZenithAngle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.html">nsrdb.data_model.variable_factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.data_model.variable_factory.VarFactory.html">nsrdb.data_model.variable_factory.VarFactory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.html">nsrdb.file_handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.html">nsrdb.file_handlers.collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html">nsrdb.file_handlers.collection.Collector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.html">nsrdb.file_handlers.file_system</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.file_system.NSRDBFileSystem.html">nsrdb.file_handlers.file_system.NSRDBFileSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.html">nsrdb.file_handlers.outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.outputs.Outputs.html">nsrdb.file_handlers.outputs.Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.html">nsrdb.file_handlers.resource</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.MultiFileResource.html">nsrdb.file_handlers.resource.MultiFileResource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.resource.Resource.html">nsrdb.file_handlers.resource.Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.html">nsrdb.file_handlers.surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.file_handlers.surfrad.Surfrad.html">nsrdb.file_handlers.surfrad.Surfrad</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.html">nsrdb.gap_fill</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.html">nsrdb.gap_fill.cloud_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.cloud_fill.CloudGapFill.html">nsrdb.gap_fill.cloud_fill.CloudGapFill</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.html">nsrdb.gap_fill.irradiance_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.enforce_clearsky.html">nsrdb.gap_fill.irradiance_fill.enforce_clearsky</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.gap_fill_irrad.html">nsrdb.gap_fill.irradiance_fill.gap_fill_irrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.make_fill_flag.html">nsrdb.gap_fill.irradiance_fill.make_fill_flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.irradiance_fill.missing_cld_props.html">nsrdb.gap_fill.irradiance_fill.missing_cld_props</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.html">nsrdb.gap_fill.mlclouds_fill</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.gap_fill.mlclouds_fill.MLCloudsFill.html">nsrdb.gap_fill.mlclouds_fill.MLCloudsFill</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.html">nsrdb.mymean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.html">nsrdb.mymean.mymean</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.mymean.mymean.MyMean.html">nsrdb.mymean.mymean.MyMean</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.html">nsrdb.nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html">nsrdb.nsrdb.NSRDB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.nsrdb.NSRDB.html#nsrdb.nsrdb.NSRDB"><code class="docutils literal notranslate"><span class="pre">NSRDB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.html">nsrdb.preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.html">nsrdb.preprocessing.nasa_data_model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.run_jobs.html">nsrdb.preprocessing.nasa_data_model.run_jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.preprocessing.nasa_data_model.NasaDataModel.html">nsrdb.preprocessing.nasa_data_model.NasaDataModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.html">nsrdb.solar_position</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.html">nsrdb.solar_position.solpos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.solpos.SolPos.html">nsrdb.solar_position.solpos.SolPos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.html">nsrdb.solar_position.spa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa.SPA.html">nsrdb.solar_position.spa.SPA</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.html">nsrdb.solar_position.spa_tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.DeltaTable.html">nsrdb.solar_position.spa_tables.DeltaTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.solar_position.spa_tables.SPAtables.html">nsrdb.solar_position.spa_tables.SPAtables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.html">nsrdb.tmy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.html">nsrdb.tmy.cdf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.cdf.Cdf.html">nsrdb.tmy.cdf.Cdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.html">nsrdb.tmy.qa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.qa.run_checks.html">nsrdb.tmy.qa.run_checks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.html">nsrdb.tmy.tmy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy.Tmy.html">nsrdb.tmy.tmy.Tmy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.html">nsrdb.tmy.tmy_runner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.tmy_runner.TmyRunner.html">nsrdb.tmy.tmy_runner.TmyRunner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.html">nsrdb.tmy.utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.drop_leap.html">nsrdb.tmy.utilities.drop_leap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.tmy.utilities.make_time_masks.html">nsrdb.tmy.utilities.make_time_masks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.html">nsrdb.utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html">nsrdb.utilities.ModuleName</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.ModuleName.html#nsrdb.utilities.ModuleName"><code class="docutils literal notranslate"><span class="pre">ModuleName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.html">nsrdb.utilities.cli</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.get_doys.html">nsrdb.utilities.cli.get_doys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.BaseCLI.html">nsrdb.utilities.cli.BaseCLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.cli.SlurmManager.html">nsrdb.utilities.cli.SlurmManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.html">nsrdb.utilities.extract_nsrdb_data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB.html">nsrdb.utilities.extract_nsrdb_data.ExtractNSRDB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico.html">nsrdb.utilities.extract_nsrdb_data.ExtractPuertoRico</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractTestData.html">nsrdb.utilities.extract_nsrdb_data.ExtractTestData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_nsrdb_data.ExtractValidationData.html">nsrdb.utilities.extract_nsrdb_data.ExtractValidationData</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.html">nsrdb.utilities.extract_surfrad</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.extract_all.html">nsrdb.utilities.extract_surfrad.extract_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.filter_measurement_df.html">nsrdb.utilities.extract_surfrad.filter_measurement_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_dat_table.html">nsrdb.utilities.extract_surfrad.get_dat_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.get_lw1_table.html">nsrdb.utilities.extract_surfrad.get_lw1_table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.extract_surfrad.surfrad_to_h5.html">nsrdb.utilities.extract_surfrad.surfrad_to_h5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.html">nsrdb.utilities.file_utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.clean_meta.html">nsrdb.utilities.file_utils.clean_meta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_directory.html">nsrdb.utilities.file_utils.convert_directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_h4.html">nsrdb.utilities.file_utils.convert_h4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_parallel.html">nsrdb.utilities.file_utils.convert_list_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.convert_list_serial.html">nsrdb.utilities.file_utils.convert_list_serial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.daterange.html">nsrdb.utilities.file_utils.daterange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_conversion_list.html">nsrdb.utilities.file_utils.get_conversion_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.get_format_keys.html">nsrdb.utilities.file_utils.get_format_keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.pd_date_range.html">nsrdb.utilities.file_utils.pd_date_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.repack_h5.html">nsrdb.utilities.file_utils.repack_h5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.str_replace_dict.html">nsrdb.utilities.file_utils.str_replace_dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.ts_freq_check.html">nsrdb.utilities.file_utils.ts_freq_check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.unzip_gz.html">nsrdb.utilities.file_utils.unzip_gz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.file_utils.url_download.html">nsrdb.utilities.file_utils.url_download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.html">nsrdb.utilities.interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.agg.html">nsrdb.utilities.interpolation.agg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.idw.html">nsrdb.utilities.interpolation.idw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.lower_data.html">nsrdb.utilities.interpolation.lower_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.nn.html">nsrdb.utilities.interpolation.nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.parse_method.html">nsrdb.utilities.interpolation.parse_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.raise_data.html">nsrdb.utilities.interpolation.raise_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.remove_tz.html">nsrdb.utilities.interpolation.remove_tz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.spatial_interp.html">nsrdb.utilities.interpolation.spatial_interp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_lin.html">nsrdb.utilities.interpolation.temporal_lin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.interpolation.temporal_step.html">nsrdb.utilities.interpolation.temporal_step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.html">nsrdb.utilities.nearest_neighbor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.geo_nn.html">nsrdb.utilities.nearest_neighbor.geo_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.knn.html">nsrdb.utilities.nearest_neighbor.knn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.rad_to_dist.html">nsrdb.utilities.nearest_neighbor.rad_to_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.reg_grid_nn.html">nsrdb.utilities.nearest_neighbor.reg_grid_nn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.nearest_neighbor.to_rads.html">nsrdb.utilities.nearest_neighbor.to_rads</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.html">nsrdb.utilities.plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Spatial.html">nsrdb.utilities.plots.Spatial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.plots.Temporal.html">nsrdb.utilities.plots.Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.html">nsrdb.utilities.pytest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.pytest.execute_pytest.html">nsrdb.utilities.pytest.execute_pytest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.html">nsrdb.utilities.sky_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.sky_class.SkyClass.html">nsrdb.utilities.sky_class.SkyClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.html">nsrdb.utilities.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.N.html">nsrdb.utilities.statistics.N</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae.html">nsrdb.utilities.statistics.mae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mae_perc.html">nsrdb.utilities.statistics.mae_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe.html">nsrdb.utilities.statistics.mbe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.mbe_perc.html">nsrdb.utilities.statistics.mbe_perc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse.html">nsrdb.utilities.statistics.rmse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/nsrdb.utilities.statistics.rmse_perc.html">nsrdb.utilities.statistics.rmse_perc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_cli/cli.html">CLI reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_cli/nsrdb.html">nsrdb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-aggregate">aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-all-sky">all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-batch">batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-blend">blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-cloud-fill">cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-aggregate">collect-aggregate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-blend">collect-blend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-daily">collect-daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-data-model">collect-data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-final">collect-final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-collect-tmy">collect-tmy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-create-configs">create-configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-daily-all-sky">daily-all-sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-data-model">data-model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-ml-cloud-fill">ml-cloud-fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-pipeline">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_cli/nsrdb.html#nsrdb-tmy">tmy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">nsrdb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nsrdb.file_handlers.collection</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nsrdb.file_handlers.collection</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;NSRDB chunked file collection tools.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">as_completed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="kn">import</span> <span class="n">warn</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex</span><span class="w"> </span><span class="kn">import</span> <span class="n">NSRDB</span> <span class="k">as</span> <span class="n">NSRDBHandler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultiFileNSRDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex.utilities.execution</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpawnProcessPool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rex.utilities.loggers</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_logger</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.data_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">VarFactory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.file_handlers.outputs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Outputs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nsrdb.utilities.file_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">pd_date_range</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Collector">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Collector</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;NSRDB file collection framework&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">dset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        collect_dir : str</span>
+<span class="sd">            Directory that files are being collected from</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Dataset/var name that is searched for in file names in collect_dir.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">collect_dir</span> <span class="o">=</span> <span class="n">collect_dir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_flist</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">dset</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flist</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                <span class="s1">&#39;No &quot;</span><span class="si">{}</span><span class="s1">&quot; files found in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">verify_flist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">dset</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Collector.verify_flist">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.verify_flist">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">verify_flist</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Verify the correct number of files in d for var. Raise if bad flist.</span>
+
+<span class="sd">        Filename requirements:</span>
+<span class="sd">         - Expects file names with leading &quot;YYYYMMDD_&quot;.</span>
+<span class="sd">         - Must have var in the file name.</span>
+<span class="sd">         - Should end with &quot;.h5&quot;</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flist : list</span>
+<span class="sd">            List of .h5 files in directory d that contain the var string.</span>
+<span class="sd">            Sorted by integer before the first underscore in the filename.</span>
+<span class="sd">        d : str</span>
+<span class="sd">            Directory to get file list from.</span>
+<span class="sd">        var : str</span>
+<span class="sd">            Variable name that is searched for in files in d.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">date_str_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">]</span>
+        <span class="n">date_str_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">date_str_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">date_str_start</span> <span class="o">=</span> <span class="n">date_str_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">date_str_end</span> <span class="o">=</span> <span class="n">date_str_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">date_str_start</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">date_str_end</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">date_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span>
+                <span class="n">year</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date_str_start</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]),</span>
+                <span class="n">month</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date_str_start</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]),</span>
+                <span class="n">day</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date_str_start</span><span class="p">[</span><span class="mi">6</span><span class="p">:]),</span>
+            <span class="p">)</span>
+            <span class="n">date_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span>
+                <span class="n">year</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date_str_end</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]),</span>
+                <span class="n">month</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date_str_end</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]),</span>
+                <span class="n">day</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">date_str_end</span><span class="p">[</span><span class="mi">6</span><span class="p">:]),</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Could not parse date: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date_str_start</span><span class="p">))</span>
+
+        <span class="n">date_end</span> <span class="o">+=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">ti</span> <span class="o">=</span> <span class="n">pd_date_range</span><span class="p">(</span>
+            <span class="n">start</span><span class="o">=</span><span class="n">date_start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">date_end</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;1D&#39;</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s1">&#39;left&#39;</span>
+        <span class="p">)</span>
+
+        <span class="n">missing</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">ti</span><span class="p">:</span>
+            <span class="n">date_str</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">date_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">date_str_list</span><span class="p">:</span>
+                <span class="n">missing</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                <span class="s1">&#39;Missing the following date files for &#39;</span> <span class="s1">&#39;&quot;</span><span class="si">{}</span><span class="s1">&quot;:</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">var</span><span class="p">,</span> <span class="n">missing</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s1">&#39;Good file count of </span><span class="si">{}</span><span class="s1"> for &quot;</span><span class="si">{}</span><span class="s1">&quot; in year </span><span class="si">{}</span><span class="s1"> in dir: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">),</span> <span class="n">var</span><span class="p">,</span> <span class="n">date_start</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">d</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Collector.filter_flist">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.filter_flist">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">filter_flist</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">dset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filter file list so that only remaining files have given dset.&quot;&quot;&quot;</span>
+        <span class="n">filt_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">:</span>
+            <span class="n">fp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fobj</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">fobj</span><span class="o">.</span><span class="n">dsets</span><span class="p">:</span>
+                    <span class="n">filt_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Found files for &quot;</span><span class="si">{</span><span class="n">dset</span><span class="si">}</span><span class="s1">&quot;: </span><span class="si">{</span><span class="n">filt_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">filt_list</span></div>
+
+
+<div class="viewcode-block" id="Collector.get_flist">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.get_flist">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_flist</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a date-sorted .h5 file list for a given var.</span>
+
+<span class="sd">        Filename requirements:</span>
+<span class="sd">         - Expects file names with leading &quot;YYYYMMDD_&quot;.</span>
+<span class="sd">         - Must have var in the file name.</span>
+<span class="sd">         - Should end with &quot;.h5&quot;</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        d : str</span>
+<span class="sd">            Directory to get file list from.</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Variable name that is searched for in files in d.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        flist : list</span>
+<span class="sd">            List of .h5 files in directory d that contain the var string.</span>
+<span class="sd">            Sorted by integer before the first underscore in the filename.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">temp</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+        <span class="n">flist</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">filter_flist</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">collect_dir</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">dset</span><span class="o">=</span><span class="n">dset</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span></div>
+
+
+<div class="viewcode-block" id="Collector.get_slices">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.get_slices">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_slices</span><span class="p">(</span><span class="n">final_time_index</span><span class="p">,</span> <span class="n">final_meta</span><span class="p">,</span> <span class="n">new_time_index</span><span class="p">,</span> <span class="n">new_meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get index slices where the new ti/meta belong in the final ti/meta.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        final_time_index : pd.Datetimeindex</span>
+<span class="sd">            Time index of the final file that new_time_index is being written</span>
+<span class="sd">            to.</span>
+<span class="sd">        final_meta : pd.DataFrame</span>
+<span class="sd">            Meta data of the final file that new_meta is being written to.</span>
+<span class="sd">        new_time_index : pd.Datetimeindex</span>
+<span class="sd">            Chunk time index that is a subset of the final_time_index.</span>
+<span class="sd">        new_meta : pd.DataFrame</span>
+<span class="sd">            Chunk meta data that is a subset of the final_meta.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        row_slice : slice</span>
+<span class="sd">            final_time_index[row_slice] = new_time_index</span>
+<span class="sd">        col_slice : slice</span>
+<span class="sd">            final_meta[col_slice] = new_meta</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">final_index</span> <span class="o">=</span> <span class="n">final_meta</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">new_index</span> <span class="o">=</span> <span class="n">new_meta</span><span class="o">.</span><span class="n">index</span>
+        <span class="k">if</span> <span class="s1">&#39;gid&#39;</span> <span class="ow">in</span> <span class="n">final_meta</span><span class="p">:</span>
+            <span class="n">final_index</span> <span class="o">=</span> <span class="n">final_meta</span><span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;gid&#39;</span> <span class="ow">in</span> <span class="n">new_meta</span><span class="p">:</span>
+            <span class="n">new_index</span> <span class="o">=</span> <span class="n">new_meta</span><span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">]</span>
+
+        <span class="n">row_loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">final_time_index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">new_time_index</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">col_loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">final_index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">new_index</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">row_loc</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Could not find row locations in file collection. &#39;</span>
+                <span class="s1">&#39;New time index: </span><span class="si">{}</span><span class="s1"> final time index: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">new_time_index</span><span class="p">,</span> <span class="n">final_time_index</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_loc</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Could not find col locations in file collection. &#39;</span>
+                <span class="s1">&#39;New gid index: </span><span class="si">{}</span><span class="s1"> final gid index: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">new_index</span><span class="p">,</span> <span class="n">final_index</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">row_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">row_loc</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">row_loc</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">col_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">col_loc</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">col_loc</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">col_slice</span><span class="o">.</span><span class="n">stop</span> <span class="o">-</span> <span class="n">col_slice</span><span class="o">.</span><span class="n">start</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_loc</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Indices for coordinates are not ascending and / or &#39;</span>
+                <span class="s1">&#39;contiguous.&#39;</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">col_slice</span> <span class="o">=</span> <span class="n">col_loc</span>
+
+        <span class="k">return</span> <span class="n">row_slice</span><span class="p">,</span> <span class="n">col_loc</span></div>
+
+
+<div class="viewcode-block" id="Collector.get_data">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.get_data">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span>
+        <span class="n">fpath</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">sites</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retreive a data array from a chunked file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fpath : str</span>
+<span class="sd">            h5 file to get data from</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            dataset to retrieve data from fpath.</span>
+<span class="sd">        time_index : pd.Datetimeindex</span>
+<span class="sd">            Time index of the final file.</span>
+<span class="sd">        final_meta : pd.DataFrame</span>
+<span class="sd">            Meta data of the final file.</span>
+<span class="sd">        scale_factor : int | float</span>
+<span class="sd">            Final destination scale factor after collection. If the data</span>
+<span class="sd">            retrieval from the files to be collected has a different scale</span>
+<span class="sd">            factor, the collected data will be rescaled and returned as</span>
+<span class="sd">            float32.</span>
+<span class="sd">        dtype : np.dtype</span>
+<span class="sd">            Final dtype to return data as</span>
+<span class="sd">        sites : None | np.ndarray</span>
+<span class="sd">            Subset of site indices to collect. None collects all sites.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        f_data : np.ndarray</span>
+<span class="sd">            Data array from the fpath cast as input dtype.</span>
+<span class="sd">        row_slice : slice</span>
+<span class="sd">            final_time_index[row_slice] = new_time_index</span>
+<span class="sd">        col_slice : slice</span>
+<span class="sd">            final_meta[col_slice] = new_meta</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">unscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f_ti</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">time_index</span>
+            <span class="n">f_meta</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">meta</span>
+            <span class="n">source_scale_factor</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="n">dset</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scale_factor&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">dset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">dsets</span><span class="p">:</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="s1">&#39;Trying to collect dataset &quot;</span><span class="si">{}</span><span class="s1">&quot; but cannot find in &#39;</span>
+                    <span class="s1">&#39;available: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">dsets</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+            <span class="n">f_data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">][</span><span class="o">...</span><span class="p">]</span> <span class="k">if</span> <span class="n">sites</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">][:,</span> <span class="n">sites</span><span class="p">]</span>
+
+        <span class="c1"># use gid in chunked file in case results are chunked by site.</span>
+        <span class="k">if</span> <span class="s1">&#39;gid&#39;</span> <span class="ow">in</span> <span class="n">f_meta</span><span class="p">:</span>
+            <span class="n">f_meta</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">f_meta</span><span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">]</span>
+
+        <span class="n">row_slice</span><span class="p">,</span> <span class="n">col_slice</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">get_slices</span><span class="p">(</span>
+            <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">f_ti</span><span class="p">,</span> <span class="n">f_meta</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">scale_factor</span> <span class="o">!=</span> <span class="n">source_scale_factor</span><span class="p">:</span>
+            <span class="n">f_data</span> <span class="o">=</span> <span class="n">f_data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="n">f_data</span> <span class="o">*=</span> <span class="n">scale_factor</span> <span class="o">/</span> <span class="n">source_scale_factor</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">):</span>
+            <span class="n">f_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">f_data</span><span class="p">)</span>
+
+        <span class="n">f_data</span> <span class="o">=</span> <span class="n">f_data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">f_data</span><span class="p">,</span> <span class="n">row_slice</span><span class="p">,</span> <span class="n">col_slice</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_special_attrs</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">dset_attrs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Enforce any special dataset attributes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Name of dataset</span>
+<span class="sd">        dset_attrs : dict</span>
+<span class="sd">            Attribute key-value pair dictionary for dset.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dset_attrs : dict</span>
+<span class="sd">            Attributes for dset with any special formatting.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="s1">&#39;fill_flag&#39;</span> <span class="ow">in</span> <span class="n">dset</span><span class="p">:</span>
+            <span class="n">dset_attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;percent of filled timesteps&#39;</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="s1">&#39;scale_factor&#39;</span> <span class="ow">in</span> <span class="n">dset_attrs</span>
+            <span class="ow">and</span> <span class="s1">&#39;psm_scale_factor&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dset_attrs</span>
+        <span class="p">):</span>
+            <span class="n">dset_attrs</span><span class="p">[</span><span class="s1">&#39;psm_scale_factor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dset_attrs</span><span class="p">[</span><span class="s1">&#39;scale_factor&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s1">&#39;units&#39;</span> <span class="ow">in</span> <span class="n">dset_attrs</span> <span class="ow">and</span> <span class="s1">&#39;psm_units&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dset_attrs</span><span class="p">:</span>
+            <span class="n">dset_attrs</span><span class="p">[</span><span class="s1">&#39;psm_units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dset_attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">dset_attrs</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_collection_attrs</span><span class="p">(</span>
+        <span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">sites</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort_key</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get important dataset attributes from a file list to be collected.</span>
+
+<span class="sd">        Assumes the file list is chunked in time (row chunked).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flist : list</span>
+<span class="sd">            List of chunked filenames in collect_dir to collect.</span>
+<span class="sd">        collect_dir : str</span>
+<span class="sd">            Directory of chunked files (flist).</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Dataset name to collect.</span>
+<span class="sd">        sites : None | np.ndarray</span>
+<span class="sd">            Subset of site indices to collect. None collects all sites.</span>
+<span class="sd">        sort : bool</span>
+<span class="sd">            flag to sort flist to determine meta data order.</span>
+<span class="sd">        sort_key : None | fun</span>
+<span class="sd">            Optional sort key to sort flist by (determines how meta is built</span>
+<span class="sd">            if f_out does not exist).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        time_index : pd.datetimeindex</span>
+<span class="sd">            Concatenated full size datetime index from the flist that is</span>
+<span class="sd">            being collected</span>
+<span class="sd">        meta : pd.DataFrame</span>
+<span class="sd">            Concatenated full size meta data from the flist that is being</span>
+<span class="sd">            collected</span>
+<span class="sd">        shape : tuple</span>
+<span class="sd">            Output (collected) dataset shape</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s1">&#39;Getting collection attrs from collect_dir=</span><span class="si">%s</span><span class="s1">, flist=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">collect_dir</span><span class="p">,</span>
+            <span class="n">flist</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">sort</span><span class="p">:</span>
+            <span class="n">flist</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sort_key</span><span class="p">)</span>
+
+        <span class="n">time_index</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">:</span>
+            <span class="n">fp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">meta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">meta</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">time_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">time_index</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">time_index</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">time_index</span> <span class="o">=</span> <span class="n">time_index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">time_index</span><span class="p">)</span>
+
+        <span class="n">time_index</span> <span class="o">=</span> <span class="n">time_index</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+        <span class="n">time_index</span> <span class="o">=</span> <span class="n">time_index</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s1">&#39;gid&#39;</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="s1">&#39;latitude&#39;</span> <span class="ow">in</span> <span class="n">meta</span> <span class="ow">and</span> <span class="s1">&#39;longitude&#39;</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">sites</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sites</span><span class="p">,</span> <span class="p">:]</span>
+
+        <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_index</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">meta</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">shape</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_init_collected_h5</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the output h5 file to save collected data to.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f_out : str</span>
+<span class="sd">            Output file path - must not yet exist.</span>
+<span class="sd">        time_index : pd.datetimeindex</span>
+<span class="sd">            Full datetime index of collected data.</span>
+<span class="sd">        meta : pd.DataFrame</span>
+<span class="sd">            Full meta dataframe collected data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w-&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Initializing collection output file: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f_out</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Initializing collection output file with shape </span><span class="si">{}</span><span class="s1"> &#39;</span>
+                <span class="s1">&#39;and meta data:</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">time_index</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">meta</span><span class="p">)),</span> <span class="n">meta</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">f</span><span class="p">[</span><span class="s1">&#39;time_index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_index</span>
+            <span class="n">f</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ensure_dset_in_output</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">var_meta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure that dset is initialized in f_out and initialize if not.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        f_out : str</span>
+<span class="sd">            Pre-existing H5 file output path</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Dataset name</span>
+<span class="sd">        var_meta : str | pd.DataFrame | None</span>
+<span class="sd">            CSV file or dataframe containing meta data for all NSRDB variables.</span>
+<span class="sd">            Defaults to the NSRDB var meta csv in git repo.</span>
+<span class="sd">        data : np.ndarray | None</span>
+<span class="sd">            Optional data to write to dataset if initializing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">dset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">dsets</span><span class="p">:</span>
+                <span class="n">attrs</span><span class="p">,</span> <span class="n">chunks</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">VarFactory</span><span class="o">.</span><span class="n">get_dset_attrs</span><span class="p">(</span>
+                    <span class="n">dset</span><span class="p">,</span> <span class="n">var_meta</span><span class="o">=</span><span class="n">var_meta</span>
+                <span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s1">&#39;Initializing dataset &quot;</span><span class="si">{}</span><span class="s1">&quot; with shape </span><span class="si">{}</span><span class="s1"> and &#39;</span>
+                    <span class="s1">&#39;dtype </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">_create_dset</span><span class="p">(</span>
+                    <span class="n">dset</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="n">chunks</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">attrs</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span>
+                <span class="p">)</span>
+
+<div class="viewcode-block" id="Collector.collect_flist">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.collect_flist">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">collect_flist</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">flist</span><span class="p">,</span>
+        <span class="n">collect_dir</span><span class="p">,</span>
+        <span class="n">f_out</span><span class="p">,</span>
+        <span class="n">dset</span><span class="p">,</span>
+        <span class="n">sites</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">sort_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">var_meta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Collect a dataset from a file list with data pre-init.</span>
+
+<span class="sd">        Note</span>
+<span class="sd">        ----</span>
+<span class="sd">        Collects data that can be chunked in both space and time.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flist : list</span>
+<span class="sd">            List of chunked filenames in collect_dir to collect.</span>
+<span class="sd">        collect_dir : str</span>
+<span class="sd">            Directory of chunked files (flist).</span>
+<span class="sd">        f_out : str</span>
+<span class="sd">            File path of final output file.</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Dataset name to collect.</span>
+<span class="sd">        sites : None | np.ndarray</span>
+<span class="sd">            Subset of site indices to collect. None collects all sites.</span>
+<span class="sd">        sort : bool</span>
+<span class="sd">            flag to sort flist to determine meta data order.</span>
+<span class="sd">        sort_key : None | fun</span>
+<span class="sd">            Optional sort key to sort flist by (determines how meta is built</span>
+<span class="sd">            if f_out does not exist).</span>
+<span class="sd">        var_meta : str | pd.DataFrame | None</span>
+<span class="sd">            CSV file or dataframe containing meta data for all NSRDB variables.</span>
+<span class="sd">            Defaults to the NSRDB var meta csv in git repo.</span>
+<span class="sd">        max_workers : int | None</span>
+<span class="sd">            Number of workers to use in parallel. 1 runs serial,</span>
+<span class="sd">            None uses all available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">flist</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">filter_flist</span><span class="p">(</span>
+            <span class="n">flist</span><span class="o">=</span><span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="o">=</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">dset</span><span class="o">=</span><span class="n">dset</span>
+        <span class="p">)</span>
+        <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">_get_collection_attrs</span><span class="p">(</span>
+            <span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">sites</span><span class="o">=</span><span class="n">sites</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span> <span class="n">sort_key</span><span class="o">=</span><span class="n">sort_key</span>
+        <span class="p">)</span>
+
+        <span class="n">attrs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">final_dtype</span> <span class="o">=</span> <span class="n">VarFactory</span><span class="o">.</span><span class="n">get_dset_attrs</span><span class="p">(</span>
+            <span class="n">dset</span><span class="p">,</span> <span class="n">var_meta</span><span class="o">=</span><span class="n">var_meta</span>
+        <span class="p">)</span>
+        <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scale_factor&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s1">&#39;Collecting file list of shape </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">flist</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">final_dtype</span><span class="p">)</span>
+        <span class="n">mem</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s1">&#39;Initializing output dataset &quot;</span><span class="si">{}</span><span class="s1">&quot; in-memory with shape &#39;</span>
+            <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> and dtype </span><span class="si">{}</span><span class="s1">. Current memory usage is &#39;</span>
+            <span class="s1">&#39;</span><span class="si">{:.3f}</span><span class="s1"> GB out of </span><span class="si">{:.3f}</span><span class="s1"> GB total.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">dset</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">final_dtype</span><span class="p">,</span> <span class="n">mem</span><span class="o">.</span><span class="n">used</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span> <span class="n">mem</span><span class="o">.</span><span class="n">total</span> <span class="o">/</span> <span class="mf">1e9</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">max_workers</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fname</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flist</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                    <span class="s1">&#39;Collecting data from file </span><span class="si">{}</span><span class="s1"> out of </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+                <span class="n">f_data</span><span class="p">,</span> <span class="n">row_slice</span><span class="p">,</span> <span class="n">col_slice</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span>
+                    <span class="n">fpath</span><span class="p">,</span>
+                    <span class="n">dset</span><span class="p">,</span>
+                    <span class="n">time_index</span><span class="p">,</span>
+                    <span class="n">meta</span><span class="p">,</span>
+                    <span class="n">scale_factor</span><span class="p">,</span>
+                    <span class="n">final_dtype</span><span class="p">,</span>
+                    <span class="n">sites</span><span class="o">=</span><span class="n">sites</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">row_slice</span><span class="p">,</span> <span class="n">col_slice</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Running parallel collection on </span><span class="si">{}</span><span class="s1"> workers.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">max_workers</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="n">futures</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">completed</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">loggers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nsrdb&#39;</span><span class="p">]</span>
+            <span class="k">with</span> <span class="n">SpawnProcessPool</span><span class="p">(</span>
+                <span class="n">loggers</span><span class="o">=</span><span class="n">loggers</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">:</span>
+                    <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+                    <span class="n">futures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                            <span class="n">Collector</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span>
+                            <span class="n">fpath</span><span class="p">,</span>
+                            <span class="n">dset</span><span class="p">,</span>
+                            <span class="n">time_index</span><span class="p">,</span>
+                            <span class="n">meta</span><span class="p">,</span>
+                            <span class="n">scale_factor</span><span class="p">,</span>
+                            <span class="n">final_dtype</span><span class="p">,</span>
+                            <span class="n">sites</span><span class="o">=</span><span class="n">sites</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">futures</span><span class="p">):</span>
+                    <span class="n">completed</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">mem</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="s1">&#39;Collection futures completed: &#39;</span>
+                        <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> out of </span><span class="si">{}</span><span class="s1">. &#39;</span>
+                        <span class="s1">&#39;Current memory usage is &#39;</span>
+                        <span class="s1">&#39;</span><span class="si">{:.3f}</span><span class="s1"> GB out of </span><span class="si">{:.3f}</span><span class="s1"> GB total.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">completed</span><span class="p">,</span>
+                            <span class="nb">len</span><span class="p">(</span><span class="n">futures</span><span class="p">),</span>
+                            <span class="n">mem</span><span class="o">.</span><span class="n">used</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span>
+                            <span class="n">mem</span><span class="o">.</span><span class="n">total</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="n">f_data</span><span class="p">,</span> <span class="n">row_slice</span><span class="p">,</span> <span class="n">col_slice</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">row_slice</span><span class="p">,</span> <span class="n">col_slice</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_data</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f_out</span><span class="p">):</span>
+            <span class="n">Collector</span><span class="o">.</span><span class="n">_init_collected_h5</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
+            <span class="n">x_write_slice</span><span class="p">,</span> <span class="n">y_write_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">target_meta</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">meta</span>
+                <span class="n">target_ti</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">time_index</span>
+            <span class="n">y_write_slice</span><span class="p">,</span> <span class="n">x_write_slice</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">get_slices</span><span class="p">(</span>
+                <span class="n">target_ti</span><span class="p">,</span> <span class="n">target_meta</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span>
+            <span class="p">)</span>
+
+        <span class="n">Collector</span><span class="o">.</span><span class="n">_ensure_dset_in_output</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">var_meta</span><span class="o">=</span><span class="n">var_meta</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">,</span> <span class="n">y_write_slice</span><span class="p">,</span> <span class="n">x_write_slice</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s1">&#39;Finished writing &quot;</span><span class="si">{}</span><span class="s1">&quot; for row </span><span class="si">{}</span><span class="s1"> and col </span><span class="si">{}</span><span class="s1"> to: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">dset</span><span class="p">,</span> <span class="n">y_write_slice</span><span class="p">,</span> <span class="n">x_write_slice</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f_out</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Collector.collect_flist_lowmem">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.collect_flist_lowmem">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">collect_flist_lowmem</span><span class="p">(</span>
+        <span class="n">flist</span><span class="p">,</span>
+        <span class="n">collect_dir</span><span class="p">,</span>
+        <span class="n">f_out</span><span class="p">,</span>
+        <span class="n">dset</span><span class="p">,</span>
+        <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">sort_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">var_meta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_file</span><span class="o">=</span><span class="s1">&#39;collect_flist_lowmem.log&#39;</span><span class="p">,</span>
+        <span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Collect a file list without data pre-init for low memory utilization</span>
+
+<span class="sd">        Collects data that can be chunked in both space and time as long as</span>
+<span class="sd">        f_out is pre-initialized.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        flist : list | str</span>
+<span class="sd">            List of chunked filenames in collect_dir to collect. Can also be a</span>
+<span class="sd">            json.dumps(flist).</span>
+<span class="sd">        collect_dir : str</span>
+<span class="sd">            Directory of chunked files (flist).</span>
+<span class="sd">        f_out : str</span>
+<span class="sd">            File path of final output file. Must already be initialized with</span>
+<span class="sd">            full time index and meta.</span>
+<span class="sd">        dset : str</span>
+<span class="sd">            Dataset name to collect.</span>
+<span class="sd">        sort : bool</span>
+<span class="sd">            flag to sort flist to determine meta data order.</span>
+<span class="sd">        sort_key : None | fun</span>
+<span class="sd">            Optional sort key to sort flist by (determines how meta is built</span>
+<span class="sd">            if f_out does not exist).</span>
+<span class="sd">        var_meta : str | pd.DataFrame | None</span>
+<span class="sd">            CSV file or dataframe containing meta data for all NSRDB variables.</span>
+<span class="sd">            Defaults to the NSRDB var meta csv in git repo.</span>
+<span class="sd">        log_level : str | None</span>
+<span class="sd">            Desired log level, None will not initialize logging.</span>
+<span class="sd">        log_file : str | None</span>
+<span class="sd">            Target log file. None logs to stdout.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">init_logger</span><span class="p">(</span>
+            <span class="s1">&#39;nsrdb.file_handlers&#39;</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f_out</span><span class="p">):</span>
+            <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">_get_collection_attrs</span><span class="p">(</span>
+                <span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span> <span class="n">sort_key</span><span class="o">=</span><span class="n">sort_key</span>
+            <span class="p">)</span>
+
+            <span class="n">Collector</span><span class="o">.</span><span class="n">_init_collected_h5</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
+
+        <span class="n">Collector</span><span class="o">.</span><span class="n">_ensure_dset_in_output</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">var_meta</span><span class="o">=</span><span class="n">var_meta</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">flist</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;[&#39;</span> <span class="ow">in</span> <span class="n">flist</span> <span class="ow">and</span> <span class="s1">&#39;]&#39;</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">:</span>
+            <span class="n">flist</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">Outputs</span><span class="p">(</span><span class="n">f_out</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">time_index</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">time_index</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">meta</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_dset_properties</span><span class="p">(</span><span class="n">dset</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">scale_factor</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_scale_factor</span><span class="p">(</span><span class="n">dset</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">flist</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Collecting file &quot;</span><span class="si">{}</span><span class="s1">&quot;.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+                <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+
+                <span class="n">data</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span>
+                    <span class="n">fpath</span><span class="p">,</span> <span class="n">dset</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">dtype</span>
+                <span class="p">)</span>
+                <span class="n">f</span><span class="p">[</span><span class="n">dset</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Finished file list collection.&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Collector.collect_daily">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.collect_daily">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">collect_daily</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">collect_dir</span><span class="p">,</span>
+        <span class="n">fn_out</span><span class="p">,</span>
+        <span class="n">dsets</span><span class="p">,</span>
+        <span class="n">sites</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">n_writes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">var_meta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_file</span><span class="o">=</span><span class="s1">&#39;collect_daily.log&#39;</span><span class="p">,</span>
+        <span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Collect daily data model files from a dir to one output file.</span>
+
+<span class="sd">        Assumes the file list is chunked in time (row chunked).</span>
+
+<span class="sd">        Filename requirements:</span>
+<span class="sd">         - Expects file names with leading &quot;YYYYMMDD_&quot;.</span>
+<span class="sd">         - Must have var in the file name.</span>
+<span class="sd">         - Should end with &quot;.h5&quot;</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        collect_dir : str</span>
+<span class="sd">            Directory of chunked files. Each file should be one variable for</span>
+<span class="sd">            one day.</span>
+<span class="sd">        fn_out : str</span>
+<span class="sd">            File path of final output file.</span>
+<span class="sd">        dsets : list | str</span>
+<span class="sd">            List of datasets / variable names to collect. Can also be a single</span>
+<span class="sd">            dataset or json.dumps(dsets).</span>
+<span class="sd">        sites : None | np.ndarray</span>
+<span class="sd">            Subset of site indices to collect. None collects all sites.</span>
+<span class="sd">        n_writes : None | int</span>
+<span class="sd">            Number of file list divisions to write per dataset. For example,</span>
+<span class="sd">            if ghi and dni are being collected and n_writes is set to 2,</span>
+<span class="sd">            half of the source ghi files will be collected at once and then</span>
+<span class="sd">            written, then the second half of ghi files, then dni.</span>
+<span class="sd">        var_meta : str | pd.DataFrame | None</span>
+<span class="sd">            CSV file or dataframe containing meta data for all NSRDB variables.</span>
+<span class="sd">            Defaults to the NSRDB var meta csv in git repo. This is used if</span>
+<span class="sd">            f_out has not yet been initialized.</span>
+<span class="sd">        max_workers : int | None</span>
+<span class="sd">            Number of workers to use in parallel. 1 runs serial, None will use</span>
+<span class="sd">            all available workers.</span>
+<span class="sd">        log_file : str | None</span>
+<span class="sd">            Target log file. None logs to stdout.</span>
+<span class="sd">        log_level : str | None</span>
+<span class="sd">            Desired log level, None will not initialize logging.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">init_logger</span><span class="p">(</span>
+            <span class="s1">&#39;nsrdb.file_handlers&#39;</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dsets</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">dsets</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">dsets</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;[&#39;</span> <span class="ow">in</span> <span class="n">dsets</span> <span class="ow">and</span> <span class="s1">&#39;]&#39;</span> <span class="ow">in</span> <span class="n">dsets</span> <span class="k">else</span> <span class="p">[</span><span class="n">dsets</span><span class="p">]</span>
+            <span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s1">&#39;Collecting data from </span><span class="si">{}</span><span class="s1"> to </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fn_out</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dsets</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Collecting dataset &quot;</span><span class="si">{}</span><span class="s1">&quot;.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">collector</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">dset</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;No &quot;</span><span class="si">{}</span><span class="s1">&quot; files found&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dset</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="s1">&#39;Skipping dataset &quot;</span><span class="si">{}</span><span class="s1">&quot;, no files found in: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">dset</span><span class="p">,</span> <span class="n">collect_dir</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">e</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">n_writes</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">collector</span><span class="o">.</span><span class="n">flist</span><span class="p">):</span>
+                    <span class="n">e</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="s1">&#39;Cannot split file list of length </span><span class="si">{}</span><span class="s1"> into &#39;</span>
+                        <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> write chunks!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="nb">len</span><span class="p">(</span><span class="n">collector</span><span class="o">.</span><span class="n">flist</span><span class="p">),</span> <span class="n">n_writes</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fn_out</span><span class="p">):</span>
+                    <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">collector</span><span class="o">.</span><span class="n">_get_collection_attrs</span><span class="p">(</span>
+                        <span class="n">collector</span><span class="o">.</span><span class="n">flist</span><span class="p">,</span> <span class="n">collect_dir</span><span class="p">,</span> <span class="n">sites</span><span class="o">=</span><span class="n">sites</span>
+                    <span class="p">)</span>
+                    <span class="n">collector</span><span class="o">.</span><span class="n">_init_collected_h5</span><span class="p">(</span><span class="n">fn_out</span><span class="p">,</span> <span class="n">time_index</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
+
+                <span class="n">flist_chunks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">collector</span><span class="o">.</span><span class="n">flist</span><span class="p">),</span> <span class="n">n_writes</span>
+                <span class="p">)</span>
+                <span class="n">flist_chunks</span> <span class="o">=</span> <span class="p">[</span><span class="n">fl</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">fl</span> <span class="ow">in</span> <span class="n">flist_chunks</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">flist</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flist_chunks</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="s1">&#39;Collecting file list chunk </span><span class="si">{}</span><span class="s1"> out of </span><span class="si">{}</span><span class="s1"> &#39;</span>
+                        <span class="s1">&#39;for &quot;</span><span class="si">{}</span><span class="s1">&quot; (dataset </span><span class="si">{}</span><span class="s1"> out of </span><span class="si">{}</span><span class="s1">).&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">flist_chunks</span><span class="p">),</span> <span class="n">dset</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dsets</span><span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="n">collector</span><span class="o">.</span><span class="n">collect_flist</span><span class="p">(</span>
+                        <span class="n">flist</span><span class="p">,</span>
+                        <span class="n">collect_dir</span><span class="p">,</span>
+                        <span class="n">fn_out</span><span class="p">,</span>
+                        <span class="n">dset</span><span class="p">,</span>
+                        <span class="n">sites</span><span class="o">=</span><span class="n">sites</span><span class="p">,</span>
+                        <span class="n">var_meta</span><span class="o">=</span><span class="n">var_meta</span><span class="p">,</span>
+                        <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Finished daily file collection.&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Collector.get_dset_attrs">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.get_dset_attrs">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_dset_attrs</span><span class="p">(</span>
+        <span class="n">h5dir</span><span class="p">,</span> <span class="n">ignore_dsets</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;coordinates&#39;</span><span class="p">,</span> <span class="s1">&#39;time_index&#39;</span><span class="p">,</span> <span class="s1">&#39;meta&#39;</span><span class="p">)</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get output file dataset attributes for a set of datasets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        h5dir : str</span>
+<span class="sd">            Path to directory containing multiple h5 files with all available</span>
+<span class="sd">            dsets. Can also be a single h5 filepath.</span>
+<span class="sd">        ignore_dsets : tuple | list</span>
+<span class="sd">            List of datasets to ignore (will not be aggregated).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dsets : list</span>
+<span class="sd">            List of datasets.</span>
+<span class="sd">        attrs : dict</span>
+<span class="sd">            Dictionary of dataset attributes keyed by dset name.</span>
+<span class="sd">        chunks : dict</span>
+<span class="sd">            Dictionary of chunk tuples keyed by dset name.</span>
+<span class="sd">        dtypes : dict</span>
+<span class="sd">            dictionary of numpy datatypes keyed by dset name.</span>
+<span class="sd">        ti : pd.Datetimeindex</span>
+<span class="sd">            Time index of source files in h5dir.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dsets</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">chunks</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">dtypes</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="n">h5dir</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">h5dir</span><span class="p">):</span>
+            <span class="n">h5_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">h5dir</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">h5dir</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;*&#39;</span> <span class="ow">in</span> <span class="n">h5dir</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">MultiFileNSRDB</span><span class="p">(</span><span class="n">h5dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+                <span class="n">h5_files</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">_h5_files</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">h5_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span> <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">h5dir</span><span class="p">)</span> <span class="k">if</span> <span class="n">fn</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">)]</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s1">&#39;Getting dataset attributes from the following files: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">h5_files</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">h5_files</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">NSRDBHandler</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">h5dir</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+                <span class="n">ti</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">time_index</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">out</span><span class="o">.</span><span class="n">dsets</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ignore_dsets</span> <span class="ow">and</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+                        <span class="n">attrs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">Collector</span><span class="o">.</span><span class="n">_special_attrs</span><span class="p">(</span>
+                            <span class="n">d</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">get_attrs</span><span class="p">(</span><span class="n">dset</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+                        <span class="p">)</span>
+
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">x</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">get_dset_properties</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+                        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                            <span class="n">m</span> <span class="o">=</span> <span class="p">(</span>
+                                <span class="s1">&#39;Could not get dataset &quot;</span><span class="si">{}</span><span class="s1">&quot; properties from &#39;</span>
+                                <span class="s1">&#39;file: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">h5dir</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span>
+                            <span class="p">)</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+                            <span class="k">raise</span> <span class="n">e</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">_</span><span class="p">,</span> <span class="n">dtypes</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">chunks</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+
+        <span class="n">dsets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">attrs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Found the following datasets: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dsets</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">dsets</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">chunks</span><span class="p">,</span> <span class="n">dtypes</span><span class="p">,</span> <span class="n">ti</span></div>
+
+
+<div class="viewcode-block" id="Collector.collect_dir">
+<a class="viewcode-back" href="../../../_autosummary/nsrdb.file_handlers.collection.Collector.html#nsrdb.file_handlers.collection.Collector.collect_dir">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">collect_dir</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">meta_final</span><span class="p">,</span>
+        <span class="n">collect_dir</span><span class="p">,</span>
+        <span class="n">collect_tag</span><span class="p">,</span>
+        <span class="n">fout</span><span class="p">,</span>
+        <span class="n">dsets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_file</span><span class="o">=</span><span class="s1">&#39;collect_dir.log&#39;</span><span class="p">,</span>
+        <span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform final collection of dsets for given collect_dir.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        meta_final : str | pd.DataFrame</span>
+<span class="sd">            Final meta data with index = gid.</span>
+<span class="sd">        collect_dir : str</span>
+<span class="sd">            Directory path containing chunked h5 files to collect.</span>
+<span class="sd">        collect_tag : str</span>
+<span class="sd">            String to be found in files that are being collected</span>
+<span class="sd">        fout : str</span>
+<span class="sd">            File path to the output collected file (will be initialized by</span>
+<span class="sd">            this method).</span>
+<span class="sd">        dsets : list | tuple</span>
+<span class="sd">            Select datasets to collect (None will default to all dsets)</span>
+<span class="sd">        max_workers : int | None</span>
+<span class="sd">            Number of workers to use in parallel. 1 runs serial, None will use</span>
+<span class="sd">            all available workers.</span>
+<span class="sd">        log_file : str | None</span>
+<span class="sd">            Target log file. None logs to stdout.</span>
+<span class="sd">        log_level : str | None</span>
+<span class="sd">            Desired log level, None will not initialize logging.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">init_logger</span><span class="p">(</span>
+            <span class="s1">&#39;nsrdb.file_handlers&#39;</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">meta_final</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">meta_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">meta_final</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">fns</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">)</span>
+        <span class="n">flist</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">fn</span>
+            <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">fns</span>
+            <span class="k">if</span> <span class="n">fn</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">collect_tag</span> <span class="ow">in</span> <span class="n">fn</span>
+            <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span> <span class="o">!=</span> <span class="n">fout</span>
+        <span class="p">]</span>
+        <span class="n">flist</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">flist</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+            <span class="k">else</span> <span class="n">x</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Collecting chunks from </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span><span class="si">}</span><span class="s1"> files to: </span><span class="si">{</span><span class="n">fout</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">dsets_all</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">chunks</span><span class="p">,</span> <span class="n">dtypes</span><span class="p">,</span> <span class="n">ti</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_dset_attrs</span><span class="p">(</span><span class="n">collect_dir</span><span class="p">)</span>
+        <span class="n">dsets</span> <span class="o">=</span> <span class="n">dsets_all</span> <span class="k">if</span> <span class="n">dsets</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dsets</span>
+        <span class="n">Outputs</span><span class="o">.</span><span class="n">init_h5</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span> <span class="n">dsets</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">chunks</span><span class="p">,</span> <span class="n">dtypes</span><span class="p">,</span> <span class="n">ti</span><span class="p">,</span> <span class="n">meta_final</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">collect_flist</span><span class="p">(</span>
+                <span class="n">flist</span><span class="p">,</span>
+                <span class="n">collect_dir</span><span class="p">,</span>
+                <span class="n">fout</span><span class="p">,</span>
+                <span class="n">dset</span><span class="p">,</span>
+                <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+            <span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Alliance for Sustainable Energy, LLC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

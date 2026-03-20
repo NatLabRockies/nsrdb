@@ -1,0 +1,44 @@
+nsrdb.aggregation.aggregation.Aggregation
+=========================================
+
+.. currentmodule:: nsrdb.aggregation.aggregation
+
+.. autoclass:: Aggregation
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Aggregation.cloud_property
+      ~Aggregation.cloud_property_avg
+      ~Aggregation.cloud_type
+      ~Aggregation.cloud_type_mode
+      ~Aggregation.dhi
+      ~Aggregation.fill_flag
+      ~Aggregation.format_out_arr
+      ~Aggregation.mean
+      ~Aggregation.point
+      ~Aggregation.reduce_timeseries
+      ~Aggregation.spatial_avg
+      ~Aggregation.spatial_sum
+      ~Aggregation.time_avg
+      ~Aggregation.time_sum
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Aggregation.data
+      ~Aggregation.source_time_index
+   
+   

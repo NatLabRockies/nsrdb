@@ -1,0 +1,31 @@
+nsrdb.file\_handlers.collection
+===============================
+
+.. automodule:: nsrdb.file_handlers.collection
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Collector
+   
+   
+
+   
+   
+   
+
+
+

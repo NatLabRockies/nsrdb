@@ -1,0 +1,42 @@
+nsrdb.file\_handlers.file\_system.NSRDBFileSystem
+=================================================
+
+.. currentmodule:: nsrdb.file_handlers.file_system
+
+.. autoclass:: NSRDBFileSystem
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NSRDBFileSystem.copy
+      ~NSRDBFileSystem.cp
+      ~NSRDBFileSystem.exists
+      ~NSRDBFileSystem.glob
+      ~NSRDBFileSystem.isdir
+      ~NSRDBFileSystem.isfile
+      ~NSRDBFileSystem.ls
+      ~NSRDBFileSystem.mkdirs
+      ~NSRDBFileSystem.mv
+      ~NSRDBFileSystem.open
+      ~NSRDBFileSystem.rm
+      ~NSRDBFileSystem.size
+      ~NSRDBFileSystem.walk
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NSRDBFileSystem.path
+   
+   

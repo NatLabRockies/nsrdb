@@ -1,0 +1,36 @@
+nsrdb.tmy.tmy\_runner.TmyRunner
+===============================
+
+.. currentmodule:: nsrdb.tmy.tmy_runner
+
+.. autoclass:: TmyRunner
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TmyRunner.collect
+      ~TmyRunner.get_dset_attrs
+      ~TmyRunner.run_single
+      ~TmyRunner.tmy
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TmyRunner.WEIGHTS
+      ~TmyRunner.dsets
+      ~TmyRunner.meta
+      ~TmyRunner.site_chunks
+   
+   

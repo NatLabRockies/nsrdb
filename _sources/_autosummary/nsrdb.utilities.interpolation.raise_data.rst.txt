@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.raise\_data
+=========================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: raise_data

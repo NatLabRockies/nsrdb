@@ -1,0 +1,34 @@
+nsrdb.tmy
+=========
+
+.. automodule:: nsrdb.tmy
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   cdf
+   qa
+   tmy
+   tmy_runner
+   utilities
+

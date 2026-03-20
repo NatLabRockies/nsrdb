@@ -1,0 +1,33 @@
+nsrdb.data\_model.gfs.GfsVarSingle
+==================================
+
+.. currentmodule:: nsrdb.data_model.gfs
+
+.. autoclass:: GfsVarSingle
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GfsVarSingle.datasets
+      ~GfsVarSingle.timestep
+      ~GfsVarSingle.units
+      ~GfsVarSingle.wind_direction
+      ~GfsVarSingle.wind_speed
+   
+   

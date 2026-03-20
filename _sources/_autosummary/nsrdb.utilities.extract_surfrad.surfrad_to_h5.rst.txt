@@ -1,0 +1,6 @@
+nsrdb.utilities.extract\_surfrad.surfrad\_to\_h5
+================================================
+
+.. currentmodule:: nsrdb.utilities.extract_surfrad
+
+.. autofunction:: surfrad_to_h5

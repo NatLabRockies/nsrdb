@@ -1,0 +1,65 @@
+nsrdb.data\_model.nrel\_data.NrelVar
+====================================
+
+.. currentmodule:: nsrdb.data_model.nrel_data
+
+.. autoclass:: NrelVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NrelVar.pre_flight
+      ~NrelVar.scale_data
+      ~NrelVar.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NrelVar.DEFAULT_DIR
+      ~NrelVar.NN_METHOD
+      ~NrelVar.attrs
+      ~NrelVar.cache_file
+      ~NrelVar.chunks
+      ~NrelVar.data_source
+      ~NrelVar.date
+      ~NrelVar.description
+      ~NrelVar.doy
+      ~NrelVar.dset_name
+      ~NrelVar.dtype
+      ~NrelVar.elevation_correct
+      ~NrelVar.file
+      ~NrelVar.file_set
+      ~NrelVar.final_dtype
+      ~NrelVar.grid
+      ~NrelVar.mask
+      ~NrelVar.name
+      ~NrelVar.next_date
+      ~NrelVar.next_file
+      ~NrelVar.next_file_exists
+      ~NrelVar.next_pattern
+      ~NrelVar.pattern
+      ~NrelVar.physical_max
+      ~NrelVar.physical_min
+      ~NrelVar.row_mask
+      ~NrelVar.scale_factor
+      ~NrelVar.source_data
+      ~NrelVar.source_dir
+      ~NrelVar.spatial_method
+      ~NrelVar.temporal_method
+      ~NrelVar.time_index
+      ~NrelVar.units
+      ~NrelVar.var_meta
+   
+   

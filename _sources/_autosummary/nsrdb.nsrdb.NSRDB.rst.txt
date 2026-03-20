@@ -1,0 +1,44 @@
+nsrdb.nsrdb.NSRDB
+=================
+
+.. currentmodule:: nsrdb.nsrdb
+
+.. autoclass:: NSRDB
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NSRDB.collect_data_model
+      ~NSRDB.collect_final
+      ~NSRDB.date_to_doy
+      ~NSRDB.doy_to_datestr
+      ~NSRDB.gap_fill_clouds
+      ~NSRDB.init_output_h5
+      ~NSRDB.make_out_dirs
+      ~NSRDB.ml_cloud_fill
+      ~NSRDB.run_all_sky
+      ~NSRDB.run_daily_all_sky
+      ~NSRDB.run_data_model
+      ~NSRDB.run_full
+      ~NSRDB.to_datetime
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NSRDB.OUTS
+      ~NSRDB.meta
+      ~NSRDB.time_index_year
+   
+   

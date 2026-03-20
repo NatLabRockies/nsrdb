@@ -1,0 +1,60 @@
+nsrdb.data\_model.data\_model.DataModel
+=======================================
+
+.. currentmodule:: nsrdb.data_model.data_model
+
+.. autoclass:: DataModel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataModel.check_merra_cloud_source
+      ~DataModel.convert_units
+      ~DataModel.dump
+      ~DataModel.get_cloud_nn
+      ~DataModel.get_dependencies
+      ~DataModel.get_geo_nn
+      ~DataModel.get_single_cloud_data
+      ~DataModel.get_weights
+      ~DataModel.init_cloud_data
+      ~DataModel.is_cloud_var
+      ~DataModel.is_derived_var
+      ~DataModel.is_merra_cloud
+      ~DataModel.run_clouds
+      ~DataModel.run_multiple
+      ~DataModel.run_pre_flight
+      ~DataModel.run_single
+      ~DataModel.scale_data
+      ~DataModel.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DataModel.ALL_SKY_VARS
+      ~DataModel.ALL_VARS
+      ~DataModel.ALL_VARS_ML
+      ~DataModel.CACHE_DIR
+      ~DataModel.CLOUD_VARS
+      ~DataModel.MERRA_VARS
+      ~DataModel.MLCLOUDS_VARS
+      ~DataModel.WEIGHTS
+      ~DataModel.date
+      ~DataModel.nsrdb_data_shape
+      ~DataModel.nsrdb_grid
+      ~DataModel.nsrdb_ti
+      ~DataModel.processed_data
+      ~DataModel.var_meta
+   
+   

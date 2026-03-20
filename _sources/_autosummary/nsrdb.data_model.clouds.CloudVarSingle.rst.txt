@@ -1,0 +1,38 @@
+nsrdb.data\_model.clouds.CloudVarSingle
+=======================================
+
+.. currentmodule:: nsrdb.data_model.clouds
+
+.. autoclass:: CloudVarSingle
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CloudVarSingle.clean_attrs
+      ~CloudVarSingle.get_dset
+      ~CloudVarSingle.remap_pc_coords
+      ~CloudVarSingle.remap_pc_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CloudVarSingle.GRID_LABELS
+      ~CloudVarSingle.dsets
+      ~CloudVarSingle.fpath
+      ~CloudVarSingle.grid
+      ~CloudVarSingle.source_data
+      ~CloudVarSingle.tree
+   
+   

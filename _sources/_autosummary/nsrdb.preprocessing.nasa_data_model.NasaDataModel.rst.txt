@@ -1,0 +1,38 @@
+nsrdb.preprocessing.nasa\_data\_model.NasaDataModel
+===================================================
+
+.. currentmodule:: nsrdb.preprocessing.nasa_data_model
+
+.. autoclass:: NasaDataModel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NasaDataModel.derive_stdevs
+      ~NasaDataModel.drop_vars
+      ~NasaDataModel.remap_cloud_phase
+      ~NasaDataModel.remap_dims
+      ~NasaDataModel.rename_vars
+      ~NasaDataModel.run
+      ~NasaDataModel.write_output
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NasaDataModel.ds
+      ~NasaDataModel.output_file
+      ~NasaDataModel.timestamp
+   
+   

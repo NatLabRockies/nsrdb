@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.convert\_list\_serial
+=================================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: convert_list_serial

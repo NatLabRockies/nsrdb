@@ -1,0 +1,61 @@
+nsrdb.data\_model.base\_handler.AncillaryVarHandler
+===================================================
+
+.. currentmodule:: nsrdb.data_model.base_handler
+
+.. autoclass:: AncillaryVarHandler
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AncillaryVarHandler.pre_flight
+      ~AncillaryVarHandler.scale_data
+      ~AncillaryVarHandler.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AncillaryVarHandler.DEFAULT_DIR
+      ~AncillaryVarHandler.NN_METHOD
+      ~AncillaryVarHandler.attrs
+      ~AncillaryVarHandler.cache_file
+      ~AncillaryVarHandler.chunks
+      ~AncillaryVarHandler.data_source
+      ~AncillaryVarHandler.date
+      ~AncillaryVarHandler.description
+      ~AncillaryVarHandler.doy
+      ~AncillaryVarHandler.dset_name
+      ~AncillaryVarHandler.dtype
+      ~AncillaryVarHandler.elevation_correct
+      ~AncillaryVarHandler.file
+      ~AncillaryVarHandler.file_set
+      ~AncillaryVarHandler.final_dtype
+      ~AncillaryVarHandler.mask
+      ~AncillaryVarHandler.name
+      ~AncillaryVarHandler.next_date
+      ~AncillaryVarHandler.next_file
+      ~AncillaryVarHandler.next_file_exists
+      ~AncillaryVarHandler.next_pattern
+      ~AncillaryVarHandler.pattern
+      ~AncillaryVarHandler.physical_max
+      ~AncillaryVarHandler.physical_min
+      ~AncillaryVarHandler.scale_factor
+      ~AncillaryVarHandler.source_dir
+      ~AncillaryVarHandler.spatial_method
+      ~AncillaryVarHandler.temporal_method
+      ~AncillaryVarHandler.units
+      ~AncillaryVarHandler.var_meta
+   
+   

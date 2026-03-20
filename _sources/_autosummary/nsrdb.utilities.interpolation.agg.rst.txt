@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.agg
+=================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: agg

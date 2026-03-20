@@ -1,0 +1,6 @@
+nsrdb.utilities.nearest\_neighbor.knn
+=====================================
+
+.. currentmodule:: nsrdb.utilities.nearest_neighbor
+
+.. autofunction:: knn

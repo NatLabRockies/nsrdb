@@ -1,0 +1,31 @@
+nsrdb.mymean.mymean
+===================
+
+.. automodule:: nsrdb.mymean.mymean
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      MyMean
+   
+   
+
+   
+   
+   
+
+
+

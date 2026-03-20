@@ -1,0 +1,31 @@
+nsrdb.data\_model.nrel\_data
+============================
+
+.. automodule:: nsrdb.data_model.nrel_data
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      NrelVar
+   
+   
+
+   
+   
+   
+
+
+
