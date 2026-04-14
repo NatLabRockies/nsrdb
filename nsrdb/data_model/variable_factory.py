@@ -97,8 +97,11 @@ class VarFactory:
         try:
             instance = HandlerClass(*args, **kwargs)
         except Exception as e:
-            m = 'Received an exception trying to instantiate "{}":\n{}'.format(
-                var_name, e
+            m = (
+                'Received an exception trying to instantiate "{}" with '
+                'HandlerClass {} with args: {} and kwargs: {}\n{}'.format(
+                    var_name, HandlerClass, args, kwargs, e
+                )
             )
             logger.exception(m)
             raise RuntimeError(m) from e
@@ -308,7 +311,5 @@ class VarFactory:
         if fpath.endswith('.nc'):
             return CloudVarSingleNC(fpath, dsets=dsets, **kwargs)
         raise TypeError(
-            'Did not recognize cloud file type as .nc or ' '.h5: {}'.format(
-                fpath
-            )
+            'Did not recognize cloud file type as .nc or .h5: {}'.format(fpath)
         )

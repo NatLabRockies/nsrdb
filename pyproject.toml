@@ -6,13 +6,13 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "NREL-nsrdb"
+name = "NLR-nsrdb"
 dynamic = ["version"]
 description = "National Solar Radiation Database (NSRDB) Software"
-keywords = ["nsrdb", "NREL"]
+keywords = ["nsrdb", "NLR"]
 readme = "README.rst"
 authors = [
-  {name = "Brandon Benton", email = "brandon.benton@nrel.gov"},
+  {name = "Brandon Benton", email = "brandon.benton@nlr.gov"},
 ]
 license = {text = "BSD-3-Clause"}
 requires-python = ">= 3.9"
@@ -28,9 +28,9 @@ classifiers=[
 dependencies = [
   "NREL-gaps>=0.6.14,<0.8.0",
   "NREL-cloud_fs>=0.0.8",
-  "NREL-farms>1.0.6",
-  "NREL-rest2>=1.0.2",
-  "NREL-mlclouds>=0.0.5",
+  "NLR-farms>=1.0.8",
+  "NLR-rest2>=1.0.3",
+  "NLR-mlclouds>=0.0.6",
   "netCDF4>=1.5.8,<1.7",
   "scikit-learn>=1.0",
   "matplotlib>=3.1",
@@ -60,9 +60,9 @@ test = [
 ]
 
 [project.urls]
-homepage = "https://github.com/NREL/nsrdb"
-documentation = "https://nrel.github.io/nsrdb/"
-repository = "https://github.com/NREL/nsrdb"
+homepage = "https://github.com/NatLabRockies/nsrdb"
+documentation = "https://natlabrockies.github.io/nsrdb/"
+repository = "https://github.com/NatLabRockies/nsrdb"
 
 [tool.ruff]
 line-length = 79
@@ -180,6 +180,8 @@ packages = ["nsrdb"]
 
 [tool.setuptools_scm]
 version_file = "nsrdb/_version.py"
+version_scheme = "guess-next-dev"
+fallback_version = "4.1.3"
 
 [tool.pixi.workspace]
 channels = ["conda-forge", "anaconda", "main"]
@@ -202,7 +204,7 @@ matplotlib = ">=3.1"
 numpy = ">=1.22,<1.24"
 
 [tool.pixi.pypi-dependencies]
-NREL-nsrdb = { path = ".", editable = true }
+NLR-nsrdb = { path = ".", editable = true }
 
 [tool.pixi.feature.build.tasks]
 build-wheels = { cmd = "uv build --sdist --wheel --out-dir dist/ ." }

@@ -10,7 +10,7 @@ class SolPos:
     """
     Class to compute solar position for time(s) and site(s)
     Based off of SAM Solar Position Function:
-    https://github.com/NREL/ssc/blob/develop/shared/lib_irradproc.cpp
+    https://github.com/NatLabRockies/ssc/blob/develop/shared/lib_irradproc.cpp
     """
 
     def __init__(self, time_index, lat_lon):

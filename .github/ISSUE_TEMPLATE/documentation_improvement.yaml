@@ -10,7 +10,7 @@ body:
       options:
         - label: >
             I have checked that the issue still exists on the latest versions of the docs
-            on `main` [here](https://nrel.github.io/nsrdb/)
+            on `main` [here](https://natlabrockies.github.io/nsrdb/)
           required: true
   - type: textarea
     id: location
@@ -18,7 +18,7 @@ body:
       label: Location of the documentation
       description: >
         Please provide the location of the documentation,
-        placeholder: https://nrel.github.io/pipes_config/_autosummary/pipes_config.cli.html#pipes_config.cli
+        placeholder: https://natlabrockies.github.io/pipes_config/_autosummary/pipes_config.cli.html#pipes_config.cli
     validations:
       required: true
   - type: textarea
