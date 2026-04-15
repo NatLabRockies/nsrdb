@@ -31,7 +31,7 @@ The National Solar Radiation Database (NSRDB) software includes all the methods
 for the irradiance data processing pipeline. To get started, check out the
 NSRDB command line interface `(CLI)
 <https://natlabrockies.github.io/nsrdb/_cli/nsrdb.html#nsrdb>`_. Refer to the `NLR
-website <https://nsrdb.natlabrockies.gov/>`_ and the original `journal article
+website <https://nsrdb.nlr.gov/>`_ and the original `journal article
 <https://www.sciencedirect.com/science/article/pii/S136403211830087X>`_ for
 more information on the NSRDB.  For details on NSRDB variable units,
 datatypes, interpolation methods, and other attributes, see the `NSRDB
