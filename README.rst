@@ -5,23 +5,23 @@ Welcome to the National Solar Radiation Data Base (NSRDB)!
 ##########################################################
 |Docs| |Tests| |Linter| |PyPi| |PythonV| |Codecov| |Zenodo|
 
-.. |Docs| image:: https://github.com/NREL/nsrdb/workflows/Documentation/badge.svg
-    :target: https://nrel.github.io/nsrdb/
+.. |Docs| image:: https://github.com/NatLabRockies/nsrdb/workflows/Documentation/badge.svg
+    :target: https://natlabrockies.github.io/nsrdb/
 
-.. |Tests| image:: https://github.com/NREL/nsrdb/workflows/Pytests/badge.svg
-    :target: https://github.com/NREL/nsrdb/actions?query=workflow%3A%22Pytests%22
+.. |Tests| image:: https://github.com/NatLabRockies/nsrdb/workflows/Pytests/badge.svg
+  :target: https://github.com/NatLabRockies/nsrdb/actions?query=workflow%3A%22Pytests%22
 
-.. |Linter| image:: https://github.com/NREL/nsrdb/workflows/Lint%20Code%20Base/badge.svg
-    :target: https://github.com/NREL/nsrdb/actions?query=workflow%3A%22Lint+Code+Base%22
+.. |Linter| image:: https://github.com/NatLabRockies/nsrdb/workflows/Lint%20Code%20Base/badge.svg
+  :target: https://github.com/NatLabRockies/nsrdb/actions?query=workflow%3A%22Lint+Code+Base%22
 
-.. |PyPi| image:: https://img.shields.io/pypi/pyversions/NREL-nsrdb.svg
-    :target: https://pypi.org/project/NREL-nsrdb/
+.. |PyPi| image:: https://img.shields.io/pypi/pyversions/NLR-nsrdb.svg
+  :target: https://pypi.org/project/NLR-nsrdb/
 
-.. |PythonV| image:: https://badge.fury.io/py/NREL-nsrdb.svg
-    :target: https://badge.fury.io/py/NREL-nsrdb
+.. |PythonV| image:: https://badge.fury.io/py/NLR-nsrdb.svg
+  :target: https://badge.fury.io/py/NLR-nsrdb
 
-.. |Codecov| image:: https://codecov.io/gh/nrel/nsrdb/branch/main/graph/badge.svg
-    :target: https://codecov.io/gh/nrel/nsrdb
+.. |Codecov| image:: https://codecov.io/gh/NatLabRockies/nsrdb/branch/main/graph/badge.svg
+  :target: https://codecov.io/gh/NatLabRockies/nsrdb
 
 .. |Zenodo| image:: https://zenodo.org/badge/340209614.svg
     :target: https://zenodo.org/badge/latestdoi/340209614
@@ -30,34 +30,34 @@ Welcome to the National Solar Radiation Data Base (NSRDB)!
 The National Solar Radiation Database (NSRDB) software includes all the methods
 for the irradiance data processing pipeline. To get started, check out the
 NSRDB command line interface `(CLI)
-<https://nrel.github.io/nsrdb/_cli/nsrdb.html#nsrdb>`_. Refer to the `NREL
-website <https://nsrdb.nrel.gov/>`_ and the original `journal article
+<https://natlabrockies.github.io/nsrdb/_cli/nsrdb.html#nsrdb>`_. Refer to the `NLR
+website <https://nsrdb.natlabrockies.gov/>`_ and the original `journal article
 <https://www.sciencedirect.com/science/article/pii/S136403211830087X>`_ for
 more information on the NSRDB.  For details on NSRDB variable units,
 datatypes, interpolation methods, and other attributes, see the `NSRDB
 variable meta data
-<https://github.com/NREL/nsrdb/tree/main/nsrdb/config/nsrdb_vars.csv>`_ and
+<https://github.com/NatLabRockies/nsrdb/tree/main/nsrdb/config/nsrdb_vars.csv>`_ and
 `NSRDB variable descriptions
-<https://github.com/NREL/nsrdb/tree/main/nsrdb/config/var_descriptions.csv>`_.
+<https://github.com/NatLabRockies/nsrdb/tree/main/nsrdb/config/var_descriptions.csv>`_.
 
 The PXS All-Sky Irradiance Model
 ================================
 The PXS All-Sky `Irradiance Model
-<https://github.com/NREL/nsrdb/tree/main/nsrdb/all_sky>`_ is the main physics
+<https://github.com/NatLabRockies/nsrdb/tree/main/nsrdb/all_sky>`_ is the main physics
 package that calculates surface irradiance variables.
 
 The NSRDB Data Model
 ====================
 The NSRDB `Data Model
-<https://github.com/NREL/nsrdb/tree/main/nsrdb/data_model>`_ is the data
+<https://github.com/NatLabRockies/nsrdb/tree/main/nsrdb/data_model>`_ is the data
 aggregation framework that sources, processes, and prepares data for input to
 All-Sky.
 
 The MLClouds Model
 ==================
-The `MLClouds Model <https://github.com/NREL/mlclouds.git>`_ is used to predict
+The `MLClouds Model <https://github.com/NatLabRockies/mlclouds.git>`_ is used to predict
 missing cloud properties (a.k.a. Gap Fill). The NSRDB interface with MLClouds
-can be found `here <https://github.com/NREL/nsrdb/tree/main/nsrdb/gap_fill>`_.
+can be found `here <https://github.com/NatLabRockies/nsrdb/tree/main/nsrdb/gap_fill>`_.
 
 Installation
 ============
@@ -73,12 +73,12 @@ Option 1: Install from PIP (recommended for analysts):
 
 2. Activate environment: ``conda activate nsrdb``
 
-3. Install nsrdb: ``pip install NREL-nsrdb``
+3. Install nsrdb: ``pip install NLR-nsrdb``
 
 Option 2: Clone repo (recommended for developers)
 -------------------------------------------------
 
-1. Run ``git clone git@github.com:NREL/nsrdb.git``
+1. Run ``git clone git@github.com:NatLabRockies/nsrdb.git``
 2. ``cd nsrdb``.
 3. Make sure the branch is correct (install from main!)
 4. If you are using conda, create and activate a new environment:
@@ -201,7 +201,7 @@ NSRDB Versions
       - Initial release of PSM v2 (use of FARMS, downscaling of ancillary data
         introduced to account for elevation, NSRDB website distribution
         developed)
-        - Clear sky: REST2, Cloudy sky: NREL FARMS model and DISC model
+        - Clear sky: REST2, Cloudy sky: NLR FARMS model and DISC model
         - Climate Forecast System Reanalysis (CFSR) is used for ancillary data
         - Monthly 0.5º aerosol optical depth (AOD) for 1998-2014 using
           satellite and ground-based measurements. Monthly results interpolated
@@ -222,7 +222,7 @@ Update with current version and DOI:
 
 Grant Buster, Brandon Benton, Mike Bannister, Yu Xie, Aron Habte, Galen
 Maclaurin, Manajit Sengupta. National Solar Radiation Database (NSRDB).
-https://github.com/NREL/nsrdb (version v4.0.0), 2023. DOI:
+https://github.com/NatLabRockies/nsrdb (version v4.0.0), 2023. DOI:
 10.5281/zenodo.10471523
 
 Acknowledgments

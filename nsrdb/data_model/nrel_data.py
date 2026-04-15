@@ -1,4 +1,4 @@
-"""A framework for handling source data in the NREL resource format: .h5 source
+"""A framework for handling source data in the NLR resource format: .h5 source
 files with meta and time_index datasets, all data is (n_time, n_sites).
 """
 
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 
 class NrelVar(AncillaryVarHandler):
-    """Framework for NREL source data extraction."""
+    """Framework for NLR source data extraction."""
 
     def __init__(self, name, var_meta, date, **kwargs):
         """
@@ -87,7 +87,7 @@ class NrelVar(AncillaryVarHandler):
 
     @property
     def time_index(self):
-        """Get the NREL source file native time index masked for the
+        """Get the NLR source file native time index masked for the
         day of interest.
 
         Returns

@@ -23,8 +23,8 @@ RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Install dependencies
 RUN pip install --no-cache-dir --upgrade pip
-RUN --mount=type=ssh,id=github_ssh_key pip install --no-cache-dir git+ssh://git@github.com/NREL/rest2.git
+RUN --mount=type=ssh,id=github_ssh_key pip install --no-cache-dir git+ssh://git@github.com/NatLabRockies/rest2.git
 RUN pip install --no-cache-dir -e .
-RUN --mount=type=ssh,id=github_ssh_key pip install --no-cache-dir git+ssh://git@github.com/NREL/mlclouds.git
+RUN --mount=type=ssh,id=github_ssh_key pip install --no-cache-dir git+ssh://git@github.com/NatLabRockies/mlclouds.git
 
 ENTRYPOINT ["nsrdb"]
