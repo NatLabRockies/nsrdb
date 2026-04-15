@@ -265,10 +265,14 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/a9/80/19189ea605017473660e43762dc853d2797984b3c7bf30ce656099add30c/ml_dtypes-0.5.4-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5a/56/21b27c560c13822ed93133f08aa6372c53a8e067f11fbed37b4adcdac922/multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/4b/27/20770bd6bf8fbe1e16f848ba21da9df061f38d2e6483952c29d2bb5d1d8b/narwhals-2.17.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/cf/d5/6f503661099c103b0a60f8529d27e75bab90e87c03f1c4a28b1742351f3d/nlr_farms-1.0.8-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/e4/82/8d88829bd0a894c0200a39f2fafe5ee147cbb6c68294702e2b7d9eb6a32c/nlr_mlclouds-0.0.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/37/6e/ef1bc4e9d1e440fcc56b50e332a04416f752a38ba34ed10530baa9514b8b/nlr_rest2-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/62/00/55b2859a6a88daa85958f690f86a8fe9bf21a0b23fb582826ed5aeb80e51/NREL_cloud_fs-0.0.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/51/b6/95a52fcd1a92e339a61d34d054401671c50e3522f8aaea37d413e651951d/nrel_farms-1.0.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/69/0c9c9c681664c712cc7cad6b657904e99b00667c08c6c95019c896ac8943/nrel_gaps-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/19/6c/26933331130ed2a15f125c91f2a89cf20e1e3aa2db5f72d6b4120e46cc33/NREL_mlclouds-0.0.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/91/98/7c766b5435dee89a5bcae06f5520b5557a2ede4d87eb4272e1e1662dc37f/nrel_nsrdb-4.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/c3/4c9a17ca2b2ae1f09f91b4ee2608e185af82ddc751e9dbedaa6949bde644/nrel_phygnn-0.0.33-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/48/cf30faa390f3160f7cfe81266af1c1421d08b0b9cdf4585ba2d222091cef/NREL_rest2-1.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/5c/c948539727ee833688958d711dd8237c1ccd04a2383ad26c84aec6705b7c/NREL_rex-0.2.99-py3-none-any.whl
@@ -547,10 +551,14 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/a9/80/19189ea605017473660e43762dc853d2797984b3c7bf30ce656099add30c/ml_dtypes-0.5.4-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5a/56/21b27c560c13822ed93133f08aa6372c53a8e067f11fbed37b4adcdac922/multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/4b/27/20770bd6bf8fbe1e16f848ba21da9df061f38d2e6483952c29d2bb5d1d8b/narwhals-2.17.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/cf/d5/6f503661099c103b0a60f8529d27e75bab90e87c03f1c4a28b1742351f3d/nlr_farms-1.0.8-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/e4/82/8d88829bd0a894c0200a39f2fafe5ee147cbb6c68294702e2b7d9eb6a32c/nlr_mlclouds-0.0.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/37/6e/ef1bc4e9d1e440fcc56b50e332a04416f752a38ba34ed10530baa9514b8b/nlr_rest2-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/62/00/55b2859a6a88daa85958f690f86a8fe9bf21a0b23fb582826ed5aeb80e51/NREL_cloud_fs-0.0.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/51/b6/95a52fcd1a92e339a61d34d054401671c50e3522f8aaea37d413e651951d/nrel_farms-1.0.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/69/0c9c9c681664c712cc7cad6b657904e99b00667c08c6c95019c896ac8943/nrel_gaps-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/19/6c/26933331130ed2a15f125c91f2a89cf20e1e3aa2db5f72d6b4120e46cc33/NREL_mlclouds-0.0.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/91/98/7c766b5435dee89a5bcae06f5520b5557a2ede4d87eb4272e1e1662dc37f/nrel_nsrdb-4.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/c3/4c9a17ca2b2ae1f09f91b4ee2608e185af82ddc751e9dbedaa6949bde644/nrel_phygnn-0.0.33-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/48/cf30faa390f3160f7cfe81266af1c1421d08b0b9cdf4585ba2d222091cef/NREL_rest2-1.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/5c/c948539727ee833688958d711dd8237c1ccd04a2383ad26c84aec6705b7c/NREL_rex-0.2.99-py3-none-any.whl
@@ -888,10 +896,14 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/a9/80/19189ea605017473660e43762dc853d2797984b3c7bf30ce656099add30c/ml_dtypes-0.5.4-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5a/56/21b27c560c13822ed93133f08aa6372c53a8e067f11fbed37b4adcdac922/multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/4b/27/20770bd6bf8fbe1e16f848ba21da9df061f38d2e6483952c29d2bb5d1d8b/narwhals-2.17.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/cf/d5/6f503661099c103b0a60f8529d27e75bab90e87c03f1c4a28b1742351f3d/nlr_farms-1.0.8-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/e4/82/8d88829bd0a894c0200a39f2fafe5ee147cbb6c68294702e2b7d9eb6a32c/nlr_mlclouds-0.0.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/37/6e/ef1bc4e9d1e440fcc56b50e332a04416f752a38ba34ed10530baa9514b8b/nlr_rest2-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/62/00/55b2859a6a88daa85958f690f86a8fe9bf21a0b23fb582826ed5aeb80e51/NREL_cloud_fs-0.0.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/51/b6/95a52fcd1a92e339a61d34d054401671c50e3522f8aaea37d413e651951d/nrel_farms-1.0.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/69/0c9c9c681664c712cc7cad6b657904e99b00667c08c6c95019c896ac8943/nrel_gaps-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/19/6c/26933331130ed2a15f125c91f2a89cf20e1e3aa2db5f72d6b4120e46cc33/NREL_mlclouds-0.0.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/91/98/7c766b5435dee89a5bcae06f5520b5557a2ede4d87eb4272e1e1662dc37f/nrel_nsrdb-4.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/c3/4c9a17ca2b2ae1f09f91b4ee2608e185af82ddc751e9dbedaa6949bde644/nrel_phygnn-0.0.33-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/48/cf30faa390f3160f7cfe81266af1c1421d08b0b9cdf4585ba2d222091cef/NREL_rest2-1.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/5c/c948539727ee833688958d711dd8237c1ccd04a2383ad26c84aec6705b7c/NREL_rex-0.2.99-py3-none-any.whl
@@ -1172,10 +1184,14 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/a9/80/19189ea605017473660e43762dc853d2797984b3c7bf30ce656099add30c/ml_dtypes-0.5.4-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5a/56/21b27c560c13822ed93133f08aa6372c53a8e067f11fbed37b4adcdac922/multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/4b/27/20770bd6bf8fbe1e16f848ba21da9df061f38d2e6483952c29d2bb5d1d8b/narwhals-2.17.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/cf/d5/6f503661099c103b0a60f8529d27e75bab90e87c03f1c4a28b1742351f3d/nlr_farms-1.0.8-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/e4/82/8d88829bd0a894c0200a39f2fafe5ee147cbb6c68294702e2b7d9eb6a32c/nlr_mlclouds-0.0.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/37/6e/ef1bc4e9d1e440fcc56b50e332a04416f752a38ba34ed10530baa9514b8b/nlr_rest2-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/62/00/55b2859a6a88daa85958f690f86a8fe9bf21a0b23fb582826ed5aeb80e51/NREL_cloud_fs-0.0.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/51/b6/95a52fcd1a92e339a61d34d054401671c50e3522f8aaea37d413e651951d/nrel_farms-1.0.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/69/0c9c9c681664c712cc7cad6b657904e99b00667c08c6c95019c896ac8943/nrel_gaps-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/19/6c/26933331130ed2a15f125c91f2a89cf20e1e3aa2db5f72d6b4120e46cc33/NREL_mlclouds-0.0.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/91/98/7c766b5435dee89a5bcae06f5520b5557a2ede4d87eb4272e1e1662dc37f/nrel_nsrdb-4.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/c3/4c9a17ca2b2ae1f09f91b4ee2608e185af82ddc751e9dbedaa6949bde644/nrel_phygnn-0.0.33-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/48/cf30faa390f3160f7cfe81266af1c1421d08b0b9cdf4585ba2d222091cef/NREL_rest2-1.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/5c/c948539727ee833688958d711dd8237c1ccd04a2383ad26c84aec6705b7c/NREL_rex-0.2.99-py3-none-any.whl
@@ -1456,10 +1472,14 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/a9/80/19189ea605017473660e43762dc853d2797984b3c7bf30ce656099add30c/ml_dtypes-0.5.4-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/5a/56/21b27c560c13822ed93133f08aa6372c53a8e067f11fbed37b4adcdac922/multidict-6.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/4b/27/20770bd6bf8fbe1e16f848ba21da9df061f38d2e6483952c29d2bb5d1d8b/narwhals-2.17.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/cf/d5/6f503661099c103b0a60f8529d27e75bab90e87c03f1c4a28b1742351f3d/nlr_farms-1.0.8-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/e4/82/8d88829bd0a894c0200a39f2fafe5ee147cbb6c68294702e2b7d9eb6a32c/nlr_mlclouds-0.0.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/37/6e/ef1bc4e9d1e440fcc56b50e332a04416f752a38ba34ed10530baa9514b8b/nlr_rest2-1.0.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/62/00/55b2859a6a88daa85958f690f86a8fe9bf21a0b23fb582826ed5aeb80e51/NREL_cloud_fs-0.0.8-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/51/b6/95a52fcd1a92e339a61d34d054401671c50e3522f8aaea37d413e651951d/nrel_farms-1.0.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/69/0c9c9c681664c712cc7cad6b657904e99b00667c08c6c95019c896ac8943/nrel_gaps-0.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/19/6c/26933331130ed2a15f125c91f2a89cf20e1e3aa2db5f72d6b4120e46cc33/NREL_mlclouds-0.0.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/91/98/7c766b5435dee89a5bcae06f5520b5557a2ede4d87eb4272e1e1662dc37f/nrel_nsrdb-4.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/c3/4c9a17ca2b2ae1f09f91b4ee2608e185af82ddc751e9dbedaa6949bde644/nrel_phygnn-0.0.33-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/44/48/cf30faa390f3160f7cfe81266af1c1421d08b0b9cdf4585ba2d222091cef/NREL_rest2-1.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d6/5c/c948539727ee833688958d711dd8237c1ccd04a2383ad26c84aec6705b7c/NREL_rex-0.2.99-py3-none-any.whl
@@ -3846,6 +3866,82 @@ packages:
   - pkg:pypi/nh3?source=hash-mapping
   size: 669207
   timestamp: 1761831302988
+- pypi: https://files.pythonhosted.org/packages/cf/d5/6f503661099c103b0a60f8529d27e75bab90e87c03f1c4a28b1742351f3d/nlr_farms-1.0.8-py3-none-any.whl
+  name: nlr-farms
+  version: 1.0.8
+  sha256: 77b2daf1adbaafc1ae3130aa3404b56e3bfb7b8690f0dd62776f3639446876f3
+  requires_dist:
+  - numpy>=1.17
+  - pandas>=0.25
+  - build>=0.5 ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - ruff>=0.5.0 ; extra == 'dev'
+  - sphinx>=7.0 ; extra == 'doc'
+  - sphinx-rtd-theme>=2.0 ; extra == 'doc'
+  - sphinx-click>=4.0 ; extra == 'doc'
+  - pytest>=5.2 ; extra == 'test'
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/e4/82/8d88829bd0a894c0200a39f2fafe5ee147cbb6c68294702e2b7d9eb6a32c/nlr_mlclouds-0.0.6-py3-none-any.whl
+  name: nlr-mlclouds
+  version: 0.0.6
+  sha256: 09d6aa2022260c90ccdd8dce83b4f3881d874b7e37a7c0e228d0a990dd51ec77
+  requires_dist:
+  - nrel-nsrdb>=4.1.2
+  - nrel-phygnn>=0.0.30
+  - tensorflow==2.12
+  - plotly
+  - build>=0.5 ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - ruff>=0.5.0 ; extra == 'dev'
+  - sphinx>=7.0 ; extra == 'doc'
+  - sphinx-rtd-theme>=2.0 ; extra == 'doc'
+  - sphinx-click>=4.0 ; extra == 'doc'
+  - pytest>=5.2 ; extra == 'test'
+  - pytest-env>=1.1.3 ; extra == 'test'
+  - pytest-cov>=5.0.0 ; extra == 'test'
+  requires_python: '>=3.9'
+- pypi: ./
+  name: nlr-nsrdb
+  version: 4.1.4.dev2+g50bff425c.d20260415
+  sha256: a8ceff16eabe7705c319f59e24aefa2df4273d4e19a37ffa9555c8413193f1c7
+  requires_dist:
+  - nrel-gaps>=0.6.14,<0.8.0
+  - nlr-farms>=1.0.8
+  - nlr-rest2>=1.0.3
+  - nlr-mlclouds>=0.0.6
+  - netcdf4>=1.5.8,<1.7
+  - scikit-learn>=1.0
+  - matplotlib>=3.1
+  - h5netcdf>=1.0.0,<1.2
+  - pre-commit ; extra == 'dev'
+  - ruff>=0.5.0 ; extra == 'dev'
+  - ipython>=9.8.0,<10 ; extra == 'dev'
+  - build>=0.5 ; extra == 'build'
+  - twine>=5.0 ; extra == 'build'
+  - uv>=0.3.0 ; extra == 'build'
+  - sphinx>=8.0.2,<8.1.0 ; extra == 'doc'
+  - sphinx-rtd-theme>=3.0.2 ; extra == 'doc'
+  - sphinx-click>=5.2.1 ; extra == 'doc'
+  - pytest>=5.2 ; extra == 'test'
+  - pytest-env>=1.1.3 ; extra == 'test'
+  - pytest-cov>=5.0.0 ; extra == 'test'
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/37/6e/ef1bc4e9d1e440fcc56b50e332a04416f752a38ba34ed10530baa9514b8b/nlr_rest2-1.0.4-py3-none-any.whl
+  name: nlr-rest2
+  version: 1.0.4
+  sha256: c1167fedd70935a33f4eb444ae0a163d233f1bd3f0ce6b30f2f3a184f65fecdd
+  requires_dist:
+  - nlr-farms>=1.0.8
+  - numpy>=1.17,<2.0
+  - h5py>=2.10.0,!=3.0.0
+  - build>=0.5 ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - ruff>=0.5.0 ; extra == 'dev'
+  - sphinx>=7.0 ; extra == 'doc'
+  - sphinx-rtd-theme>=2.0 ; extra == 'doc'
+  - sphinx-click>=4.0 ; extra == 'doc'
+  - pytest>=5.2 ; extra == 'test'
+  requires_python: '>=3.9'
 - conda: https://conda.anaconda.org/conda-forge/noarch/nodeenv-1.9.1-pyhd8ed1ab_1.conda
   sha256: 3636eec0e60466a00069b47ce94b6d88b01419b6577d8e393da44bb5bc8d3468
   md5: 7ba3f09fceae6a120d664217e58fe686
@@ -3951,29 +4047,26 @@ packages:
   - pytest-env>=1.1.3 ; extra == 'test'
   - pytest-cov>=5.0.0 ; extra == 'test'
   requires_python: '>=3.9'
-- pypi: ./
+- pypi: https://files.pythonhosted.org/packages/91/98/7c766b5435dee89a5bcae06f5520b5557a2ede4d87eb4272e1e1662dc37f/nrel_nsrdb-4.1.2-py3-none-any.whl
   name: nrel-nsrdb
-  version: 4.1.3.dev53+ge2c5d6c52.d20260320
-  sha256: 3e8ea4833455135212016fa61b38126bb5c3d86fe42fb69c7d1b55615ebfc315
+  version: 4.1.2
+  sha256: 39854c11e5a9831fe3c638f95babfd2a7faff4f4da9d5e65aab9aecb467e0920
   requires_dist:
-  - nrel-gaps>=0.6.14,<0.8.0
+  - netcdf4>=1.6,<1.7
+  - matplotlib>=3.1
+  - nrel-gaps>=0.6.0
   - nrel-cloud-fs>=0.0.8
-  - nrel-farms>1.0.6
+  - nrel-farms>=1.0.6
+  - scikit-learn>=1.0
   - nrel-rest2>=1.0.2
   - nrel-mlclouds>=0.0.5
-  - netcdf4>=1.5.8,<1.7
-  - scikit-learn>=1.0
-  - matplotlib>=3.1
-  - h5netcdf>=1.0.0,<1.2
+  - dask>=2024.8.0
+  - build>=0.5 ; extra == 'dev'
   - pre-commit ; extra == 'dev'
   - ruff>=0.5.0 ; extra == 'dev'
-  - ipython>=9.8.0,<10 ; extra == 'dev'
-  - build>=0.5 ; extra == 'build'
-  - twine>=5.0 ; extra == 'build'
-  - uv>=0.3.0 ; extra == 'build'
-  - sphinx>=8.0.2,<8.1.0 ; extra == 'doc'
-  - sphinx-rtd-theme>=3.0.2 ; extra == 'doc'
-  - sphinx-click>=5.2.1 ; extra == 'doc'
+  - sphinx>=7.0 ; extra == 'doc'
+  - sphinx-rtd-theme>=2.0 ; extra == 'doc'
+  - sphinx-click>=4.0 ; extra == 'doc'
   - pytest>=5.2 ; extra == 'test'
   - pytest-env>=1.1.3 ; extra == 'test'
   - pytest-cov>=5.0.0 ; extra == 'test'

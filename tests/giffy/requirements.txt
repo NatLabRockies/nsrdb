@@ -1,7 +1,0 @@
-geopandas
-matplotlib
-numpy
-pandas
-NREL-cloud_fs>=0.0.8
-NREL-rex
-Pillow
