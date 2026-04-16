@@ -1,6 +1,0 @@
-# dot files and directories
-.*
-.*/
-
-# Docker Files
-Docker*
