@@ -70,7 +70,6 @@ AGG_KWARGS = {
     'full_spatial': '2km',
     'conus_spatial': '2km',
     'final_spatial': '4km',
-    'data_dir': './post_proc',
     'full_freq': '10min',
     'conus_freq': '5min',
     'final_freq': '30min',
@@ -134,7 +133,9 @@ class CreateConfigs:
                 input_kwargs.pop('execution_control')
             )
         config.update(input_kwargs)
-        config['out_dir'] = os.path.abspath(config['out_dir'])
+        for k, v in list(config.items()):
+            if k.endswith('_dir'):
+                config[k] = os.path.abspath(v)
         os.makedirs(config['out_dir'], exist_ok=True)
         return config
 
@@ -222,9 +223,9 @@ class CreateConfigs:
         if run_name is not None:
             return run_name
 
-        config.update(
-            {k: v for k, v in BASE_KWARGS.items() if k not in config}
-        )
+        config.update({
+            k: v for k, v in BASE_KWARGS.items() if k not in config
+        })
         pattern_dict = {
             'surfrad': cls.SURFRAD_RUN_NAME,
             'main': cls.MAIN_RUN_NAME,
@@ -271,9 +272,9 @@ class CreateConfigs:
         with open(template, encoding='utf-8') as s:
             config_dict = json.loads(str_replace_dict(s.read(), config))
 
-        config_dict.update(
-            {k: v for k, v in config.items() if k in config_dict}
-        )
+        config_dict.update({
+            k: v for k, v in config.items() if k in config_dict
+        })
 
         # special case for 2018. use all points as neighbors during cloud
         # regrid
@@ -400,6 +401,7 @@ class CreateConfigs:
         out_dir = os.path.abspath(kwargs.get('out_dir', './'))
         post_proc_dir = os.path.join(out_dir, 'post_proc')
         kwargs['post_proc_dir'] = kwargs.get('post_proc_dir', post_proc_dir)
+        kwargs['data_dir'] = kwargs.get('data_dir', post_proc_dir)
         kwargs['main_dir'] = out_dir
 
         if kwargs['year'] > 2018:
@@ -435,9 +437,10 @@ class CreateConfigs:
                 os.path.join(post_proc_dir, fname),
                 module_name=mod_name,
             )
-            pipeline_config['pipeline'].append(
-                {step_name: fname, 'command': mod_name}
-            )
+            pipeline_config['pipeline'].append({
+                step_name: fname,
+                'command': mod_name,
+            })
         cls._write_config(
             pipeline_config,
             cls._get_config_file({'out_dir': post_proc_dir}, 'pipeline_post'),
