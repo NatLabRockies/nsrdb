@@ -76,7 +76,7 @@ def run_data_model_jobs(
                     future.result()
                 except Exception as error:
                     logger.error(
-                        'Error processing file: %s',
+                        'Error processing file(s): %s',
                         futures[future],
                     )
                     logger.exception(error)
@@ -124,7 +124,7 @@ class BaseUwiscDataModel:
         ts = re.match(cls.TIMESTAMP_PATTERN, input_file).groups()
         if len(ts) == 3:
             year, doy, hour = ts
-            return year, doy, hour, '000'
+            return year, doy, hour, '00'
         return ts
 
     @classmethod
@@ -259,6 +259,17 @@ class BaseUwiscDataModel:
         return ds
 
     @classmethod
+    def fill_missing_vars(cls, ds):
+        """Fill any missing variables with NaN arrays."""
+        for var_name in cls.NAME_MAP:
+            if var_name not in ds.data_vars:
+                ds[var_name] = (('south_north', 'west_east'), np.full(
+                    (ds.sizes['south_north'], ds.sizes['west_east']),
+                    np.nan,
+                ))
+        return ds
+
+    @classmethod
     def remap_cloud_phase(cls, ds):
         """Map source cloud phase flags to UWISC cloud types."""
         if cls.CLOUD_TYPE_SOURCE_VAR is None:
@@ -295,6 +306,7 @@ class BaseUwiscDataModel:
     def process_dataset(self, ds):
         """Run the shared UWISC preprocessing pipeline on a dataset."""
         ds = self.remap_dims(ds)
+        ds = self.fill_missing_vars(ds)
         ds = self.transform_raw_data(ds)
         ds = self.rename_vars(ds)
         ds = self.drop_vars(ds)
