@@ -9,6 +9,7 @@ from glob import glob
 
 import numpy as np
 import pandas as pd
+from rex.utilities.solar_position import SolarPosition
 
 DROP_VARS = ['relative_time']
 
@@ -122,10 +123,11 @@ class BaseUwiscDataModel:
     def parse_timestamp(cls, input_file):
         """Parse a timestamp tuple from an input file path."""
         ts = re.match(cls.TIMESTAMP_PATTERN, input_file).groups()
-        if len(ts) == 3:
-            year, doy, hour = ts
-            return year, doy, hour, '00'
-        return ts
+        year, doy, hour = ts
+        hour = hour[:2]
+        minute = hour[2:] if len(hour) > 2 else '00'
+        secs = '000'
+        return year, doy, hour, minute, secs
 
     @classmethod
     def parse_timestamp_string(cls, input_file):
@@ -143,19 +145,18 @@ class BaseUwiscDataModel:
         return self.parse_timestamp_string(self.primary_input_file)
 
     @cached_property
-    def timeindex(self):
+    def time_index(self):
         """Get a single-step time index for the primary input file."""
-        year, doy, hour, minute = self.timestamp
+        year, doy, hour, minute, _ = self.timestamp
         timestamp = pd.to_datetime(
-            f'{year}{doy}{hour}{minute}',
-            format='%Y%j%H%M',
+            f'{year}{doy}{hour}{minute}00', format='%Y%j%H%M%S'
         )
         return pd.DatetimeIndex([timestamp])
 
     @cached_property
     def output_file(self):
         """Get output file name for the configured output pattern."""
-        year, doy, _, _ = self.timestamp
+        year, doy, *_ = self.timestamp
         return self.output_pattern.format(
             year=year,
             doy=doy,
@@ -176,6 +177,22 @@ class BaseUwiscDataModel:
     def transform_raw_data(cls, ds):
         """Apply any subclass-specific preprocessing to the raw dataset."""
         return ds
+
+    def get_solar_zenith(self, ds):
+        """Derive the solar zenith angle for the dataset."""
+        lats = ds['latitude'].values
+        lons = ds['longitude'].values
+        return SolarPosition._zenith(
+            self.time_index, lats, lons
+        )
+
+    def get_solar_azimuth(self, ds):
+        """Derive the solar azimuth angle for the dataset."""
+        lats = ds['latitude'].values
+        lons = ds['longitude'].values
+        return SolarPosition._azimuth(
+            self.time_index, lats, lons
+        )
 
     @classmethod
     def rename_vars(cls, ds):
@@ -252,7 +269,7 @@ class BaseUwiscDataModel:
         if ref_time is not None:
             time_index = pd.DatetimeIndex([ref_time]).values
         else:
-            time_index = self.timeindex.values
+            time_index = self.time_index.values
         ds = self._rename_spatial_dims(ds)
         ds = self._promote_lat_lon_coords(ds)
         ds = ds.assign_coords({'time': ('time', time_index)})
@@ -263,10 +280,27 @@ class BaseUwiscDataModel:
         """Fill any missing variables with NaN arrays."""
         for var_name in cls.NAME_MAP:
             if var_name not in ds.data_vars:
-                ds[var_name] = (('south_north', 'west_east'), np.full(
-                    (ds.sizes['south_north'], ds.sizes['west_east']),
-                    np.nan,
-                ))
+                ds[var_name] = (
+                    ('south_north', 'west_east'),
+                    np.full(
+                        (ds.sizes['south_north'], ds.sizes['west_east']),
+                        np.nan,
+                    ),
+                )
+        return ds
+
+    def derive_solar_angles(self, ds):
+        """Derive solar angles if not already present in the dataset."""
+        if 'solar_zenith_angle' not in ds.data_vars:
+            ds['solar_zenith_angle'] = (
+                ('south_north', 'west_east'),
+                self.get_solar_zenith(ds),
+            )
+        if 'solar_azimuth_angle' not in ds.data_vars:
+            ds['solar_azimuth_angle'] = (
+                ('south_north', 'west_east'),
+                self.get_solar_azimuth(ds),
+            )
         return ds
 
     @classmethod
@@ -312,6 +346,7 @@ class BaseUwiscDataModel:
         ds = self.drop_vars(ds)
         ds = self.remap_cloud_phase(ds)
         ds = self.derive_stdevs(ds)
+        ds = self.derive_solar_angles(ds)
         return ds
 
     @classmethod

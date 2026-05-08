@@ -79,17 +79,6 @@ class NasaDataModel(BaseUwiscDataModel):
         return super().run(input_file, output_pattern)
 
 
-def run_jobs(input_pattern, output_pattern, max_workers=None):
-    """Run multiple file conversion jobs."""
-    return run_data_model_jobs(
-        NasaDataModel,
-        input_pattern,
-        output_pattern,
-        max_workers=max_workers,
-        logger=logger,
-    )
-
-
 if __name__ == '__main__':
     default_output_pattern = '/projects/pxs/nasa_polar/standardized/{year}'
     default_output_pattern += '/{doy}/nacomposite_{timestamp}.nc'
@@ -114,8 +103,10 @@ if __name__ == '__main__':
         help='Number of workers to use for parallel file conversion',
     )
     args = parser.parse_args()
-    run_jobs(
-        input_pattern=args.input_pattern,
-        output_pattern=args.output_pattern,
+    run_data_model_jobs(
+        NasaDataModel,
+        args.input_pattern,
+        args.output_pattern,
         max_workers=args.max_workers,
+        logger=logger,
     )

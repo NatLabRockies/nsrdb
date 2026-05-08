@@ -1205,7 +1205,7 @@ class SPA:
     @classmethod
     def azimuth(cls, time_index, lat_lon, elev=0, delta_t=None):
         """
-        Compute the solar elevation
+        Compute the solar azimuth
 
         Parameters
         ----------
@@ -1231,7 +1231,7 @@ class SPA:
     @classmethod
     def zenith(cls, time_index, lat_lon, elev=0, delta_t=None):
         """
-        Compute the solar elevation
+        Compute the solar zenith
 
         Parameters
         ----------

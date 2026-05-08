@@ -32,7 +32,7 @@ NAME_MAP = {
     'CTH': 'cld_height_acha',  # cloud top height
     'CP': 'cloud_type',  # cloud phase
     'VZA': 'sensor_zenith_angle',
-    'VAZ': 'solar_azimuth_angle',
+    'VAZ': 'sensor_azimuth_angle',
 }
 
 GK2A_CLOUD_TYPE = {
@@ -219,30 +219,13 @@ class Gk2aDataModel(BaseUwiscDataModel):
         """Parse the GK2A timestamp tuple from an input file path."""
         basename = os.path.basename(input_file)
         match = re.search(r'(\d{12})(?=\.[^.]+$)', basename)
-        if match is not None:
-            timestamp = pd.to_datetime(match.group(1), format='%Y%m%d%H%M')
-            return (
-                timestamp.strftime('%Y'),
-                timestamp.strftime('%j'),
-                timestamp.strftime('%H'),
-                timestamp.strftime('%M'),
-            )
-
-        match_pattern = r'.*_([0-9]+).([0-9]+).([0-9]+).([0-9]+).\w+'
-        ts = re.match(match_pattern, input_file).groups()
-        return ts
-
-    @classmethod
-    def parse_timestamp_string(cls, input_file):
-        """Get output timestamp string from the primary input file."""
-        basename = os.path.basename(input_file)
-        match = re.search(r'(\d{12})(?=\.[^.]+$)', basename)
-        if match is not None:
-            return f's{match.group(1)}'
-
-        match_pattern = r'.*_([0-9]+).([0-9]+).([0-9]+).([0-9]+).\w+'
-        ts = re.match(match_pattern, input_file).groups()
-        return f's{"".join(ts)}'
+        timestamp = pd.to_datetime(match.group(1), format='%Y%m%d%H%M')
+        year = timestamp.strftime('%Y')
+        doy = timestamp.strftime('%j')
+        hour = timestamp.strftime('%H')
+        minute = timestamp.strftime('%M')
+        secs = '000'
+        return year, doy, hour, minute, secs
 
     @classmethod
     def open_dataset(cls, input_files):
@@ -253,8 +236,8 @@ class Gk2aDataModel(BaseUwiscDataModel):
     def get_files_from_timestamp(cls, timestamp):
         """Get list of files needed for given timestamp. This is needed to
         combine different channels, which are stored in separate files."""
-        year, doy, hour, secs = timestamp
-        file_pattern = f'*{year}.{doy}.{hour}.{secs}*.nc'
+        year, doy, hour, minute, _ = timestamp
+        file_pattern = f'*{year}.{doy}.{hour}{minute}*.nc'
         files = glob(os.path.join(os.path.dirname(__file__), file_pattern))
         return files
 
@@ -313,18 +296,6 @@ def group_files_by_timestamp(files):
     return [group + untimestamped for group in groups.values()]
 
 
-def run_jobs(input_pattern, output_pattern, max_workers=None):
-    """Run multiple file conversion jobs."""
-    return run_data_model_jobs(
-        Gk2aDataModel,
-        input_pattern,
-        output_pattern,
-        max_workers=max_workers,
-        group_inputs=group_files_by_timestamp,
-        logger=logger,
-    )
-
-
 if __name__ == '__main__':
     default_output_pattern = '/projects/pxs/GK2A/standardized/{year}'
     default_output_pattern += '/{doy}/gk2a_{timestamp}.nc'
@@ -349,8 +320,11 @@ if __name__ == '__main__':
         help='Number of workers to use for parallel file conversion',
     )
     args = parser.parse_args()
-    run_jobs(
-        input_pattern=args.input_pattern,
-        output_pattern=args.output_pattern,
+    run_data_model_jobs(
+        Gk2aDataModel,
+        args.input_pattern,
+        args.output_pattern,
         max_workers=args.max_workers,
+        group_inputs=group_files_by_timestamp,
+        logger=logger,
     )

@@ -52,7 +52,7 @@ def test_remap_dims_normalizes_spatial_dims_and_coords(y_dim, x_dim):
 
     remapped = model.remap_dims(ds)
 
-    assert remapped.indexes['time'][0] == model.timeindex[0]
+    assert remapped.indexes['time'][0] == model.time_index[0]
     assert remapped['foo'].dims == ('south_north', 'west_east')
     assert 'latitude' in remapped.coords
     assert 'longitude' in remapped.coords
