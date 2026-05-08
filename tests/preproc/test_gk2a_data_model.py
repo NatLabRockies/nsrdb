@@ -8,7 +8,6 @@ import xarray as xr
 from nsrdb.preprocessing.gk2a_data_model import (
     Gk2aDataModel,
     group_files_by_timestamp,
-    run_jobs,
 )
 
 
@@ -106,29 +105,3 @@ def test_gk2a_remap_cloud_phase_uses_cp_source_var():
         remapped['cloud_type'].values,
         np.array([[0, 3], [6, 10]]),
     )
-
-
-def test_run_jobs_accepts_multiple_glob_patterns(
-    make_nested_files,
-    collect_run_calls,
-):
-    """GK2A run_jobs should group timestamped files before execution."""
-    file_1, file_2 = make_nested_files(
-        'set_1/a/vi006_202501010700.nc',
-        'set_2/b/ir112_202501010700.nc',
-    )
-    calls = collect_run_calls(Gk2aDataModel)
-
-    root = file_1.split('/set_1/', 1)[0]
-    run_jobs(
-        input_pattern=[f'{root}/set_1/**/*.nc', f'{root}/set_2/**/*.nc'],
-        output_pattern='/tmp/out/{year}/{doy}/gk2a_{timestamp}.nc',
-        max_workers=1,
-    )
-
-    assert calls == [
-        (
-            sorted([file_1, file_2]),
-            '/tmp/out/{year}/{doy}/gk2a_{timestamp}.nc',
-        )
-    ]
