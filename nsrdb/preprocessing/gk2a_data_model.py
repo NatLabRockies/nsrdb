@@ -5,7 +5,6 @@ import logging
 import os
 import re
 from contextlib import suppress
-from glob import glob
 
 import numpy as np
 import pandas as pd
@@ -231,15 +230,6 @@ class Gk2aDataModel(BaseUwiscDataModel):
     def open_dataset(cls, input_files):
         """Get xarray dataset for raw input file"""
         return cls.combine_files(input_files)
-
-    @classmethod
-    def get_files_from_timestamp(cls, timestamp):
-        """Get list of files needed for given timestamp. This is needed to
-        combine different channels, which are stored in separate files."""
-        year, doy, hour, minute, _ = timestamp
-        file_pattern = f'*{year}.{doy}.{hour}{minute}*.nc'
-        files = glob(os.path.join(os.path.dirname(__file__), file_pattern))
-        return files
 
     @classmethod
     def combine_files(cls, files):
