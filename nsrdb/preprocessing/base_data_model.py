@@ -369,7 +369,7 @@ class BaseUwiscDataModel:
             )
             return
 
-        logger.info('Geting xarray dataset for %s', input_data)
+        logger.info('Getting xarray dataset for %s', input_data)
         ds = data_model.process_dataset(data_model.ds)
 
         logger.info('Writing converted file to %s', data_model.output_file)
