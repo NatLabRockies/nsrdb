@@ -124,8 +124,8 @@ class BaseUwiscDataModel:
         """Parse a timestamp tuple from an input file path."""
         ts = re.match(cls.TIMESTAMP_PATTERN, input_file).groups()
         year, doy, hour = ts
-        hour = hour[:2]
         minute = hour[2:] if len(hour) > 2 else '00'
+        hour = hour[:2]
         secs = '000'
         return year, doy, hour, minute, secs
 
