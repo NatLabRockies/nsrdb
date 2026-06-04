@@ -454,14 +454,18 @@ class TmyRunner:
         """
 
         logger.debug('Saving TMY results to: {}'.format(f_out))
-
+        tmp_file = f_out + '.tmp'
         TmyRunner._init_file(
-            f_out, list(data_dict.keys()), time_index, meta, var_meta=var_meta
+            tmp_file,
+            list(data_dict.keys()),
+            time_index,
+            meta,
+            var_meta=var_meta,
         )
-
-        with Outputs(f_out, mode='a') as f:
+        with Outputs(tmp_file, mode='a') as f:
             for dset, arr in data_dict.items():
                 f[dset] = arr
+        os.rename(tmp_file, f_out)
 
     @staticmethod
     def _run_file(fp):
