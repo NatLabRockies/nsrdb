@@ -100,3 +100,58 @@ def test_run_data_model_jobs_accepts_multiple_glob_patterns(
         (file_1, '/tmp/out/{year}/{doy}/file_{timestamp}.nc'),
         (file_2, '/tmp/out/{year}/{doy}/file_{timestamp}.nc'),
     ]
+
+
+def test_solar_angles_use_public_solar_position_api(monkeypatch):
+    """Solar angle helpers should use public SolarPosition properties."""
+
+    class FakeSolarPosition:
+        """Test double for rex SolarPosition."""
+
+        call_args = None
+
+        def __init__(self, time_index, lat_lon):
+            self.time_index = time_index
+            self.lat_lon = lat_lon
+            self.__class__.call_args = (time_index, lat_lon)
+
+        @property
+        def zenith(self):
+            return np.arange(self.lat_lon.shape[0])[None, :]
+
+        @property
+        def azimuth(self):
+            return (100 + np.arange(self.lat_lon.shape[0]))[None, :]
+
+    monkeypatch.setattr(
+        'nsrdb.preprocessing.base_data_model.SolarPosition',
+        FakeSolarPosition,
+    )
+
+    model = DummyDataModel(
+        '/tmp/input_2025.001.12.nc',
+        '/tmp/out/{year}/{doy}/{timestamp}.nc',
+    )
+    ds = xr.Dataset({
+        'latitude': (
+            ('south_north', 'west_east'),
+            np.array([[10.0, 11.0], [12.0, 13.0]]),
+        ),
+        'longitude': (
+            ('south_north', 'west_east'),
+            np.array([[30.0, 31.0], [32.0, 33.0]]),
+        ),
+    })
+
+    zenith = model.get_solar_zenith(ds)
+    assert np.array_equal(zenith, np.array([[0, 1], [2, 3]]))
+
+    time_index, lat_lon = FakeSolarPosition.call_args
+    assert time_index.equals(model.time_index)
+    assert np.array_equal(
+        lat_lon,
+        np.array([[10.0, 30.0], [11.0, 31.0], [12.0, 32.0], [13.0, 33.0]]),
+    )
+
+    azimuth = model.get_solar_azimuth(ds)
+    assert np.array_equal(azimuth, np.array([[100, 101], [102, 103]]))
