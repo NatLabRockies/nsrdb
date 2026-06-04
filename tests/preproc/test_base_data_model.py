@@ -104,16 +104,15 @@ def test_run_data_model_jobs_accepts_multiple_glob_patterns(
 
 def test_solar_angles_use_public_solar_position_api(monkeypatch):
     """Solar angle helpers should use public SolarPosition properties."""
+    call_args = []
 
     class FakeSolarPosition:
         """Test double for rex SolarPosition."""
 
-        call_args = None
-
         def __init__(self, time_index, lat_lon):
             self.time_index = time_index
             self.lat_lon = lat_lon
-            self.__class__.call_args = (time_index, lat_lon)
+            call_args.append((time_index, lat_lon))
 
         @property
         def zenith(self):
@@ -146,7 +145,7 @@ def test_solar_angles_use_public_solar_position_api(monkeypatch):
     zenith = model.get_solar_zenith(ds)
     assert np.array_equal(zenith, np.array([[0, 1], [2, 3]]))
 
-    time_index, lat_lon = FakeSolarPosition.call_args
+    time_index, lat_lon = call_args[-1]
     assert time_index.equals(model.time_index)
     assert np.array_equal(
         lat_lon,
