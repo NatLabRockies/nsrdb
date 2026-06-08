@@ -1,0 +1,39 @@
+nsrdb.preprocessing.base\_data\_model
+=====================================
+
+.. automodule:: nsrdb.preprocessing.base_data_model
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      expand_input_patterns
+      run_data_model_jobs
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      BaseUwiscDataModel
+   
+   
+
+   
+   
+   
+
+
+

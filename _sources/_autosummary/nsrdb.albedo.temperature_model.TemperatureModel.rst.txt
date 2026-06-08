@@ -1,0 +1,26 @@
+nsrdb.albedo.temperature\_model.TemperatureModel
+================================================
+
+.. currentmodule:: nsrdb.albedo.temperature_model
+
+.. autoclass:: TemperatureModel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TemperatureModel.get_ice_albedo
+      ~TemperatureModel.get_snow_albedo
+      ~TemperatureModel.update_snow_albedo
+   
+   
+
+   
+   
+   

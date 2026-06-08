@@ -1,0 +1,39 @@
+nsrdb.cli.DictOrFile
+====================
+
+.. currentmodule:: nsrdb.cli
+
+.. autoclass:: DictOrFile
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DictOrFile.convert
+      ~DictOrFile.fail
+      ~DictOrFile.get_metavar
+      ~DictOrFile.get_missing_message
+      ~DictOrFile.shell_complete
+      ~DictOrFile.split_envvar_value
+      ~DictOrFile.to_info_dict
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DictOrFile.arity
+      ~DictOrFile.envvar_list_splitter
+      ~DictOrFile.is_composite
+      ~DictOrFile.name
+   
+   

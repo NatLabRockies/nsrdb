@@ -1,0 +1,31 @@
+nsrdb.cli
+=========
+
+.. automodule:: nsrdb.cli
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      DictOrFile
+   
+   
+
+   
+   
+   
+
+
+

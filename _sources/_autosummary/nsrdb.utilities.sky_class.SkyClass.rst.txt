@@ -1,0 +1,41 @@
+nsrdb.utilities.sky\_class.SkyClass
+===================================
+
+.. currentmodule:: nsrdb.utilities.sky_class
+
+.. autoclass:: SkyClass
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkyClass.add_validation_data
+      ~SkyClass.calculate_sky_class
+      ~SkyClass.get_comparison_df
+      ~SkyClass.get_rest_inputs
+      ~SkyClass.run
+      ~SkyClass.run_rest
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SkyClass.ALIASES
+      ~SkyClass.REST_VARS
+      ~SkyClass.nsrdb
+      ~SkyClass.nsrdb_time_index
+      ~SkyClass.surf_ghi
+      ~SkyClass.surf_time_index
+      ~SkyClass.surfrad
+   
+   

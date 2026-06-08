@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.temporal\_step
+============================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: temporal_step

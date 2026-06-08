@@ -1,0 +1,32 @@
+nsrdb.solar\_position
+=====================
+
+.. automodule:: nsrdb.solar_position
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   solpos
+   spa
+   spa_tables
+

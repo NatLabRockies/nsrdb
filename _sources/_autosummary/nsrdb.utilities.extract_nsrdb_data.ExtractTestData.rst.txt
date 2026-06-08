@@ -1,0 +1,39 @@
+nsrdb.utilities.extract\_nsrdb\_data.ExtractTestData
+====================================================
+
+.. currentmodule:: nsrdb.utilities.extract_nsrdb_data
+
+.. autoclass:: ExtractTestData
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExtractTestData.copy_nsrdb_test_file
+      ~ExtractTestData.extract_closest_meta
+      ~ExtractTestData.extract_dsets
+      ~ExtractTestData.extract_map
+      ~ExtractTestData.extract_sites
+      ~ExtractTestData.filter_meta
+      ~ExtractTestData.meta_to_disk
+      ~ExtractTestData.oregon_50
+      ~ExtractTestData.srrl_2017
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ExtractTestData.IGNORE_LIST
+      ~ExtractTestData.meta
+   
+   

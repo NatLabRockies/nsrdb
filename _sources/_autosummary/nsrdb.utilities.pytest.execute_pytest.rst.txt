@@ -1,0 +1,6 @@
+nsrdb.utilities.pytest.execute\_pytest
+======================================
+
+.. currentmodule:: nsrdb.utilities.pytest
+
+.. autofunction:: execute_pytest

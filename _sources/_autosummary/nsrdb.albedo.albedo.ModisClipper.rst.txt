@@ -1,0 +1,23 @@
+nsrdb.albedo.albedo.ModisClipper
+================================
+
+.. currentmodule:: nsrdb.albedo.albedo
+
+.. autoclass:: ModisClipper
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+
+   
+   
+   

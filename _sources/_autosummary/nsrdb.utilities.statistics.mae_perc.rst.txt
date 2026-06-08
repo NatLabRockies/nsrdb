@@ -1,0 +1,6 @@
+nsrdb.utilities.statistics.mae\_perc
+====================================
+
+.. currentmodule:: nsrdb.utilities.statistics
+
+.. autofunction:: mae_perc

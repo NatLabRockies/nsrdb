@@ -1,0 +1,32 @@
+nsrdb.utilities.plots
+=====================
+
+.. automodule:: nsrdb.utilities.plots
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Spatial
+      Temporal
+   
+   
+
+   
+   
+   
+
+
+

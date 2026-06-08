@@ -1,0 +1,6 @@
+nsrdb.preprocessing.gk2a\_data\_model.group\_files\_by\_timestamp
+=================================================================
+
+.. currentmodule:: nsrdb.preprocessing.gk2a_data_model
+
+.. autofunction:: group_files_by_timestamp

@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.convert\_directory
+==============================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: convert_directory

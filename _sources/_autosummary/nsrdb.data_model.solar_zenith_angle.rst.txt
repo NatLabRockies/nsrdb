@@ -1,0 +1,31 @@
+nsrdb.data\_model.solar\_zenith\_angle
+======================================
+
+.. automodule:: nsrdb.data_model.solar_zenith_angle
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      SolarZenithAngle
+   
+   
+
+   
+   
+   
+
+
+

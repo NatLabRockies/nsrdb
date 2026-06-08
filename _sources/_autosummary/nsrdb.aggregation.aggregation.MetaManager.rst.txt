@@ -1,0 +1,28 @@
+nsrdb.aggregation.aggregation.MetaManager
+=========================================
+
+.. currentmodule:: nsrdb.aggregation.aggregation
+
+.. autoclass:: MetaManager
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MetaManager.load_pickle_tree
+      ~MetaManager.meta_sources
+      ~MetaManager.meta_sources_2018
+      ~MetaManager.plot_meta_source
+      ~MetaManager.simple
+   
+   
+
+   
+   
+   

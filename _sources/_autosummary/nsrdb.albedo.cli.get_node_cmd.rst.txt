@@ -1,0 +1,6 @@
+nsrdb.albedo.cli.get\_node\_cmd
+===============================
+
+.. currentmodule:: nsrdb.albedo.cli
+
+.. autofunction:: get_node_cmd

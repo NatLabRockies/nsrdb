@@ -1,0 +1,32 @@
+nsrdb.data\_model.base\_handler
+===============================
+
+.. automodule:: nsrdb.data_model.base_handler
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      AncillaryVarHandler
+      BaseDerivedVar
+   
+   
+
+   
+   
+   
+
+
+

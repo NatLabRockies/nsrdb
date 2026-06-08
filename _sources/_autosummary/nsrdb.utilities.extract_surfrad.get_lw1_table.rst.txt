@@ -1,0 +1,6 @@
+nsrdb.utilities.extract\_surfrad.get\_lw1\_table
+================================================
+
+.. currentmodule:: nsrdb.utilities.extract_surfrad
+
+.. autofunction:: get_lw1_table

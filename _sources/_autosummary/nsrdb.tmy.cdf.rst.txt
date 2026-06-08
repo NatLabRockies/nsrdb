@@ -1,0 +1,31 @@
+nsrdb.tmy.cdf
+=============
+
+.. automodule:: nsrdb.tmy.cdf
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Cdf
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,46 @@
+nsrdb.tmy.tmy.Tmy
+=================
+
+.. currentmodule:: nsrdb.tmy.tmy
+
+.. autoclass:: Tmy
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Tmy.calculate_tmy_years
+      ~Tmy.get_tmy_timeseries
+      ~Tmy.get_weighted_fs
+      ~Tmy.persistence_filter
+      ~Tmy.select_fs_years
+      ~Tmy.sort_years_mm
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Tmy.daily_mean_temp
+      ~Tmy.daily_time_masks
+      ~Tmy.daily_total_ghi
+      ~Tmy.meta
+      ~Tmy.my_daily_time_index
+      ~Tmy.my_time_index
+      ~Tmy.source_freq
+      ~Tmy.time_index
+      ~Tmy.time_masks
+      ~Tmy.tmy_years_long
+      ~Tmy.tmy_years_short
+      ~Tmy.years
+   
+   

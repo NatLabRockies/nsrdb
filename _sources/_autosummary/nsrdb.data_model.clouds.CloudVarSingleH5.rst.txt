@@ -1,0 +1,41 @@
+nsrdb.data\_model.clouds.CloudVarSingleH5
+=========================================
+
+.. currentmodule:: nsrdb.data_model.clouds
+
+.. autoclass:: CloudVarSingleH5
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CloudVarSingleH5.clean_attrs
+      ~CloudVarSingleH5.correct_coordinates
+      ~CloudVarSingleH5.get_dset
+      ~CloudVarSingleH5.make_sparse
+      ~CloudVarSingleH5.pre_process
+      ~CloudVarSingleH5.remap_pc_coords
+      ~CloudVarSingleH5.remap_pc_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CloudVarSingleH5.GRID_LABELS
+      ~CloudVarSingleH5.dsets
+      ~CloudVarSingleH5.fpath
+      ~CloudVarSingleH5.grid
+      ~CloudVarSingleH5.source_data
+      ~CloudVarSingleH5.tree
+   
+   

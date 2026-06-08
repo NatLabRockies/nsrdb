@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.clean\_meta
+=======================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: clean_meta

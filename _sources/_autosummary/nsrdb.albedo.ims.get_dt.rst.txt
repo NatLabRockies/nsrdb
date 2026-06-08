@@ -1,0 +1,6 @@
+nsrdb.albedo.ims.get\_dt
+========================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autofunction:: get_dt

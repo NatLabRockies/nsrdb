@@ -1,0 +1,6 @@
+nsrdb.utilities.cli.get\_doys
+=============================
+
+.. currentmodule:: nsrdb.utilities.cli
+
+.. autofunction:: get_doys

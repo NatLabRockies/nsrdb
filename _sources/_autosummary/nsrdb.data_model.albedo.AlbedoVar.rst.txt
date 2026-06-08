@@ -1,0 +1,67 @@
+nsrdb.data\_model.albedo.AlbedoVar
+==================================
+
+.. currentmodule:: nsrdb.data_model.albedo
+
+.. autoclass:: AlbedoVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AlbedoVar.exclusions_from_nsrdb
+      ~AlbedoVar.pre_flight
+      ~AlbedoVar.scale_data
+      ~AlbedoVar.set_exclusions
+      ~AlbedoVar.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AlbedoVar.DEFAULT_DIR
+      ~AlbedoVar.NN_METHOD
+      ~AlbedoVar.attrs
+      ~AlbedoVar.cache_file
+      ~AlbedoVar.chunks
+      ~AlbedoVar.data_source
+      ~AlbedoVar.date
+      ~AlbedoVar.date_stamp
+      ~AlbedoVar.description
+      ~AlbedoVar.doy
+      ~AlbedoVar.dset_name
+      ~AlbedoVar.dtype
+      ~AlbedoVar.elevation_correct
+      ~AlbedoVar.file
+      ~AlbedoVar.file_set
+      ~AlbedoVar.final_dtype
+      ~AlbedoVar.grid
+      ~AlbedoVar.mask
+      ~AlbedoVar.name
+      ~AlbedoVar.next_date
+      ~AlbedoVar.next_file
+      ~AlbedoVar.next_file_exists
+      ~AlbedoVar.next_pattern
+      ~AlbedoVar.pattern
+      ~AlbedoVar.physical_max
+      ~AlbedoVar.physical_min
+      ~AlbedoVar.scale_factor
+      ~AlbedoVar.source_data
+      ~AlbedoVar.source_dir
+      ~AlbedoVar.spatial_method
+      ~AlbedoVar.temporal_method
+      ~AlbedoVar.time_index
+      ~AlbedoVar.units
+      ~AlbedoVar.var_meta
+   
+   

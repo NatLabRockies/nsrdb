@@ -1,0 +1,36 @@
+nsrdb.utilities.statistics
+==========================
+
+.. automodule:: nsrdb.utilities.statistics
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      N
+      mae
+      mae_perc
+      mbe
+      mbe_perc
+      rmse
+      rmse_perc
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

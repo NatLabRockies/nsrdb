@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.remove\_tz
+========================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: remove_tz

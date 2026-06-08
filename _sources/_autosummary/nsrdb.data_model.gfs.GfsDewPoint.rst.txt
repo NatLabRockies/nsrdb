@@ -1,0 +1,30 @@
+nsrdb.data\_model.gfs.GfsDewPoint
+=================================
+
+.. currentmodule:: nsrdb.data_model.gfs
+
+.. autoclass:: GfsDewPoint
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GfsDewPoint.derive
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GfsDewPoint.DEPENDENCIES
+   
+   

@@ -1,0 +1,6 @@
+nsrdb.albedo.ims.uncompress
+===========================
+
+.. currentmodule:: nsrdb.albedo.ims
+
+.. autofunction:: uncompress

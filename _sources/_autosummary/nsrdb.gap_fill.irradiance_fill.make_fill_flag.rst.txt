@@ -1,0 +1,6 @@
+nsrdb.gap\_fill.irradiance\_fill.make\_fill\_flag
+=================================================
+
+.. currentmodule:: nsrdb.gap_fill.irradiance_fill
+
+.. autofunction:: make_fill_flag

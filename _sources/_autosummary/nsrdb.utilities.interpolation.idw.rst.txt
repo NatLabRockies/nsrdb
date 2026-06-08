@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.idw
+=================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: idw

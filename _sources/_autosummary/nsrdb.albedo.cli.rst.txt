@@ -1,0 +1,38 @@
+nsrdb.albedo.cli
+================
+
+.. automodule:: nsrdb.albedo.cli
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      get_node_cmd
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Date
+   
+   
+
+   
+   
+   
+
+
+

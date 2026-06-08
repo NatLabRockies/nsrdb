@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.lower\_data
+=========================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: lower_data

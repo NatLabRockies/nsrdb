@@ -1,0 +1,38 @@
+nsrdb.preprocessing.gk2a\_data\_model
+=====================================
+
+.. automodule:: nsrdb.preprocessing.gk2a_data_model
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      group_files_by_timestamp
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Gk2aDataModel
+   
+   
+
+   
+   
+   
+
+
+

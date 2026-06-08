@@ -1,0 +1,30 @@
+nsrdb.data\_model.merra.DewPoint
+================================
+
+.. currentmodule:: nsrdb.data_model.merra
+
+.. autoclass:: DewPoint
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DewPoint.derive
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DewPoint.DEPENDENCIES
+   
+   

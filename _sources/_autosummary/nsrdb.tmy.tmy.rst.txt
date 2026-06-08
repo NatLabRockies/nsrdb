@@ -1,0 +1,31 @@
+nsrdb.tmy.tmy
+=============
+
+.. automodule:: nsrdb.tmy.tmy
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Tmy
+   
+   
+
+   
+   
+   
+
+
+

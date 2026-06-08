@@ -1,0 +1,6 @@
+nsrdb.all\_sky.utilities.scale\_all\_sky\_outputs
+=================================================
+
+.. currentmodule:: nsrdb.all_sky.utilities
+
+.. autofunction:: scale_all_sky_outputs

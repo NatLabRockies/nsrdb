@@ -1,0 +1,40 @@
+nsrdb.utilities.plots.Temporal
+==============================
+
+.. currentmodule:: nsrdb.utilities.plots
+
+.. autoclass:: Temporal
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Temporal.attrs1
+      ~Temporal.attrs2
+      ~Temporal.plot_sites
+      ~Temporal.plot_timeseries
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Temporal.gids1
+      ~Temporal.gids2
+      ~Temporal.h1
+      ~Temporal.h2
+      ~Temporal.meta1
+      ~Temporal.meta2
+      ~Temporal.t1
+      ~Temporal.t2
+   
+   

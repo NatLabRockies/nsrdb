@@ -1,0 +1,72 @@
+nsrdb.data\_model.clouds.CloudVar
+=================================
+
+.. currentmodule:: nsrdb.data_model.clouds
+
+.. autoclass:: CloudVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CloudVar.get_handler
+      ~CloudVar.get_timestamp
+      ~CloudVar.infer_data_freq
+      ~CloudVar.infer_data_time_index
+      ~CloudVar.pre_flight
+      ~CloudVar.save_obj
+      ~CloudVar.scale_data
+      ~CloudVar.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CloudVar.DEFAULT_DIR
+      ~CloudVar.NN_METHOD
+      ~CloudVar.attrs
+      ~CloudVar.cache_file
+      ~CloudVar.chunks
+      ~CloudVar.data_source
+      ~CloudVar.date
+      ~CloudVar.description
+      ~CloudVar.doy
+      ~CloudVar.dset_name
+      ~CloudVar.dtype
+      ~CloudVar.elevation_correct
+      ~CloudVar.file
+      ~CloudVar.file_df
+      ~CloudVar.file_set
+      ~CloudVar.final_dtype
+      ~CloudVar.flist
+      ~CloudVar.freq
+      ~CloudVar.inferred_freq
+      ~CloudVar.mask
+      ~CloudVar.name
+      ~CloudVar.next_date
+      ~CloudVar.next_file
+      ~CloudVar.next_file_exists
+      ~CloudVar.next_pattern
+      ~CloudVar.pattern
+      ~CloudVar.physical_max
+      ~CloudVar.physical_min
+      ~CloudVar.scale_factor
+      ~CloudVar.single_handler_kwargs
+      ~CloudVar.source_dir
+      ~CloudVar.spatial_method
+      ~CloudVar.temporal_method
+      ~CloudVar.time_index
+      ~CloudVar.units
+      ~CloudVar.var_meta
+   
+   

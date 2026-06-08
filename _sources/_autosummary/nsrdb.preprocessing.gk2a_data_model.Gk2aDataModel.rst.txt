@@ -1,0 +1,61 @@
+nsrdb.preprocessing.gk2a\_data\_model.Gk2aDataModel
+===================================================
+
+.. currentmodule:: nsrdb.preprocessing.gk2a_data_model
+
+.. autoclass:: Gk2aDataModel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Gk2aDataModel.combine_files
+      ~Gk2aDataModel.count_to_rad
+      ~Gk2aDataModel.count_to_refl
+      ~Gk2aDataModel.count_to_temp
+      ~Gk2aDataModel.derive_solar_angles
+      ~Gk2aDataModel.derive_stdevs
+      ~Gk2aDataModel.drop_vars
+      ~Gk2aDataModel.fill_missing_vars
+      ~Gk2aDataModel.get_primary_input_file
+      ~Gk2aDataModel.get_solar_azimuth
+      ~Gk2aDataModel.get_solar_zenith
+      ~Gk2aDataModel.open_dataset
+      ~Gk2aDataModel.parse_timestamp
+      ~Gk2aDataModel.parse_timestamp_string
+      ~Gk2aDataModel.process_dataset
+      ~Gk2aDataModel.rad_to_temp
+      ~Gk2aDataModel.remap_cloud_phase
+      ~Gk2aDataModel.remap_dims
+      ~Gk2aDataModel.rename_vars
+      ~Gk2aDataModel.run
+      ~Gk2aDataModel.transform_raw_data
+      ~Gk2aDataModel.write_output
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Gk2aDataModel.CLOUD_TYPE_MAP
+      ~Gk2aDataModel.CLOUD_TYPE_SOURCE_VAR
+      ~Gk2aDataModel.NAME_MAP
+      ~Gk2aDataModel.TIMESTAMP_PATTERN
+      ~Gk2aDataModel.ds
+      ~Gk2aDataModel.input_files
+      ~Gk2aDataModel.output_file
+      ~Gk2aDataModel.primary_input_file
+      ~Gk2aDataModel.time_index
+      ~Gk2aDataModel.timestamp
+      ~Gk2aDataModel.timestamp_string
+   
+   

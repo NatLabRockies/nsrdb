@@ -1,0 +1,36 @@
+nsrdb.data\_model.variable\_factory.VarFactory
+==============================================
+
+.. currentmodule:: nsrdb.data_model.variable_factory
+
+.. autoclass:: VarFactory
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VarFactory.get_base_handler
+      ~VarFactory.get_class
+      ~VarFactory.get_cloud_handler
+      ~VarFactory.get_dset_attrs
+      ~VarFactory.get_dsets_attrs
+      ~VarFactory.get_instance
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~VarFactory.HANDLER_NAMES
+      ~VarFactory.MAPPING
+   
+   

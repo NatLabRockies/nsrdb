@@ -1,0 +1,6 @@
+nsrdb.utilities.nearest\_neighbor.to\_rads
+==========================================
+
+.. currentmodule:: nsrdb.utilities.nearest_neighbor
+
+.. autofunction:: to_rads

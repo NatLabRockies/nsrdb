@@ -1,0 +1,44 @@
+nsrdb.config.create\_configs.CreateConfigs
+==========================================
+
+.. currentmodule:: nsrdb.config.create_configs
+
+.. autoclass:: CreateConfigs
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CreateConfigs.aggregate
+      ~CreateConfigs.blend
+      ~CreateConfigs.collect_aggregate
+      ~CreateConfigs.collect_blend
+      ~CreateConfigs.full
+      ~CreateConfigs.init_kwargs
+      ~CreateConfigs.main
+      ~CreateConfigs.main_all
+      ~CreateConfigs.post
+      ~CreateConfigs.surfrad
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CreateConfigs.AGG_RUN_NAME
+      ~CreateConfigs.BLEND_RUN_NAME
+      ~CreateConfigs.COLLECT_AGG_RUN_NAME
+      ~CreateConfigs.COLLECT_BLEND_RUN_NAME
+      ~CreateConfigs.MAIN_RUN_NAME
+      ~CreateConfigs.SURFRAD_RUN_NAME
+   
+   

@@ -1,0 +1,31 @@
+nsrdb.data\_model.data\_model
+=============================
+
+.. automodule:: nsrdb.data_model.data_model
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      DataModel
+   
+   
+
+   
+   
+   
+
+
+

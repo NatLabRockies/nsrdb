@@ -1,0 +1,67 @@
+nsrdb.data\_model.gfs.GfsVar
+============================
+
+.. currentmodule:: nsrdb.data_model.gfs
+
+.. autoclass:: GfsVar
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GfsVar.pre_flight
+      ~GfsVar.scale_data
+      ~GfsVar.unscale_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~GfsVar.DEFAULT_DIR
+      ~GfsVar.NN_METHOD
+      ~GfsVar.attrs
+      ~GfsVar.cache_file
+      ~GfsVar.chunks
+      ~GfsVar.data_source
+      ~GfsVar.date
+      ~GfsVar.date_stamp
+      ~GfsVar.description
+      ~GfsVar.doy
+      ~GfsVar.dset_name
+      ~GfsVar.dtype
+      ~GfsVar.elevation_correct
+      ~GfsVar.file
+      ~GfsVar.file_set
+      ~GfsVar.files
+      ~GfsVar.final_dtype
+      ~GfsVar.grid
+      ~GfsVar.mask
+      ~GfsVar.name
+      ~GfsVar.next_date
+      ~GfsVar.next_file
+      ~GfsVar.next_file_exists
+      ~GfsVar.next_pattern
+      ~GfsVar.pattern
+      ~GfsVar.physical_max
+      ~GfsVar.physical_min
+      ~GfsVar.scale_factor
+      ~GfsVar.shape
+      ~GfsVar.source_data
+      ~GfsVar.source_dir
+      ~GfsVar.spatial_method
+      ~GfsVar.temporal_method
+      ~GfsVar.time_index
+      ~GfsVar.units
+      ~GfsVar.var_meta
+   
+   

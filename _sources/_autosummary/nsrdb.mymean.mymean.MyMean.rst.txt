@@ -1,0 +1,31 @@
+nsrdb.mymean.mymean.MyMean
+==========================
+
+.. currentmodule:: nsrdb.mymean.mymean
+
+.. autoclass:: MyMean
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MyMean.run
+      ~MyMean.to_kwh_m2_day
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MyMean.meta
+   
+   

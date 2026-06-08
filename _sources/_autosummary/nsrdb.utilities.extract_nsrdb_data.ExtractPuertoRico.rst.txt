@@ -1,0 +1,42 @@
+nsrdb.utilities.extract\_nsrdb\_data.ExtractPuertoRico
+======================================================
+
+.. currentmodule:: nsrdb.utilities.extract_nsrdb_data
+
+.. autoclass:: ExtractPuertoRico
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExtractPuertoRico.extract_closest_meta
+      ~ExtractPuertoRico.extract_dsets
+      ~ExtractPuertoRico.extract_gen_meta
+      ~ExtractPuertoRico.extract_map
+      ~ExtractPuertoRico.extract_sites
+      ~ExtractPuertoRico.filter_meta
+      ~ExtractPuertoRico.meta_to_disk
+      ~ExtractPuertoRico.puerto_rico_data
+      ~ExtractPuertoRico.puerto_rico_data_50
+      ~ExtractPuertoRico.puerto_rico_meta
+      ~ExtractPuertoRico.puerto_rico_vi_data
+      ~ExtractPuertoRico.puerto_rico_vi_meta
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ExtractPuertoRico.IGNORE_LIST
+      ~ExtractPuertoRico.meta
+   
+   

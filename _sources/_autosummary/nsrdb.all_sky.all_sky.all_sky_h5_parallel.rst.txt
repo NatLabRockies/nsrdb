@@ -1,0 +1,6 @@
+nsrdb.all\_sky.all\_sky.all\_sky\_h5\_parallel
+==============================================
+
+.. currentmodule:: nsrdb.all_sky.all_sky
+
+.. autofunction:: all_sky_h5_parallel

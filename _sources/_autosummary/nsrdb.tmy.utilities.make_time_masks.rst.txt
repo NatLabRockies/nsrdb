@@ -1,0 +1,6 @@
+nsrdb.tmy.utilities.make\_time\_masks
+=====================================
+
+.. currentmodule:: nsrdb.tmy.utilities
+
+.. autofunction:: make_time_masks

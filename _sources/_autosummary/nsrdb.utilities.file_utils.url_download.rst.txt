@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.url\_download
+=========================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: url_download

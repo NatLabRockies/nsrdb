@@ -1,0 +1,34 @@
+nsrdb.tmy.cdf.Cdf
+=================
+
+.. currentmodule:: nsrdb.tmy.cdf
+
+.. autoclass:: Cdf
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Cdf.plot_tmy_selection
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Cdf.cdf
+      ~Cdf.fs_all
+      ~Cdf.lt_cdf
+      ~Cdf.time_index
+      ~Cdf.years
+   
+   

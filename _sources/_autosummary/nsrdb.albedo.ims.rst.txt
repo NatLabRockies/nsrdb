@@ -1,0 +1,52 @@
+nsrdb.albedo.ims
+================
+
+.. automodule:: nsrdb.albedo.ims
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      download
+      get_dt
+      uncompress
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      ImsDataAcquisition
+      ImsDay
+      ImsFileAcquisition
+      ImsGapFill
+      MetaFiles
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+      :toctree:
+   
+      ImsDataNotFoundError
+      ImsError
+   
+   
+
+
+

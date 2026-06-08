@@ -1,0 +1,34 @@
+nsrdb.file\_handlers
+====================
+
+.. automodule:: nsrdb.file_handlers
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   collection
+   file_system
+   outputs
+   resource
+   surfrad
+

@@ -1,0 +1,43 @@
+nsrdb.utilities.file\_utils
+===========================
+
+.. automodule:: nsrdb.utilities.file_utils
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      clean_meta
+      convert_directory
+      convert_h4
+      convert_list_parallel
+      convert_list_serial
+      daterange
+      get_conversion_list
+      get_format_keys
+      pd_date_range
+      repack_h5
+      str_replace_dict
+      ts_freq_check
+      unzip_gz
+      url_download
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,35 @@
+nsrdb.albedo.albedo.CompositeAlbedoDay
+======================================
+
+.. currentmodule:: nsrdb.albedo.albedo
+
+.. autoclass:: CompositeAlbedoDay
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CompositeAlbedoDay.run
+      ~CompositeAlbedoDay.write_albedo
+      ~CompositeAlbedoDay.write_tiff
+      ~CompositeAlbedoDay.write_tiff_from_h5
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~CompositeAlbedoDay.ALBEDO_ATTRS
+      ~CompositeAlbedoDay.CHUNKS
+      ~CompositeAlbedoDay.SNOW_ALBEDO
+   
+   

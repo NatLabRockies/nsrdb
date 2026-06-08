@@ -1,0 +1,6 @@
+nsrdb.preprocessing.base\_data\_model.run\_data\_model\_jobs
+============================================================
+
+.. currentmodule:: nsrdb.preprocessing.base_data_model
+
+.. autofunction:: run_data_model_jobs

@@ -1,0 +1,32 @@
+nsrdb.file\_handlers.resource
+=============================
+
+.. automodule:: nsrdb.file_handlers.resource
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      MultiFileResource
+      Resource
+   
+   
+
+   
+   
+   
+
+
+

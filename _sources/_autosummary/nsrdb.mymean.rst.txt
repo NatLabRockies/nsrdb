@@ -1,0 +1,30 @@
+nsrdb.mymean
+============
+
+.. automodule:: nsrdb.mymean
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   mymean
+

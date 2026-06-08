@@ -1,0 +1,56 @@
+nsrdb.preprocessing.base\_data\_model.BaseUwiscDataModel
+========================================================
+
+.. currentmodule:: nsrdb.preprocessing.base_data_model
+
+.. autoclass:: BaseUwiscDataModel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BaseUwiscDataModel.derive_solar_angles
+      ~BaseUwiscDataModel.derive_stdevs
+      ~BaseUwiscDataModel.drop_vars
+      ~BaseUwiscDataModel.fill_missing_vars
+      ~BaseUwiscDataModel.get_primary_input_file
+      ~BaseUwiscDataModel.get_solar_azimuth
+      ~BaseUwiscDataModel.get_solar_zenith
+      ~BaseUwiscDataModel.open_dataset
+      ~BaseUwiscDataModel.parse_timestamp
+      ~BaseUwiscDataModel.parse_timestamp_string
+      ~BaseUwiscDataModel.process_dataset
+      ~BaseUwiscDataModel.remap_cloud_phase
+      ~BaseUwiscDataModel.remap_dims
+      ~BaseUwiscDataModel.rename_vars
+      ~BaseUwiscDataModel.run
+      ~BaseUwiscDataModel.transform_raw_data
+      ~BaseUwiscDataModel.write_output
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BaseUwiscDataModel.CLOUD_TYPE_MAP
+      ~BaseUwiscDataModel.CLOUD_TYPE_SOURCE_VAR
+      ~BaseUwiscDataModel.NAME_MAP
+      ~BaseUwiscDataModel.TIMESTAMP_PATTERN
+      ~BaseUwiscDataModel.ds
+      ~BaseUwiscDataModel.input_files
+      ~BaseUwiscDataModel.output_file
+      ~BaseUwiscDataModel.primary_input_file
+      ~BaseUwiscDataModel.time_index
+      ~BaseUwiscDataModel.timestamp
+      ~BaseUwiscDataModel.timestamp_string
+   
+   

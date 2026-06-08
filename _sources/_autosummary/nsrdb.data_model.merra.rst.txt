@@ -1,0 +1,33 @@
+nsrdb.data\_model.merra
+=======================
+
+.. automodule:: nsrdb.data_model.merra
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      DewPoint
+      MerraVar
+      RelativeHumidity
+   
+   
+
+   
+   
+   
+
+
+

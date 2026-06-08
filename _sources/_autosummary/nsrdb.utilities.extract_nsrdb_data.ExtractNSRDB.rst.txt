@@ -1,0 +1,36 @@
+nsrdb.utilities.extract\_nsrdb\_data.ExtractNSRDB
+=================================================
+
+.. currentmodule:: nsrdb.utilities.extract_nsrdb_data
+
+.. autoclass:: ExtractNSRDB
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExtractNSRDB.extract_closest_meta
+      ~ExtractNSRDB.extract_dsets
+      ~ExtractNSRDB.extract_map
+      ~ExtractNSRDB.extract_sites
+      ~ExtractNSRDB.filter_meta
+      ~ExtractNSRDB.meta_to_disk
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ExtractNSRDB.IGNORE_LIST
+      ~ExtractNSRDB.meta
+   
+   

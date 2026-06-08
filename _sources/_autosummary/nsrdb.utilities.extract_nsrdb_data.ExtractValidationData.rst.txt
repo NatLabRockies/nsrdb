@@ -1,0 +1,38 @@
+nsrdb.utilities.extract\_nsrdb\_data.ExtractValidationData
+==========================================================
+
+.. currentmodule:: nsrdb.utilities.extract_nsrdb_data
+
+.. autoclass:: ExtractValidationData
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExtractValidationData.extract_closest_meta
+      ~ExtractValidationData.extract_dsets
+      ~ExtractValidationData.extract_map
+      ~ExtractValidationData.extract_sites
+      ~ExtractValidationData.filter_meta
+      ~ExtractValidationData.meta_to_disk
+      ~ExtractValidationData.save_meta
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ExtractValidationData.COORDS
+      ~ExtractValidationData.IGNORE_LIST
+      ~ExtractValidationData.meta
+   
+   

@@ -1,0 +1,6 @@
+nsrdb.utilities.file\_utils.convert\_h4
+=======================================
+
+.. currentmodule:: nsrdb.utilities.file_utils
+
+.. autofunction:: convert_h4

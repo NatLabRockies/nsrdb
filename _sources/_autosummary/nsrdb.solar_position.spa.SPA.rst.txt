@@ -1,0 +1,72 @@
+nsrdb.solar\_position.spa.SPA
+=============================
+
+.. currentmodule:: nsrdb.solar_position.spa
+
+.. autoclass:: SPA
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SPA.aberration_correction
+      ~SPA.apparent_elevation
+      ~SPA.apparent_elevation_angle
+      ~SPA.apparent_position
+      ~SPA.apparent_sidereal_time
+      ~SPA.apparent_solar_position
+      ~SPA.apparent_sun_longitude
+      ~SPA.apparent_zenith
+      ~SPA.atmospheric_refraction_correction
+      ~SPA.azimuth
+      ~SPA.elevation
+      ~SPA.equation_of_time
+      ~SPA.equatorial_horizontal_parallax
+      ~SPA.geocentric_latitude
+      ~SPA.geocentric_longitude
+      ~SPA.geocentric_sun_position
+      ~SPA.heliocentric_latitude
+      ~SPA.heliocentric_longitude
+      ~SPA.heliocentric_radius_vector
+      ~SPA.local_hour_angle
+      ~SPA.mean_anomaly_moon
+      ~SPA.mean_anomaly_sun
+      ~SPA.mean_ecliptic_obliquity
+      ~SPA.mean_elongation
+      ~SPA.mean_sidereal_time
+      ~SPA.moon_argument_latitude
+      ~SPA.moon_ascending_longitude
+      ~SPA.nutation_coefficients
+      ~SPA.nutation_position
+      ~SPA.observer_xy
+      ~SPA.parallax_sun_right_ascension
+      ~SPA.position
+      ~SPA.solar_position
+      ~SPA.sun_mean_longitude
+      ~SPA.topocentric_local_hour_angle
+      ~SPA.topocentric_solar_position
+      ~SPA.topocentric_sun_declination
+      ~SPA.topocentric_zenith_angle
+      ~SPA.true_ecliptic_obliquity
+      ~SPA.zenith
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SPA.altitude
+      ~SPA.latitude
+      ~SPA.longitude
+      ~SPA.time_index
+   
+   

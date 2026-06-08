@@ -1,0 +1,6 @@
+nsrdb.utilities.extract\_surfrad.extract\_all
+=============================================
+
+.. currentmodule:: nsrdb.utilities.extract_surfrad
+
+.. autofunction:: extract_all

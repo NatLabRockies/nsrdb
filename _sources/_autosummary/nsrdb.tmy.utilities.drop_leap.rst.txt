@@ -1,0 +1,6 @@
+nsrdb.tmy.utilities.drop\_leap
+==============================
+
+.. currentmodule:: nsrdb.tmy.utilities
+
+.. autofunction:: drop_leap

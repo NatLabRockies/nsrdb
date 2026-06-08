@@ -1,0 +1,56 @@
+nsrdb.preprocessing.nasa\_data\_model.NasaDataModel
+===================================================
+
+.. currentmodule:: nsrdb.preprocessing.nasa_data_model
+
+.. autoclass:: NasaDataModel
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NasaDataModel.derive_solar_angles
+      ~NasaDataModel.derive_stdevs
+      ~NasaDataModel.drop_vars
+      ~NasaDataModel.fill_missing_vars
+      ~NasaDataModel.get_primary_input_file
+      ~NasaDataModel.get_solar_azimuth
+      ~NasaDataModel.get_solar_zenith
+      ~NasaDataModel.open_dataset
+      ~NasaDataModel.parse_timestamp
+      ~NasaDataModel.parse_timestamp_string
+      ~NasaDataModel.process_dataset
+      ~NasaDataModel.remap_cloud_phase
+      ~NasaDataModel.remap_dims
+      ~NasaDataModel.rename_vars
+      ~NasaDataModel.run
+      ~NasaDataModel.transform_raw_data
+      ~NasaDataModel.write_output
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NasaDataModel.CLOUD_TYPE_MAP
+      ~NasaDataModel.CLOUD_TYPE_SOURCE_VAR
+      ~NasaDataModel.NAME_MAP
+      ~NasaDataModel.TIMESTAMP_PATTERN
+      ~NasaDataModel.ds
+      ~NasaDataModel.input_files
+      ~NasaDataModel.output_file
+      ~NasaDataModel.primary_input_file
+      ~NasaDataModel.time_index
+      ~NasaDataModel.timestamp
+      ~NasaDataModel.timestamp_string
+   
+   

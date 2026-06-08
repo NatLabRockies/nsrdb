@@ -1,0 +1,32 @@
+nsrdb.albedo.modis.ModisDay
+===========================
+
+.. currentmodule:: nsrdb.albedo.modis
+
+.. autoclass:: ModisDay
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ModisDay.plot
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ModisDay.LAT_SIZE
+      ~ModisDay.LON_SIZE
+      ~ModisDay.SCALE
+   
+   

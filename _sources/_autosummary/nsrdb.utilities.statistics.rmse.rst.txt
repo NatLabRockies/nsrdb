@@ -1,0 +1,6 @@
+nsrdb.utilities.statistics.rmse
+===============================
+
+.. currentmodule:: nsrdb.utilities.statistics
+
+.. autofunction:: rmse

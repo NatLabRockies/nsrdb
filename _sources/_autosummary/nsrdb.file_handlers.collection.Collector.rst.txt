@@ -1,0 +1,33 @@
+nsrdb.file\_handlers.collection.Collector
+=========================================
+
+.. currentmodule:: nsrdb.file_handlers.collection
+
+.. autoclass:: Collector
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Collector.collect_daily
+      ~Collector.collect_dir
+      ~Collector.collect_flist
+      ~Collector.collect_flist_lowmem
+      ~Collector.filter_flist
+      ~Collector.get_data
+      ~Collector.get_dset_attrs
+      ~Collector.get_flist
+      ~Collector.get_slices
+      ~Collector.verify_flist
+   
+   
+
+   
+   
+   

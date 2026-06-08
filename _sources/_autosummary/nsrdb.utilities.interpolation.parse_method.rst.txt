@@ -1,0 +1,6 @@
+nsrdb.utilities.interpolation.parse\_method
+===========================================
+
+.. currentmodule:: nsrdb.utilities.interpolation
+
+.. autofunction:: parse_method
