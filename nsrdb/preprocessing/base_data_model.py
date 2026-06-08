@@ -182,17 +182,21 @@ class BaseUwiscDataModel:
         """Derive the solar zenith angle for the dataset."""
         lats = ds['latitude'].values
         lons = ds['longitude'].values
-        return SolarPosition._zenith(
-            self.time_index, lats, lons
+        solar_pos = SolarPosition(
+            self.time_index,
+            np.column_stack((lats.ravel(), lons.ravel())),
         )
+        return np.asarray(solar_pos.zenith).reshape(lats.shape)
 
     def get_solar_azimuth(self, ds):
         """Derive the solar azimuth angle for the dataset."""
         lats = ds['latitude'].values
         lons = ds['longitude'].values
-        return SolarPosition._azimuth(
-            self.time_index, lats, lons
+        solar_pos = SolarPosition(
+            self.time_index,
+            np.column_stack((lats.ravel(), lons.ravel())),
         )
+        return np.asarray(solar_pos.azimuth).reshape(lats.shape)
 
     @classmethod
     def rename_vars(cls, ds):
