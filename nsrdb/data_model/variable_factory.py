@@ -24,6 +24,7 @@ class VarFactory:
     """Factory pattern to retrieve ancillary variable helper objects."""
 
     # mapping of NSRDB variable names to helper objects
+    # TODO: split this up into psm and mlcloud variables
     MAPPING: ClassVar = {
         'asymmetry': AsymVar,
         'air_temperature': MerraVar,
